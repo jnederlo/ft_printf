@@ -46,6 +46,9 @@ void	ft_printf(const char *format, ...)
 	va_end(ap1); //signals no further arguements.
 }
 
+
+
+
 int		main()
 {
 	// I am passing into ft_printf() a string of format characters
