@@ -22,6 +22,7 @@
 typedef struct			s_badge
 {
 	int	pound;
+	int jleft;
 	int	zero;
 	int	space;
 	int	sign;
@@ -33,19 +34,19 @@ typedef struct			s_badge
 	int	hh;
 	int	j;
 	int	z;
-}						t_badge
+}						t_badge;
 
 // the program will put pointers to functions into a datastructure.
 // The functions will all take 3 arguments (char *fmt, t_badge *badge, va_list ap) and is defined here:
 
-typedef		int t_choose_cs(char *, t_badge *, va_list);
+typedef		int t_choose_cs(char **, t_badge *, va_list);
 
 typedef struct			s_cs_badge
 {
 	char		cs;
 	int			type;
 	t_choose_cs	*choose_cs;
-}						t_cs_badge
+}						t_cs_badge;
 
 // Now the header file provides the equivalent function prototyps for some functions of type t_choose_cs
 extern t_choose_cs		cs_d, cs_i, cs_o, cs_u, cs_x, cs_X, cs_D,
@@ -55,5 +56,16 @@ extern t_choose_cs		cs_d, cs_i, cs_o, cs_u, cs_x, cs_X, cs_D,
 
 extern const t_cs_badge	g_cs_list[];
 extern const int		nbr_cs_badge;
+
+extern int				g_cs_type;
+
+
+int		ft_printf(char *fmt, ...);
+int		sub_fmt(char **fmt, t_badge *badge, va_list ap);
+int		cs_d(char **fmt, t_badge *badge, va_list ap);
+void	flag_set(t_badge *badge, char **fmt);
+int		conv_spec(char **fmt, t_badge *badge, va_list ap);
+
+
 
 #endif

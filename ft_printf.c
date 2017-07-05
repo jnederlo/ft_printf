@@ -1,6 +1,6 @@
 
 #include "ft_printf.h"
-
+#include <stdio.h>
 
 int		ft_printf(char *fmt, ...)
 {
@@ -13,7 +13,10 @@ int		ft_printf(char *fmt, ...)
 	while (*fmt)
 	{
 		if (*fmt == '%')
-			len += sub_fmt(&fmt, &badge, ap) // step into sub-string functions and increase len by some amount
+		{
+			printf("just before I call sub_fmt");
+			len += sub_fmt(&fmt, &badge, ap); // step into sub-string functions and increase len by some amount
+		}
 		else
 		{
 			len += write(1, fmt, 1);
@@ -31,15 +34,14 @@ int		ft_printf(char *fmt, ...)
 int		sub_fmt(char **fmt, t_badge *badge, va_list ap)
 {
 	int			len;
-	t_cs_badge	cs_func;
 
+	printf("	Start of SUB_FMT");
 	g_cs_type = 0;
 	len = 0;
 	flag_set(badge, fmt);
-	if (conv_spec(*fmt, badge, ap))// if fmt is pointing at a valid cs
+	if (conv_spec(fmt, badge, ap))// if fmt is pointing at a valid cs
 	{
-		cs_func = g_cs_list[g_cs_type].choose_cs(*fmt, badge, ap);
-
+		g_cs_list[g_cs_type].choose_cs(fmt, badge, ap);
 	}
 	if (*(*fmt) == '%')
 	{
@@ -47,4 +49,39 @@ int		sub_fmt(char **fmt, t_badge *badge, va_list ap)
 		len += write(1, "%", 1);
 	}
 	return (len);
+}
+
+int		cs_d(char **fmt, t_badge *badge, va_list ap)
+{
+	int d;
+	int length = 2;
+
+	printf("	Start of cs_d");
+	d = va_arg(ap, int);
+	ft_putnbr(d);
+	return (length);
+}
+
+
+
+void	flag_set(t_badge *badge, char **fmt)
+{
+	(*fmt)++;
+	
+	printf("	start of FLAG_SET");
+	while (*(*fmt) == '#' || *(*fmt) == '+' || *(*fmt) == '-' ||
+		*(*fmt) == '0' || *(*fmt) == ' ')
+		{
+			if (*(*fmt) == '#')
+				badge->pound = 1;
+			else if (*(*fmt) == '+')
+				badge->sign = 1;
+			else if (*(*fmt) == '-')
+				badge->jleft = 1;
+			else if (*(*fmt) == '0')
+				badge->zero = 1;
+			else if (*(*fmt) == ' ')
+				badge->space = 1;
+			(*fmt)++;
+		}
 }
