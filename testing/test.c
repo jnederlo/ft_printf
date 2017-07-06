@@ -1,13 +1,16 @@
-
+#include <unistd.h>
 #include <stdio.h>
+#include <stdlib.h>
 
-int	main()
+int	main(int argc, char **argv)
 {
-	char	test;
+	argc = 2;
 
-	test = 260;
+	int	test;
 
-	printf("%hhd\n", test);
+	test = atoi(argv[1]);
+
+	printf("%.*d\n", 20, test);
 	return (0);
 
 }

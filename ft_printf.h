@@ -39,7 +39,7 @@ typedef struct			s_badge
 // the program will put pointers to functions into a datastructure.
 // The functions will all take 3 arguments (char *fmt, t_badge *badge, va_list ap) and is defined here:
 
-typedef		int t_choose_cs(char **, t_badge *, va_list);
+typedef		int t_choose_cs(char ** fmt, t_badge *badge, va_list ap);
 
 typedef struct			s_cs_badge
 {
@@ -48,16 +48,28 @@ typedef struct			s_cs_badge
 	t_choose_cs	*choose_cs;
 }						t_cs_badge;
 
-// Now the header file provides the equivalent function prototyps for some functions of type t_choose_cs
-extern t_choose_cs	cs_d, cs_c;
-// extern t_choose_cs		cs_d, cs_i, cs_o, cs_u, cs_x, cs_X, cs_D,
-// 						cs_O, cs_U, cs_C, cs_c, cs_S, cs_s, cs_p;
-
 // There will be a list of t_cs_badge structs and there will be nbr_cs_badge elements in this array:
 extern const t_cs_badge	g_cs_list[];
 extern const int		nbr_cs_badge;
 
 extern int				g_cs_type;
+
+// Now the header file provides the equivalent function prototyps for some functions of type t_choose_cs
+extern t_choose_cs	cs_d;
+extern t_choose_cs	cs_i;
+extern t_choose_cs	cs_o;
+extern t_choose_cs	cs_u;
+extern t_choose_cs	cs_x;
+extern t_choose_cs	cs_X;
+extern t_choose_cs	cs_D;
+extern t_choose_cs	cs_O;
+extern t_choose_cs	cs_U;
+extern t_choose_cs	cs_C;
+extern t_choose_cs	cs_c;
+extern t_choose_cs	cs_S;
+extern t_choose_cs	cs_s;
+extern t_choose_cs	cs_p;
+
 
 int		ft_printf(char *fmt, ...);
 int		sub_fmt(char **fmt, t_badge *badge, va_list ap);
