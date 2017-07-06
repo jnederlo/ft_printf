@@ -9,14 +9,12 @@ int		ft_printf(char *fmt, ...)
 	t_badge	badge;
 
 	va_start(ap, fmt);
+	s_badge_reset(&badge);
 	len = 0;
 	while (*fmt)
 	{
 		if (*fmt == '%')
-		{
-			printf("just before I call sub_fmt");
 			len += sub_fmt(&fmt, &badge, ap); // step into sub-string functions and increase len by some amount
-		}
 		else
 		{
 			len += write(1, fmt, 1);
@@ -31,44 +29,57 @@ int		ft_printf(char *fmt, ...)
 	(while calling nested functions to other badges). It will then use my dispatch
 	table to call the correct .choose_cs() if it exists, while setting the correct 
 	cs_func, else it will check for the % sign, and finally it will return the len */
-int		sub_fmt(char **fmt, t_badge *badge, va_list ap)
+// int		sub_fmt(char **fmt, t_badge *badge, va_list ap)
+// {
+// 	int			len;
+
+// 	printf("	Start of SUB_FMT");
+// 	len = 0;
+// 	flag_set(badge, fmt);
+// 	if (conv_spec(fmt, badge, ap))// if fmt is pointing at a valid cs
+// 	{
+// 		g_cs_list[g_cs_type].choose_cs(fmt, badge, ap);
+// 	}
+// 	if (*(*fmt) == '%')
+// 	{
+// 		(*fmt)++;
+// 		len += write(1, "%", 1);
+// 	}
+// 	return (len);
+// }
+
+// int		cs_d(char **fmt, t_badge *badge, va_list ap)
+// {
+// 	int d;
+// 	int length = 2;
+
+// 	printf("Start of cs_d\n");
+// 	d = va_arg(ap, int);
+// 	ft_putnbr(d);
+// 	return (length);
+// }
+
+void s_badge_reset(t_badge *badge)
 {
-	int			len;
-
-	printf("	Start of SUB_FMT");
-	g_cs_type = 0;
-	len = 0;
-	flag_set(badge, fmt);
-	if (conv_spec(fmt, badge, ap))// if fmt is pointing at a valid cs
-	{
-		g_cs_list[g_cs_type].choose_cs(fmt, badge, ap);
-	}
-	if (*(*fmt) == '%')
-	{
-		(*fmt)++;
-		len += write(1, "%", 1);
-	}
-	return (len);
+	badge->pound = 0;
+	badge->jleft = 0;
+	badge->zero = 0;
+	badge->space = 0;
+	badge->sign = 0;
+	badge->min_width = 0;
+	badge->precision = 0;
+	badge->l = 0;
+	badge->ll = 0;
+	badge->h = 0;
+	badge->hh = 0;
+	badge->j = 0;
+	badge->z = 0;
 }
-
-int		cs_d(char **fmt, t_badge *badge, va_list ap)
-{
-	int d;
-	int length = 2;
-
-	printf("	Start of cs_d");
-	d = va_arg(ap, int);
-	ft_putnbr(d);
-	return (length);
-}
-
-
 
 void	flag_set(t_badge *badge, char **fmt)
 {
 	(*fmt)++;
-	
-	printf("	start of FLAG_SET");
+
 	while (*(*fmt) == '#' || *(*fmt) == '+' || *(*fmt) == '-' ||
 		*(*fmt) == '0' || *(*fmt) == ' ')
 		{
