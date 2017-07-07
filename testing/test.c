@@ -4,13 +4,16 @@
 
 int	main(int argc, char **argv)
 {
-	argc = 2;
+	argc = 4;
 
-	int	test;
+	int num1;
+	int num2;
+	int num3;
 
-	test = atoi(argv[1]);
-
-	printf("%.*d\n", 20, test);
+	num1 = atoi(argv[1]);
+	num2 = atoi(argv[2]);
+	num3 = atoi(argv[3]);	
+	printf("the size of int is %lu, the size of 1-digit num is %lu, the size of 2-digit num is %lu, the size of 3-digit num is %lu\n", sizeof(int), sizeof(num1), sizeof(num2), sizeof(num3));
 	return (0);
 
 }

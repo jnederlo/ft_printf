@@ -21,25 +21,27 @@
 
 typedef struct			s_badge
 {
-	int	pound;
-	int jleft;
-	int	zero;
-	int	space;
-	int	sign;
-	int	min_width;
-	int	precision;
-	int	l;
-	int	ll;
-	int	h;
-	int	hh;
-	int	j;
-	int	z;
+	int		pound: 1;
+	int 	jleft: 1;
+	int		zero: 1;
+	int		space: 1;
+	int		sign: 1;
+	int		min_w;
+	// int		min_w_size;//keeps track of the size of the mw number for my padding;
+	int		prec;
+	// int		prec_size;//keeps track of the size of the precision number for my padding;
+	char	l;
+	char	ll;
+	char	h;
+	char	hh;
+	char	j;
+	char	z;
 }						t_badge;
 
 // the program will put pointers to functions into a datastructure.
 // The functions will all take 3 arguments (char *fmt, t_badge *badge, va_list ap) and is defined here:
 
-typedef		int t_choose_cs(char ** fmt, t_badge *badge, va_list ap);
+typedef		int t_choose_cs(char **fmt, t_badge *badge, va_list ap);
 
 typedef struct			s_cs_badge
 {
@@ -50,7 +52,7 @@ typedef struct			s_cs_badge
 
 // There will be a list of t_cs_badge structs and there will be nbr_cs_badge elements in this array:
 extern const t_cs_badge	g_cs_list[];
-extern const int		nbr_cs_badge;
+extern const int		g_nbr_cs_badge;
 
 extern int				g_cs_type;
 
@@ -73,8 +75,13 @@ extern t_choose_cs	cs_p;
 
 int		ft_printf(char *fmt, ...);
 int		sub_fmt(char **fmt, t_badge *badge, va_list ap);
-void	flag_set(t_badge *badge, char **fmt);
-int		conv_spec(char **fmt, t_badge *badge, va_list ap);
 void	s_badge_reset(t_badge *badge);
+void	flag_set(t_badge *badge, char **fmt);
+void	precision_set(t_badge *badge, char **fmt, va_list ap);
+void	min_width_set(t_badge *badge, char **fmt, va_list ap);
+void	len_mod_set(t_badge *badge, char **fmt, va_list ap);
+int		conv_spec(char **fmt, t_badge *badge, va_list ap);
+
+
 
 #endif

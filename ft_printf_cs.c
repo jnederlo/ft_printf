@@ -58,7 +58,7 @@ int		sub_fmt(char **fmt, t_badge *badge, va_list ap)
 	int			len;
 
 	len = 0;
-	flag_set(badge, fmt);
+	min_width_set(badge, fmt, ap);
 	if (conv_spec(fmt, badge, ap))// if fmt is pointing at a valid cs
 		g_cs_list[g_cs_type].choose_cs(fmt, badge, ap);
 	if (*(*fmt) == '%')
