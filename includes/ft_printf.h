@@ -3,7 +3,7 @@
 # define FT_PRINTF_H
 
 # include <stdarg.h>
-# include "libft/includes/libft.h"
+# include "../libft/includes/libft.h"
 # define CS_LC_D	0
 # define CS_LC_I	1
 # define CS_LC_O	2

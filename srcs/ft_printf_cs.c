@@ -36,6 +36,9 @@ int		conv_spec(char **fmt, t_badge *badge, va_list ap)
 	int		i;
 	int		cs_true;
 
+	(void)	badge;//to silence -Werror - maybe I don't have to pass into this func.
+	(void)	ap;//to silence -Werror - maybe I don't have to pass into this func.
+
 	i = 0;
 	cs_true = 0;
 	while (i < g_nbr_cs_badge)

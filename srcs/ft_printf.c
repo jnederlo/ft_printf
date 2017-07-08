@@ -113,6 +113,7 @@ void	precision_set(t_badge *badge, char **fmt, va_list ap)
 
 void	len_mod_set(t_badge *badge, char **fmt, va_list ap)
 {
+	(void)	ap;//to silence -Werror - maybe I don't have to pass into func?
 	if (*(*fmt) == 'j' || *(*fmt) == 'z')
 	{
 		*(*fmt) == 'j' ? (badge->j = 'j') : (badge->z = 'z');
