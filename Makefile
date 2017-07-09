@@ -1,3 +1,14 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2017/07/08 14:42:13 by jnederlo          #+#    #+#              #
+#    Updated: 2017/07/08 17:00:35 by jnederlo         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
 NAME				=	libftprintf.a
 CC					=	gcc -Wall -Werror -Wextra
@@ -21,12 +32,13 @@ MESS_START			=	@echo "\033[1m\033[100m\033[97m******Starting Compilation******\0
 DEPS				=	./includes/ft_printf.h
 
 #for compilation of my own main.
-TESTING				=	./testing/main_tests.c
+TESTING				=	testing/main_tests.c
 EXEC				=	test
+
 
 OBJECTS				=	$(addprefix build/, $(FILES:.c=.o))
 
-.PHONY: clean fclean all SOURCES
+.PHONY: clean fclean all run
 
 all: $(NAME)
 
@@ -63,8 +75,8 @@ build/%.o: srcs/%.c $(DEPS) | build
 
 run: all $(EXEC)
 
-$(EXEC):
+$(EXEC): testing/main_tests.c $(NAME)
 	$(MESS_CUSTOM)
-	$(CC) -o $(EXEC) $(TESTING) $(NAME) $(LIBS)
+	$(CC) -o $(EXEC) $(TESTING) $(NAME) $(LIBS) -fsanitize=address -g
 	$(MESS_BLANK)
 	$(MESS_SUCCESS)

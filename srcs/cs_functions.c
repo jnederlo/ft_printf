@@ -1,8 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   cs_functions.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/07/08 14:41:54 by jnederlo          #+#    #+#             */
+/*   Updated: 2017/07/08 18:02:35 by jnederlo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <unistd.h>
 
-int		cs_d(char **fmt, t_badge *badge, va_list ap)
+int		g_cs_lc_d(char **fmt, t_badge *badge, va_list ap)
 {
 	int d;
 	int length;
@@ -23,109 +33,109 @@ int		cs_d(char **fmt, t_badge *badge, va_list ap)
 	return (length);
 }
 
-int		cs_i(char **fmt, t_badge *badge, va_list ap)
+int		g_cs_lc_i(char **fmt, t_badge *badge, va_list ap)
 {
-		(void)fmt;
-		(void)badge;
-		(void)ap;
-		return(0);
+	(void)fmt;
+	(void)badge;
+	(void)ap;
+	return (0);
 }
 
-int		cs_o(char **fmt, t_badge *badge, va_list ap)
+int		g_cs_lc_o(char **fmt, t_badge *badge, va_list ap)
 {
-		(void)fmt;
-		(void)badge;
-		(void)ap;
-		return(0);
+	(void)fmt;
+	(void)badge;
+	(void)ap;
+	return (0);
 }
 
-int		cs_u(char **fmt, t_badge *badge, va_list ap)
+int		g_cs_lc_u(char **fmt, t_badge *badge, va_list ap)
 {
-		(void)fmt;
-		(void)badge;
-		(void)ap;
-		return(0);
+	(void)fmt;
+	(void)badge;
+	(void)ap;
+	return (0);
 }
 
-int		cs_x(char **fmt, t_badge *badge, va_list ap)
+int		g_cs_lc_x(char **fmt, t_badge *badge, va_list ap)
 {
-		(void)fmt;
-		(void)badge;
-		(void)ap;
-		return(0);
+	(void)fmt;
+	(void)badge;
+	(void)ap;
+	return (0);
 }
 
-int		cs_X(char **fmt, t_badge *badge, va_list ap)
+int		g_cs_uc_x(char **fmt, t_badge *badge, va_list ap)
 {
-		(void)fmt;
-		(void)badge;
-		(void)ap;
-		return(0);
+	(void)fmt;
+	(void)badge;
+	(void)ap;
+	return (0);
 }
 
-int		cs_D(char **fmt, t_badge *badge, va_list ap)
+int		g_cs_uc_d(char **fmt, t_badge *badge, va_list ap)
 {
-		(void)fmt;
-		(void)badge;
-		(void)ap;
-		return(0);
+	(void)fmt;
+	(void)badge;
+	(void)ap;
+	return (0);
 }
 
-int		cs_O(char **fmt, t_badge *badge, va_list ap)
+int		g_cs_uc_o(char **fmt, t_badge *badge, va_list ap)
 {
-		(void)fmt;
-		(void)badge;
-		(void)ap;
-		return(0);
+	(void)fmt;
+	(void)badge;
+	(void)ap;
+	return (0);
 }
 
-int		cs_U(char **fmt, t_badge *badge, va_list ap)
+int		g_cs_uc_u(char **fmt, t_badge *badge, va_list ap)
 {
-		(void)fmt;
-		(void)badge;
-		(void)ap;
-		return(0);
+	(void)fmt;
+	(void)badge;
+	(void)ap;
+	return (0);
 }
 
-int		cs_C(char **fmt, t_badge *badge, va_list ap)
+int		g_cs_uc_c(char **fmt, t_badge *badge, va_list ap)
 {
-		(void)fmt;
-		(void)badge;
-		(void)ap;
-		return(0);
+	(void)fmt;
+	(void)badge;
+	(void)ap;
+	return (0);
 }
 
-int		cs_c(char **fmt, t_badge *badge, va_list ap)
+int		g_cs_lc_c(char **fmt, t_badge *badge, va_list ap)
 {
-		char c;
-		(void)badge;//to silence compile error -Werror
+	char c;
 
-		c = va_arg(ap, int);
-		write (1, &c, 1);
-		(*fmt)++;
-		return (1);
+	(void)badge;//to silence compile error -Werror
+	c = va_arg(ap, int);
+	write(1, &c, 1);
+	(*fmt)++;
+	return (1);
 }
 
-int		cs_S(char **fmt, t_badge *badge, va_list ap)
+int		g_cs_uc_s(char **fmt, t_badge *badge, va_list ap)
 {
-		(void)fmt;
-		(void)badge;
-		(void)ap;
-		return(0);
+	(void)fmt;
+	(void)badge;
+	(void)ap;
+	return (0);
 }
 
-int		cs_s(char **fmt, t_badge *badge, va_list ap)
+int		g_cs_lc_s(char **fmt, t_badge *badge, va_list ap)
 {
-		(void)fmt;
-		(void)badge;
-		(void)ap;
-		return(0);
+	(void)fmt;
+	(void)badge;
+	(void)ap;
+	return (0);
 }
 
-int		cs_p(char **fmt, t_badge *badge, va_list ap)
+int		g_cs_lc_p(char **fmt, t_badge *badge, va_list ap)
 {
-		(void)fmt;
-		(void)badge;
-		(void)ap;
-		return(0);
+	(void)fmt;
+	(void)badge;
+	(void)ap;
+	return (0);
 }

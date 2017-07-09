@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/07/08 14:42:04 by jnederlo          #+#    #+#             */
+/*   Updated: 2017/07/08 18:26:54 by jnederlo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
 # include <stdarg.h>
+# include <unistd.h>
 # include "../libft/includes/libft.h"
 # define CS_LC_D	0
 # define CS_LC_I	1
@@ -22,14 +34,12 @@
 typedef struct			s_badge
 {
 	int		pound: 1;
-	int 	jleft: 1;
+	int		jleft: 1;
 	int		zero: 1;
 	int		space: 1;
 	int		sign: 1;
 	int		min_w;
-	// int		min_w_size;//keeps track of the size of the mw number for my padding;
 	int		prec;
-	// int		prec_size;//keeps track of the size of the precision number for my padding;
 	char	l;
 	char	ll;
 	char	h;
@@ -38,10 +48,12 @@ typedef struct			s_badge
 	char	z;
 }						t_badge;
 
-// the program will put pointers to functions into a datastructure.
-// The functions will all take 3 arguments (char *fmt, t_badge *badge, va_list ap) and is defined here:
+/*
+**the program will put pointers to functions into a datastructure.
+**The functions all take 3 arguments and is defined here:
+*/
 
-typedef		int t_choose_cs(char **fmt, t_badge *badge, va_list ap);
+typedef	int				t_choose_cs(char **fmt, t_badge *badge, va_list ap);
 
 typedef struct			s_cs_badge
 {
@@ -50,38 +62,49 @@ typedef struct			s_cs_badge
 	t_choose_cs	*choose_cs;
 }						t_cs_badge;
 
-// There will be a list of t_cs_badge structs and there will be nbr_cs_badge elements in this array:
+/*
+**There will be a list of t_cs_badge structs
+**and there will be nbr_cs_badge elements in this array:
+*/
+
 extern const t_cs_badge	g_cs_list[];
 extern const int		g_nbr_cs_badge;
 
 extern int				g_cs_type;
 
-// Now the header file provides the equivalent function prototyps for some functions of type t_choose_cs
-extern t_choose_cs	cs_d;
-extern t_choose_cs	cs_i;
-extern t_choose_cs	cs_o;
-extern t_choose_cs	cs_u;
-extern t_choose_cs	cs_x;
-extern t_choose_cs	cs_X;
-extern t_choose_cs	cs_D;
-extern t_choose_cs	cs_O;
-extern t_choose_cs	cs_U;
-extern t_choose_cs	cs_C;
-extern t_choose_cs	cs_c;
-extern t_choose_cs	cs_S;
-extern t_choose_cs	cs_s;
-extern t_choose_cs	cs_p;
+/*
+**Now the header file provides the equivalent function prototyps
+**for some functions of type t_choose_cs:
+*/
 
+extern t_choose_cs		g_cs_lc_d;
+extern t_choose_cs		g_cs_lc_i;
+extern t_choose_cs		g_cs_lc_o;
+extern t_choose_cs		g_cs_lc_u;
+extern t_choose_cs		g_cs_lc_x;
+extern t_choose_cs		g_cs_uc_x;
+extern t_choose_cs		g_cs_uc_d;
+extern t_choose_cs		g_cs_uc_o;
+extern t_choose_cs		g_cs_uc_u;
+extern t_choose_cs		g_cs_uc_c;
+extern t_choose_cs		g_cs_lc_c;
+extern t_choose_cs		g_cs_uc_s;
+extern t_choose_cs		g_cs_lc_s;
+extern t_choose_cs		g_cs_lc_p;
 
-int		ft_printf(char *fmt, ...);
-int		sub_fmt(char **fmt, t_badge *badge, va_list ap);
-void	s_badge_reset(t_badge *badge);
-void	flag_set(t_badge *badge, char **fmt);
-void	precision_set(t_badge *badge, char **fmt, va_list ap);
-void	min_width_set(t_badge *badge, char **fmt, va_list ap);
-void	len_mod_set(t_badge *badge, char **fmt, va_list ap);
-int		conv_spec(char **fmt, t_badge *badge, va_list ap);
+int						ft_printf(char *fmt, ...);
+int						sub_fmt(char **fmt, t_badge *badge, va_list ap);
+void					s_badge_reset(t_badge *badge);
+void					flag_set(t_badge *badge, char **fmt);
+void					precision_set(t_badge *badge, char **fmt, va_list ap);
+void					min_width_set(t_badge *badge, char **fmt, va_list ap);
+void					len_mod_set(t_badge *badge, char **fmt, va_list ap);
+int						conv_spec(char **fmt, t_badge *badge, va_list ap);
 
+/*
+**|||||||||||REMOVE|||||||||||
+*/
 
+void					print_badge(t_badge *badge);
 
 #endif
