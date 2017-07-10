@@ -6,7 +6,7 @@
 #    By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/07/08 14:42:13 by jnederlo          #+#    #+#              #
-#    Updated: 2017/07/08 17:00:35 by jnederlo         ###   ########.fr        #
+#    Updated: 2017/07/09 18:29:19 by jnederlo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ LIBS				=	./libft/libft.a
 FILES				=	cs_functions.c \
 						ft_printf_cs.c \
 						ft_printf.c \
+						ft_padding.c \
 
 #custom messages to display compilation process.
 MESS_BLANK			=	@echo ""

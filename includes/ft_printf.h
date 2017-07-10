@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:42:04 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/08 18:26:54 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/09 18:54:34 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,30 @@
 # define CS_UC_S	11
 # define CS_LC_S	12
 # define CS_LC_P	13
+# define MIN_SINT	-32768
+# define MAX_SINT	32767
+# define MIN_INT	-2147483648
+# define MAX_INT	2147483648
+# define MIN_LINT	-9223372036854775807 //or -9223372036854775808...
+# define MAX_LINT	9223372036854775807
+# define MIX_LLINT	-9223372036854775807 //or -9223372036854775808...
+# define MAX_LLINT	9223372036854775807
+# define MAX_USINT	65535
+# define MAX_UINT	4294967295
+# define MAX_ULINT	18446744073709551615
+# define MAX_ULLINT	18446744073709551615
+# define MIN_CHAR	-128
+# define MAX_CHAR	127
+# define MAX_UCHAR	255
+
 
 typedef struct			s_badge
 {
-	int		pound: 1;
-	int		jleft: 1;
-	int		zero: 1;
-	int		space: 1;
-	int		sign: 1;
+	int		pound;
+	int		jleft;
+	int		zero;
+	int		space;
+	int		sign;
 	int		min_w;
 	int		prec;
 	char	l;
@@ -100,6 +116,13 @@ void					precision_set(t_badge *badge, char **fmt, va_list ap);
 void					min_width_set(t_badge *badge, char **fmt, va_list ap);
 void					len_mod_set(t_badge *badge, char **fmt, va_list ap);
 int						conv_spec(char **fmt, t_badge *badge, va_list ap);
+
+
+int						gen_width(int d, t_badge *badge, char **fmt);
+int						generic_d(int d, t_badge *badge, char **fmt);
+void					ft_padding(t_badge *badge, int d, char c);
+int						some_prec(int d,t_badge *badge, char **fmt);
+
 
 /*
 **|||||||||||REMOVE|||||||||||
