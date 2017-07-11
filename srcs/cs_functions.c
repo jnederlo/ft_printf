@@ -6,51 +6,12 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:41:54 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/10 17:08:28 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/10 17:21:02 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdio.h>//REMOVE!!!!!!!!!!!!!!
-
-
-// int		g_cs_lc_d(char **fmt, t_badge *badge, va_list ap)
-// {
-// 	int	d;
-// 	int	len;
-
-// 	if (badge->l || badge->ll || badge->j || badge->z)
-// 	{
-// 		d = va_arg(ap, long);
-// 		if (badge->min_w && (badge->min_w > ft_count_digits(d)))
-// 			len = gen_width(d, badge, fmt);//calls -> flags() calls -> print()
-// 		else if (badge->prec && (badge->prec > ft_count_digits(d)))
-// 			len = some_prec(d, badge, fmt);//calls -> flags() calls -> print()
-// 		else
-// 			len = generic_d(d, badge, fmt);//calls -> print()
-// 	}
-// 	else if (badge->hh)
-// 	{
-// 		d = va_arg(ap, int);//won't let me specify it as "short"
-// 		if (badge->min_w && (badge->min_w > ft_count_digits(d)))
-// 			len = gen_width(d, badge, fmt);//calls -> flags() calls -> print()
-// 		else if (badge->prec && (badge->prec > ft_count_digits(d)))
-// 			len = some_prec(d, badge, fmt);//calls -> flags() calls -> print()
-// 		else
-// 			len = generic_d(d, badge, fmt);//calls -> print()
-// 	}
-// 	else
-// 	{
-// 		d = va_arg(ap, int);
-// 		if (badge->min_w && (badge->min_w > ft_count_digits(d)))
-// 			len = gen_width(d, badge, fmt);//calls -> flags() calls -> print()
-// 		else if (badge->prec && (badge->prec > ft_count_digits(d)))
-// 			len = some_prec(d, badge, fmt);//calls -> flags() calls -> print()
-// 		else
-// 			len = generic_d(d, badge, fmt);//calls -> print()
-// 	}
-// 	return (len);
-// }
 
 int		g_cs_lc_d(char **fmt, t_badge *badge, va_list ap)
 {
