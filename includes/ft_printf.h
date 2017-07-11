@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:42:04 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/09 18:54:34 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/10 16:04:12 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,12 @@
 # define MIN_CHAR	-128
 # define MAX_CHAR	127
 # define MAX_UCHAR	255
+
+typedef struct			s_type
+{
+	long long int			ll_int;
+	unsigned long long int	ull_int;
+}						t_type;
 
 
 typedef struct			s_badge
@@ -118,10 +124,10 @@ void					len_mod_set(t_badge *badge, char **fmt, va_list ap);
 int						conv_spec(char **fmt, t_badge *badge, va_list ap);
 
 
-int						gen_width(int d, t_badge *badge, char **fmt);
-int						generic_d(int d, t_badge *badge, char **fmt);
-void					ft_padding(t_badge *badge, int d, char c);
-int						some_prec(int d,t_badge *badge, char **fmt);
+int						gen_width(long long int d, t_badge *badge, char **fmt);
+int						generic_d(long long int d, t_badge *badge, char **fmt);
+void					ft_padding(t_badge *badge, long long int d, char c);
+int						some_prec(long long int d,t_badge *badge, char **fmt);
 
 
 /*
@@ -129,5 +135,11 @@ int						some_prec(int d,t_badge *badge, char **fmt);
 */
 
 void					print_badge(t_badge *badge);
+void					t_type_reset(t_type *type);
+int						len_type(int num, t_badge *badge, t_type *d, char **fmt);
+int						len_badge_set(t_type *d, t_badge *badge, va_list ap);
+int						count_digit_lli(long long int d);
+void					putnbr(long long int d);
+
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:41:54 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/09 19:25:01 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/10 17:08:28 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,45 +14,74 @@
 #include <stdio.h>//REMOVE!!!!!!!!!!!!!!
 
 
+// int		g_cs_lc_d(char **fmt, t_badge *badge, va_list ap)
+// {
+// 	int	d;
+// 	int	len;
+
+// 	if (badge->l || badge->ll || badge->j || badge->z)
+// 	{
+// 		d = va_arg(ap, long);
+// 		if (badge->min_w && (badge->min_w > ft_count_digits(d)))
+// 			len = gen_width(d, badge, fmt);//calls -> flags() calls -> print()
+// 		else if (badge->prec && (badge->prec > ft_count_digits(d)))
+// 			len = some_prec(d, badge, fmt);//calls -> flags() calls -> print()
+// 		else
+// 			len = generic_d(d, badge, fmt);//calls -> print()
+// 	}
+// 	else if (badge->hh)
+// 	{
+// 		d = va_arg(ap, int);//won't let me specify it as "short"
+// 		if (badge->min_w && (badge->min_w > ft_count_digits(d)))
+// 			len = gen_width(d, badge, fmt);//calls -> flags() calls -> print()
+// 		else if (badge->prec && (badge->prec > ft_count_digits(d)))
+// 			len = some_prec(d, badge, fmt);//calls -> flags() calls -> print()
+// 		else
+// 			len = generic_d(d, badge, fmt);//calls -> print()
+// 	}
+// 	else
+// 	{
+// 		d = va_arg(ap, int);
+// 		if (badge->min_w && (badge->min_w > ft_count_digits(d)))
+// 			len = gen_width(d, badge, fmt);//calls -> flags() calls -> print()
+// 		else if (badge->prec && (badge->prec > ft_count_digits(d)))
+// 			len = some_prec(d, badge, fmt);//calls -> flags() calls -> print()
+// 		else
+// 			len = generic_d(d, badge, fmt);//calls -> print()
+// 	}
+// 	return (len);
+// }
+
 int		g_cs_lc_d(char **fmt, t_badge *badge, va_list ap)
 {
-	int	d;
-	int	len;
+	t_type	*d;
+	int		len;
+	int		num;
 
-	if (badge->l || badge->ll || badge->j || badge->z)
-	{
-		d = va_arg(ap, long);
-		if (badge->min_w && (badge->min_w > ft_count_digits(d)))
-			len = gen_width(d, badge, fmt);//calls -> flags() calls -> print()
-		else if (badge->prec && (badge->prec > ft_count_digits(d)))
-			len = some_prec(d, badge, fmt);//calls -> flags() calls -> print()
-		else
-			len = generic_d(d, badge, fmt);//calls -> print()
-	}
-	else if (badge->hh)
-	{
-		d = va_arg(ap, int);//won't let me specify it as "short"
-		if (badge->min_w && (badge->min_w > ft_count_digits(d)))
-			len = gen_width(d, badge, fmt);//calls -> flags() calls -> print()
-		else if (badge->prec && (badge->prec > ft_count_digits(d)))
-			len = some_prec(d, badge, fmt);//calls -> flags() calls -> print()
-		else
-			len = generic_d(d, badge, fmt);//calls -> print()
-	}
-	else
-	{
-		d = va_arg(ap, int);
-		if (badge->min_w && (badge->min_w > ft_count_digits(d)))
-			len = gen_width(d, badge, fmt);//calls -> flags() calls -> print()
-		else if (badge->prec && (badge->prec > ft_count_digits(d)))
-			len = some_prec(d, badge, fmt);//calls -> flags() calls -> print()
-		else
-			len = generic_d(d, badge, fmt);//calls -> print()
-	}
+	num = 0;
+	d = malloc(sizeof(t_type));
+	t_type_reset(d);
+	num = len_badge_set(d, badge, ap);
+	len = len_type(num, badge, d, fmt);
 	return (len);
 }
 
-int		gen_width(int d, t_badge *badge, char **fmt)
+int		len_type(int num, t_badge *badge, t_type *d, char **fmt)
+{
+	int			len;
+	long long	nbr;
+
+	nbr = d->ll_int;
+	if (badge->min_w && (badge->min_w > num))
+		len = gen_width(nbr, badge, fmt);//calls -> flags() calls -> print()
+	else if (badge->prec && (badge->prec > num))
+		len = some_prec(nbr, badge, fmt);//calls -> flags() calls -> print()
+	else
+		len = generic_d(nbr, badge, fmt);//calls -> print()
+	return (len);
+}
+
+int		gen_width(long long int d, t_badge *badge, char **fmt)
 {
 	char	c;
 
@@ -66,19 +95,21 @@ int		gen_width(int d, t_badge *badge, char **fmt)
 	if (badge->jleft || badge->zero)
 	{
 		c = badge->jleft ? ' ' : '0';
-		c == ' ' ? ft_putnbr(d) : ft_padding(badge, d, c);
-		c == '0' ? ft_putnbr(d) : ft_padding(badge, d, c);
+		c == ' ' ? putnbr(d) : ft_padding(badge, d, c);
+		c == '0' && d < 0 ? putnbr(-d) : 0;
+		c == '0' && d >= 0 ? putnbr(d) : 0;
+		c == '0' ? 0 : ft_padding(badge, d, c);
 	}
 	else
 	{
 		ft_padding(badge, d, ' ');
-		ft_putnbr(d);
+		putnbr(d);
 	}
 	(*fmt)++;
 	return (badge->min_w);
 }
 
-int		generic_d(int d, t_badge *badge, char **fmt)
+int		generic_d(long long int d, t_badge *badge, char **fmt)
 {
 	int len;
 
@@ -96,13 +127,13 @@ int		generic_d(int d, t_badge *badge, char **fmt)
 		ft_putchar(' ');
 		len++;
 	}
-	ft_putnbr(d);
-	len += ft_count_digits(d);
+	putnbr(d);
+	len += count_digit_lli(d);
 	(*fmt)++;
 	return (len);
 }
 
-int		some_prec(int d,t_badge *badge, char** fmt)
+int		some_prec(long long int d, t_badge *badge, char** fmt)
 {
 	(void)d;
 	(void)badge;

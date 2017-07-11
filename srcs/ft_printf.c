@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:41:42 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/09 19:26:28 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/10 16:19:09 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,7 +124,7 @@ void	len_mod_set(t_badge *badge, char **fmt, va_list ap)
 	{
 		*(*fmt) == 'j' ? badge->j = 'j' : 0;
 		*(*fmt) == 'z' ? badge->z = 'z' : 0;
-		print_badge(badge);//WILL NEED TO REMOVE THIS!!!!!!!!!!!!!!!!
+		//print_badge(badge);//WILL NEED TO REMOVE THIS!!!!!!!!!!!!!!!!
 		(*fmt)++;
 		return ;
 	}
@@ -134,7 +134,7 @@ void	len_mod_set(t_badge *badge, char **fmt, va_list ap)
 		{
 			*(*fmt) == 'l' ? badge->l = 'l' : 0;
 			*(*fmt) == 'h' ? badge->h = 'h' : 0;
-			print_badge(badge);//WILL NEED TO REMOVE THIS!!!!!!!!!!!!!!!!
+			//print_badge(badge);//WILL NEED TO REMOVE THIS!!!!!!!!!!!!!!!!
 			(*fmt)++;
 			return ;
 		}
@@ -144,7 +144,7 @@ void	len_mod_set(t_badge *badge, char **fmt, va_list ap)
 			badge->h = 'H';
 		(*fmt) += 2;
 	}
-	print_badge(badge);//WILL NEED TO REMOVE THIS!!!!!!!!!!!!!!!
+	//print_badge(badge);//WILL NEED TO REMOVE THIS!!!!!!!!!!!!!!!
 }
 
 /*

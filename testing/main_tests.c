@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:39:51 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/09 19:34:02 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/10 17:09:17 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ int	main(void)
 {
 	int len;
 
-	len = ft_printf("%10ld\n", 3000000000);
-	len =    printf("%10ld\n", 3000000000);
+	len = ft_printf("%-20hd\n", (short)25);
+	len =    printf("%-20hd\n", (short)25);
 // 	printf("size of int is: %lu\n", sizeof(int));
 // 	printf("size of long int is: %lu\n", sizeof(long int));
 // 	printf("size of long long int is: %lu\n", sizeof(long long int));
