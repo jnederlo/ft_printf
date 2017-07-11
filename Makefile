@@ -6,7 +6,7 @@
 #    By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/07/08 14:42:13 by jnederlo          #+#    #+#              #
-#    Updated: 2017/07/09 18:29:19 by jnederlo         ###   ########.fr        #
+#    Updated: 2017/07/10 20:24:31 by jnederlo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,6 @@ DEPS				=	./includes/ft_printf.h
 TESTING				=	testing/main_tests.c
 EXEC				=	test
 
-
 OBJECTS				=	$(addprefix build/, $(FILES:.c=.o))
 
 .PHONY: clean fclean all run
@@ -60,7 +59,11 @@ $(NAME): $(OBJECTS)
 	make -C $(LIBRARY)
 	$(MESS_BLANK)
 	$(MESS_ARCHIVE)
-	ar rcs $@ $(OBJECTS) $(LIBS)
+	ar rcs temp.a $(OBJECTS)
+	ar -x temp.a
+	ar -x libft/libft.a
+	ar rcs $(NAME) $(OBJECTS)
+	rm temp.a __.SYMDEF\ SORTED *.o
 	$(MESS_BLANK)
 	$(MESS_SUCCESS)
 
