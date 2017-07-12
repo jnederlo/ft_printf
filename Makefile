@@ -6,7 +6,7 @@
 #    By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/07/08 14:42:13 by jnederlo          #+#    #+#              #
-#    Updated: 2017/07/12 11:12:43 by jnederlo         ###   ########.fr        #
+#    Updated: 2017/07/12 11:21:26 by jnederlo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,7 +63,7 @@ $(NAME): $(OBJECTS)
 	ar -x temp.a
 	ar -x libft/libft.a
 	ar rcs $(NAME) *.o
-	rm temp.a __.SYMDEF\ SORTED *.o
+	rm temp.a *.o
 	$(MESS_BLANK)
 	$(MESS_SUCCESS)
 
