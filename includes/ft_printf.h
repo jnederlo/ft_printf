@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:42:04 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/10 16:04:12 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/12 11:37:47 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ extern int				g_cs_type;
 */
 
 extern t_choose_cs		g_cs_lc_d;
-extern t_choose_cs		g_cs_lc_i;
+// extern t_choose_cs		g_cs_lc_i;
 extern t_choose_cs		g_cs_lc_o;
 extern t_choose_cs		g_cs_lc_u;
 extern t_choose_cs		g_cs_lc_x;

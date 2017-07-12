@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:42:30 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/12 10:58:34 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/12 11:37:23 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 const	t_cs_badge	g_cs_list[] = {
 	{'d', CS_LC_D, g_cs_lc_d},
-	{'i', CS_LC_I, g_cs_lc_i},
+	{'i', CS_LC_I, g_cs_lc_d},
 	{'o', CS_LC_O, g_cs_lc_o},
 	{'u', CS_LC_U, g_cs_lc_u},
 	{'x', CS_LC_X, g_cs_lc_x},
