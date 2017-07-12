@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:39:51 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/12 11:38:25 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/12 12:53:53 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,9 @@ int	main(void)
 {
 	int len;
 
-	len = ft_printf("My Printf:	-->%-4i<--\n", 42);
-	len =    printf("Acutal Printf:	-->%-4i<--\n", 42);
+	len = ft_printf("%+ d", 42);
+		     printf("Acutal Printf:	-->%+ d<--\n", 42);
+	printf("The length is: 	%d\n", len);
 // 	printf("size of int is: %lu\n", sizeof(int));
 // 	printf("size of long int is: %lu\n", sizeof(long int));
 // 	printf("size of long long int is: %lu\n", sizeof(long long int));

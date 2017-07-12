@@ -6,7 +6,7 @@
 #    By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/07/08 14:42:13 by jnederlo          #+#    #+#              #
-#    Updated: 2017/07/12 11:21:26 by jnederlo         ###   ########.fr        #
+#    Updated: 2017/07/12 11:47:41 by jnederlo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -81,6 +81,6 @@ run: all $(EXEC)
 
 $(EXEC): testing/main_tests.c $(NAME)
 	$(MESS_CUSTOM)
-	$(CC) -o $(EXEC) $(TESTING) $(NAME) $(LIBS) -fsanitize=address -g
+	$gcc -o $(EXEC) $(TESTING) $(NAME) $(LIBS) -fsanitize=address -g
 	$(MESS_BLANK)
 	$(MESS_SUCCESS)

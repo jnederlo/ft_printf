@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:41:54 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/12 11:07:51 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/12 12:50:10 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,18 +46,14 @@ int		gen_width(long long int d, t_badge *badge, char **fmt)
 {
 	char	c;
 
-	if (badge->pound || (badge->jleft && badge->zero) ||
-		(badge->sign && badge->space))
+	if (badge->pound)
 		return (-1);
-	if (badge->sign)
+	if (badge->sign || badge->space)
 	{
-		d >= 0 ? ft_putchar('+') : 0;
-		badge->min_w--;
-	}
-	if (badge->space && d >= 0)
-	{
-		ft_putchar(' ');
-		badge->min_w--;
+		badge->sign ? badge->space = 0 : 0;
+		badge->space && d >= 0 ? ft_putchar(' ') : 0;
+		badge->sign && d >= 0 ? ft_putchar('+') : 0;
+		d >= 0 ? badge->min_w--: 0;
 	}
 	if (badge->jleft || badge->zero)
 	{
@@ -81,18 +77,14 @@ int		generic_d(long long int d, t_badge *badge, char **fmt)
 	int len;
 
 	len = 0;
-	if (badge->pound || (badge->jleft && badge->zero) ||
-		(badge->sign && badge->space))
+	if (badge->pound)
 		return (-1);
-	if (badge->sign)
+	if (badge->sign || badge->space)
 	{
-		d >= 0 ? ft_putchar('+') : 0;
-		len++;
-	}
-	if (badge->space && d >= 0)
-	{
-		ft_putchar(' ');
-		len++;
+		badge->sign ? badge->space = 0 : 0;
+		badge->space && d >= 0 ? ft_putchar(' ') : 0;
+		badge->sign && d >= 0 ? ft_putchar('+') : 0;
+		d >= 0 ? len++ : 0;
 	}
 	putnbr(d);
 	len += count_digit_lli(d);
@@ -109,13 +101,13 @@ int		some_prec(long long int d, t_badge *badge, char** fmt)
 }
 
 
-int		g_cs_lc_i(char **fmt, t_badge *badge, va_list ap)
-{
-	(void)fmt;
-	(void)badge;
-	(void)ap;
-	return (0);
-}
+// int		g_cs_lc_i(char **fmt, t_badge *badge, va_list ap)
+// {
+// 	(void)fmt;
+// 	(void)badge;
+// 	(void)ap;
+// 	return (0);
+// }
 
 int		g_cs_lc_o(char **fmt, t_badge *badge, va_list ap)
 {
