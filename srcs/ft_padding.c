@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/09 17:48:50 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/10 16:44:30 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/12 11:10:21 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,11 @@ int		count_digit_lli(long long int d)
 
 	if (d == 0)
 		i = 1;
+	if (d < 0)
+	{
+		i = 1;
+		d *= -d;
+	}
 	while (d != 0)
 	{
 		d /= 10;

@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:41:54 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/10 17:21:02 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/12 11:07:51 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,15 @@ int		gen_width(long long int d, t_badge *badge, char **fmt)
 		(badge->sign && badge->space))
 		return (-1);
 	if (badge->sign)
+	{
 		d >= 0 ? ft_putchar('+') : 0;
+		badge->min_w--;
+	}
 	if (badge->space && d >= 0)
+	{
 		ft_putchar(' ');
+		badge->min_w--;
+	}
 	if (badge->jleft || badge->zero)
 	{
 		c = badge->jleft ? ' ' : '0';

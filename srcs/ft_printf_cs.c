@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:42:30 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/08 18:03:04 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/12 10:58:34 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ int		sub_fmt(char **fmt, t_badge *badge, va_list ap)
 	len = 0;
 	min_width_set(badge, fmt, ap);
 	if (conv_spec(fmt, badge, ap))//if fmt is pointing at a valid cs
-		g_cs_list[g_cs_type].choose_cs(fmt, badge, ap);
+		len = g_cs_list[g_cs_type].choose_cs(fmt, badge, ap);
 	if (*(*fmt) == '%')
 	{
 		(*fmt)++;
