@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:42:04 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/12 11:37:47 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/12 17:43:48 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,9 +124,9 @@ void					len_mod_set(t_badge *badge, char **fmt, va_list ap);
 int						conv_spec(char **fmt, t_badge *badge, va_list ap);
 
 
-int						gen_width(long long int d, t_badge *badge, char **fmt);
-int						generic_d(long long int d, t_badge *badge, char **fmt);
-void					ft_padding(t_badge *badge, long long int d, char c);
+int						cs_lc_d_width(long long int d, t_badge *badge, char **fmt);
+int						cs_lc_d_def(long long int d, t_badge *badge, char **fmt);
+void					ft_padding(t_badge *badge, long long d, char c);
 int						some_prec(long long int d,t_badge *badge, char **fmt);
 
 
@@ -140,6 +140,6 @@ int						len_type(int num, t_badge *badge, t_type *d, char **fmt);
 int						len_badge_set(t_type *d, t_badge *badge, va_list ap);
 int						count_digit_lli(long long int d);
 void					putnbr(long long int d);
-
+void					reset_flags(t_badge *badge, t_type *d);
 
 #endif

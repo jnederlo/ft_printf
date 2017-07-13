@@ -6,26 +6,28 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/09 17:48:50 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/12 11:10:21 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/12 18:00:19 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>///REMOVE!!!!!!!!!!!!!!!!!!!!!
 
-void	ft_padding(t_badge *badge, long long int d, char c)
+void	ft_padding(t_badge *badge, long long d, char c)
 {
-	long long int	num;
+	int	nbr;
+	int	i;
 
-	num = badge->sign ? 1 : 0;
-	num = d < 0 ? 1 : 0;
-	if (badge->space && d >= 0)
-		num++;
-	if (d < 0 && badge->zero)
-		ft_putchar('-');
-	while ((num + count_digit_lli(d)) < badge->min_w)
+	nbr = count_digit_lli(d);
+	i = badge->min_w;
+	// printf("\n\n	nbr = %d\n", nbr);
+	// printf("	min_w = %d\n", i);
+	// printf("	char c = %c\n", c);
+
+	while (i > nbr)
 	{
-		write(1, &c, 1);
-		num++;
+		ft_putchar(c);
+		i--;
 	}
 }
 
@@ -39,12 +41,13 @@ int		count_digit_lli(long long int d)
 {
 	int	i;
 
+	i = 0;
 	if (d == 0)
 		i = 1;
 	if (d < 0)
 	{
 		i = 1;
-		d *= -d;
+		d *= -1;
 	}
 	while (d != 0)
 	{
@@ -56,7 +59,7 @@ int		count_digit_lli(long long int d)
 
 int		len_badge_set(t_type *d, t_badge *badge, va_list ap)
 {
-	int	num;
+	long long	num;
 
 	if (badge->l || badge->ll || badge->j || badge->z)
 	{

@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:41:42 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/12 12:49:10 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/12 17:48:07 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int		ft_printf(char *fmt, ...)
 		}
 		else
 		{
-			*fmt != '\n' ? len += write(1, fmt, 1): write(1, "\n", 1);
+			len += write(1, fmt, 1);
 			fmt++;
 		}
 	}

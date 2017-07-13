@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:41:54 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/12 12:50:10 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/12 18:08:01 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,17 @@ int		g_cs_lc_d(char **fmt, t_badge *badge, va_list ap)
 	d = malloc(sizeof(t_type));
 	t_type_reset(d);
 	num = len_badge_set(d, badge, ap);
+	reset_flags(badge, d);
 	len = len_type(num, badge, d, fmt);
 	return (len);
+}
+
+void	reset_flags(t_badge *badge, t_type *d)
+{
+	if (badge->jleft)
+		badge->zero = 0;
+	if (badge->sign || d->ll_int < 0)
+		badge->space = 0;
 }
 
 int		len_type(int num, t_badge *badge, t_type *d, char **fmt)
@@ -34,45 +43,48 @@ int		len_type(int num, t_badge *badge, t_type *d, char **fmt)
 
 	nbr = d->ll_int;
 	if (badge->min_w && (badge->min_w > num))
-		len = gen_width(nbr, badge, fmt);//calls -> flags() calls -> print()
+		len = cs_lc_d_width(nbr, badge, fmt);//calls -> flags() calls -> print()
 	else if (badge->prec && (badge->prec > num))
 		len = some_prec(nbr, badge, fmt);//calls -> flags() calls -> print()
 	else
-		len = generic_d(nbr, badge, fmt);//calls -> print()
+		len = cs_lc_d_def(nbr, badge, fmt);//calls -> print()
 	return (len);
 }
 
-int		gen_width(long long int d, t_badge *badge, char **fmt)
+int		cs_lc_d_width(long long int d, t_badge *badge, char **fmt)
 {
-	char	c;
+	int	len;
 
-	if (badge->pound)
-		return (-1);
-	if (badge->sign || badge->space)
+	len = badge->min_w;
+	if (badge->jleft)
 	{
-		badge->sign ? badge->space = 0 : 0;
-		badge->space && d >= 0 ? ft_putchar(' ') : 0;
 		badge->sign && d >= 0 ? ft_putchar('+') : 0;
-		d >= 0 ? badge->min_w--: 0;
+		badge->space ? ft_putchar(' ') : 0;//means sign is 0 b/c of reset.
+		(badge->sign && d >= 0) || badge->space ? badge->min_w-- : 0;
+		putnbr(d);
+		ft_padding(badge, d, ' ');
 	}
-	if (badge->jleft || badge->zero)
+	else if (badge->zero)
 	{
-		c = badge->jleft ? ' ' : '0';
-		c == ' ' ? putnbr(d) : ft_padding(badge, d, c);
-		c == '0' && d < 0 ? putnbr(-d) : 0;
-		c == '0' && d >= 0 ? putnbr(d) : 0;
-		c == '0' ? 0 : ft_padding(badge, d, c);
+		badge->sign && d >= 0 ? ft_putchar('+') : 0;
+		d < 0 ? ft_putchar('-') : 0;
+		badge->space ? ft_putchar(' ') : 0;//means sign is 0 b/c of reset.
+		badge->space || (badge->sign && d >= 0) ? badge->min_w-- : 0;
+		ft_padding(badge, d, '0');
+		d < 0 ? putnbr(-d) : putnbr(d);//will need to handle special cases for sizes in putnbr.
 	}
 	else
 	{
+		badge->sign && d >= 0 ? ft_putchar('+') : 0;
+		badge->sign && d >= 0 ? badge->min_w-- : 0;
 		ft_padding(badge, d, ' ');
 		putnbr(d);
 	}
 	(*fmt)++;
-	return (badge->min_w);
+	return (len);
 }
 
-int		generic_d(long long int d, t_badge *badge, char **fmt)
+int		cs_lc_d_def(long long int d, t_badge *badge, char **fmt)
 {
 	int len;
 
@@ -81,10 +93,9 @@ int		generic_d(long long int d, t_badge *badge, char **fmt)
 		return (-1);
 	if (badge->sign || badge->space)
 	{
-		badge->sign ? badge->space = 0 : 0;
-		badge->space && d >= 0 ? ft_putchar(' ') : 0;
+		badge->space ? ft_putchar(' ') : 0;
 		badge->sign && d >= 0 ? ft_putchar('+') : 0;
-		d >= 0 ? len++ : 0;
+		d >= 0 || badge->space ? len++ : 0;
 	}
 	putnbr(d);
 	len += count_digit_lli(d);
