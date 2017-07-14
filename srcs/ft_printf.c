@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:41:42 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/12 17:48:07 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/13 12:03:46 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,8 +110,8 @@ void	precision_set(t_badge *badge, char **fmt, va_list ap)
 		len_mod_set(badge, fmt, ap);
 		return ;
 	}
-	else if (ft_isdigit(*(*fmt)))
-		badge->prec = ft_atoi(*fmt); //setting the precision to number
+	else
+		badge->prec = ft_isdigit(*(*fmt)) ? ft_atoi(*fmt) : 0;
 	while (ft_isdigit(*(*fmt)))
 		(*fmt)++;
 	len_mod_set(badge, fmt, ap);

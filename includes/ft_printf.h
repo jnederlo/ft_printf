@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:42:04 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/12 17:43:48 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/13 16:14:41 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,9 @@
 # define CS_UC_S	11
 # define CS_LC_S	12
 # define CS_LC_P	13
+# define MOD_W		1
+# define MOD_P		2
+# define MOD_WP		3
 # define MIN_SINT	-32768
 # define MAX_SINT	32767
 # define MIN_INT	-2147483648
@@ -126,9 +129,9 @@ int						conv_spec(char **fmt, t_badge *badge, va_list ap);
 
 int						cs_lc_d_width(long long int d, t_badge *badge, char **fmt);
 int						cs_lc_d_def(long long int d, t_badge *badge, char **fmt);
-void					ft_padding(t_badge *badge, long long d, char c);
-int						some_prec(long long int d,t_badge *badge, char **fmt);
-
+void					ft_padding(t_badge *badge, long long d, char c, int mod);
+int						cs_lc_d_prec(long long int d,t_badge *badge, char **fmt);
+int						cs_lc_d_wp(long long int d, t_badge *badge, char **fmt);
 
 /*
 **|||||||||||REMOVE|||||||||||

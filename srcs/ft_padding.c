@@ -6,28 +6,31 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/09 17:48:50 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/12 18:00:19 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/13 16:56:24 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdio.h>///REMOVE!!!!!!!!!!!!!!!!!!!!!
 
-void	ft_padding(t_badge *badge, long long d, char c)
+void	ft_padding(t_badge *badge, long long d, char c, int mod)
 {
 	int	nbr;
-	int	i;
+	int	prec;
+	int	width;
+	int	specifier;
 
-	nbr = count_digit_lli(d);
-	i = badge->min_w;
-	// printf("\n\n	nbr = %d\n", nbr);
-	// printf("	min_w = %d\n", i);
-	// printf("	char c = %c\n", c);
-
-	while (i > nbr)
+	nbr = d == 0 && badge->prec >= 0 ? 0 : count_digit_lli(d);
+	badge->prec > 0 && mod == MOD_WP && badge->min_w > badge->prec ? nbr = 0 : 0;
+	width = badge->prec >= 0 ? badge->min_w - badge->prec : badge->min_w;
+	prec = badge->prec;
+	mod == MOD_WP && d < 0  && badge->prec > 0 ? width-- : 0;
+	// printf("width = %d\n", width);
+	specifier = (mod == MOD_W || mod == MOD_WP) ? width : prec;
+	while (specifier > nbr)
 	{
 		ft_putchar(c);
-		i--;
+		specifier--;
 	}
 }
 
