@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:39:51 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/15 20:59:12 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/16 14:08:38 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -1103,7 +1103,85 @@ int	main(void)
 	printf("Test #%d\n", i++);
 	actual_l = printf("ACTUAL:	zero				 -->%05.0d<--\n", 0);
 	my_l = ft_printf("MINE:	zero				 -->%05.0d<--\n", 0);
+	printf("					   (%d, %d)\n\n\n\n", actual_l, my_l + 2);
+
+
+/******************************************************************
+***							len_mod_z TESTS						***
+*******************************************************************
+******************************************************************/
+
+	printf("||||||||||LEN_MOD_Z TESTS||||||||||\n\n");
+
+//	#177
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:						 -->%zd%zd<--\n", 0, 42);
+	my_l = ft_printf("MINE:						 -->%zd%zd<--\n", 0, 42);
 	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#178
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:						 -->%zd<--\n", MAX_LLINT);
+	my_l = ft_printf("MINE:						 -->%zd<--\n", MAX_LLINT);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#179
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:						 -->%zi%zi<--\n", 0, 42);
+	my_l = ft_printf("MINE:						 -->%zi%zi<--\n", 0, 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#180
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:						 -->%zi<--\n", MAX_LLINT);
+	my_l = ft_printf("MINE:						 -->%zi<--\n", MAX_LLINT);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#181
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:						 -->%zu%zu<--\n", 0, MAX_ULLINT);
+	my_l = ft_printf("MINE:						 -->%zu%zu<--\n", 0, MAX_ULLINT);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#182
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:						 -->%zo<--\n", MAX_ULLINT);
+	my_l = ft_printf("MINE:						 -->%zo<--\n", MAX_ULLINT);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#183
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:						 -->%zx<--\n", MAX_ULLINT);
+	my_l = ft_printf("MINE:						 -->%zx<--\n", MAX_ULLINT);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#184
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:						 -->%zX<--\n", MAX_ULLINT);
+	my_l = ft_printf("MINE:						 -->%zX<--\n", MAX_ULLINT);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#185
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:						 -->%z0<--\n", MAX_USINT);
+	my_l = ft_printf("MINE:						 -->%z0<--\n", MAX_USINT);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#186
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:						 -->%zU<--\n", MAX_USINT);
+	my_l = ft_printf("MINE:						 -->%zU<--\n", MAX_USINT);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#187
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:						 -->%zD<--\n", MAX_USINT);
+	my_l = ft_printf("MINE:						 -->%zD<--\n", MAX_USINT);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+
+
+
 
 
 

@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:41:42 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/13 12:03:46 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/16 13:39:00 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ int		ft_printf(char *fmt, ...)
 
 	va_start(ap, fmt);
 	//DO I NEED TO MALLOC FOR MY STRUCTS AT ALL???? WHY NOT???
-	s_badge_reset(&badge);//do this here or below?
+	badge_reset(&badge);//do this here or below?
 	len = 0;
 	while (*fmt)
 	{
 		if (*fmt == '%')
 		{
-			s_badge_reset(&badge);//do this here or above?
-			len += sub_fmt(&fmt, &badge, ap);//step into sub-string functions and increase len by some amount
+			badge_reset(&badge);//do this here or above?
+			len += sub_fmt(&fmt, &badge, ap);
 		}
 		else
 		{
@@ -40,111 +40,26 @@ int		ft_printf(char *fmt, ...)
 	return (len);
 }
 
-void	s_badge_reset(t_badge *badge)
+/*
+**Resets the variables in t_badge back to default
+**upon hitting a format specifier (%).
+*/
+
+void	badge_reset(t_badge *badge)
 {
 	badge->pound = 0;
 	badge->jleft = 0;
 	badge->zero = 0;
 	badge->space = 0;
 	badge->sign = 0;
-	badge->min_w = -1;//have to set to -1 b/c it could be zero.
-	badge->prec = -1;//have to set to -1 b/c it could be zero.
+	badge->min_w = -1;
+	badge->prec = -1;
 	badge->l = '\0';
 	badge->ll = '\0';
 	badge->h = '\0';
 	badge->hh = '\0';
 	badge->j = '\0';
 	badge->z = '\0';
-}
-
-void	flag_set(t_badge *badge, char **fmt)
-{
-	(*fmt)++;
-	while (*(*fmt) == '#' || *(*fmt) == '+' || *(*fmt) == '-' ||
-		*(*fmt) == '0' || *(*fmt) == ' ')
-	{
-		if (*(*fmt) == '#')
-			badge->pound = 1;
-		else if (*(*fmt) == '+')
-			badge->sign = 1;
-		else if (*(*fmt) == '-')
-			badge->jleft = 1;
-		else if (*(*fmt) == '0')
-			badge->zero = 1;
-		else if (*(*fmt) == ' ')
-			badge->space = 1;
-		(*fmt)++;
-	}
-}
-
-void	min_width_set(t_badge *badge, char **fmt, va_list ap)
-{
-	flag_set(badge, fmt);
-	if (*(*fmt) == '*')
-	{
-		badge->min_w = va_arg(ap, int); //setting the min_width to argument.
-		(*fmt)++;
-		precision_set(badge, fmt, ap);
-		return ;
-	}
-	else if (ft_isdigit(*(*fmt)))
-		badge->min_w = ft_atoi(*fmt); //setting the min_width to number.
-	while (ft_isdigit(*(*fmt)))
-		(*fmt)++;
-	precision_set(badge, fmt, ap);
-}
-
-void	precision_set(t_badge *badge, char **fmt, va_list ap)
-{
-	if (*(*fmt) == '.')
-		(*fmt)++;
-	else
-	{
-		len_mod_set(badge, fmt, ap);
-		return ;
-	}
-	if (*(*fmt) == '*')
-	{
-		badge->prec = va_arg(ap, int); //setting the precision to argument
-		(*fmt)++;
-		len_mod_set(badge, fmt, ap);
-		return ;
-	}
-	else
-		badge->prec = ft_isdigit(*(*fmt)) ? ft_atoi(*fmt) : 0;
-	while (ft_isdigit(*(*fmt)))
-		(*fmt)++;
-	len_mod_set(badge, fmt, ap);
-}
-
-void	len_mod_set(t_badge *badge, char **fmt, va_list ap)
-{
-	(void)ap;//to silence -Werror - maybe I don't have to pass into func?
-	if (*(*fmt) == 'j' || *(*fmt) == 'z')
-	{
-		*(*fmt) == 'j' ? badge->j = 'j' : 0;
-		*(*fmt) == 'z' ? badge->z = 'z' : 0;
-		//print_badge(badge);//WILL NEED TO REMOVE THIS!!!!!!!!!!!!!!!!
-		(*fmt)++;
-		return ;
-	}
-	else if (*(*fmt) == 'l' || *(*fmt) == 'h')
-	{
-		if ((*(*fmt) == 'l' && *(*fmt + 1) != 'l') || (*(*fmt) == 'h' && *(*fmt + 1) != 'h'))
-		{
-			*(*fmt) == 'l' ? badge->l = 'l' : 0;
-			*(*fmt) == 'h' ? badge->h = 'h' : 0;
-			//print_badge(badge);//WILL NEED TO REMOVE THIS!!!!!!!!!!!!!!!!
-			(*fmt)++;
-			return ;
-		}
-		else if (*(*fmt) == 'l' && *(*fmt + 1) == 'l')
-			badge->ll = 'L';
-		else if (*(*fmt) == 'h' && *(*fmt + 1) == 'h')
-			badge->h = 'H';
-		(*fmt) += 2;
-	}
-	//print_badge(badge);//WILL NEED TO REMOVE THIS!!!!!!!!!!!!!!!
 }
 
 /*

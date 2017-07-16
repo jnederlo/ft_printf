@@ -6,7 +6,7 @@
 #    By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/07/08 14:42:13 by jnederlo          #+#    #+#              #
-#    Updated: 2017/07/13 19:45:44 by jnederlo         ###   ########.fr        #
+#    Updated: 2017/07/16 15:39:31 by jnederlo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,11 +15,17 @@ CC					=	gcc -Wall -Werror -Wextra
 FLAGS				=	-I includes
 LIBRARY				=	libft
 LIBS				=	libft/libft.a
-FILES				=	cs_functions.c \
-						ft_printf_cs.c \
-						ft_printf.c \
-						ft_padding.c \
-						flags.c \
+FILES				=	ft_printf.c \
+						badge_set.c \
+						dispatcher.c \
+						padding.c \
+						cs_functions.c \
+						cs_d_start.c \
+						cs_d_print.c \
+						cs_d_helpers.c \
+						cs_u_start.c \
+						cs_u_print.c \
+						cs_u_helpers.c \
 
 #custom messages to display compilation process.
 MESS_BLANK			=	@echo ""
