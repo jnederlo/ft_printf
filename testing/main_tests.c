@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:39:51 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/13 17:06:02 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/15 20:59:12 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int	main(void)
 {
 	int my_l;
 	int	actual_l;
+	int	i = 1;
 	// len = ft_printf("My Printf:	-->%-10i<--\n", -42);
 	// 	     printf("Acutal Printf:	-->%-10i<--\n", -42);
 
@@ -27,69 +28,149 @@ int	main(void)
 
 	printf("||||||||||NO WIDTH OR PREC SPECIFERS||||||||||\n\n");
 
-	actual_l = printf("ACTUAL:	jleft -->%-d<--\n", 42);
-	my_l = ft_printf("MINE:	jleft -->%-d<--\n", 42);
-	printf("(%d, %d)\n\n", actual_l - 20, my_l - 18);
+//	#1
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft				 -->%-d<--\n", 42);
+	my_l = ft_printf("MINE:	jleft				 -->%-d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	actual_l = printf("ACTUAL:	jleft -->%-d<--\n", -42);
-	my_l = ft_printf("MINE:	jleft -->%-d<--\n", -42);
-	printf("(%d, %d)\n\n", actual_l - 20, my_l - 18);
-	
-	actual_l = printf("ACTUAL:	jleft & sign -->%-+d<--\n", 42);
-	my_l = ft_printf("MINE:	jleft & sign -->%-+d<--\n", 42);
-	printf("(%d, %d)\n\n", actual_l - 27, my_l - 25);
+//	#2
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft				 -->%-d<--\n", -42);
+	my_l = ft_printf("MINE:	jleft				 -->%-d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	actual_l = printf("ACTUAL:	jleft & sign -->%-+d<--\n", -42);
-	my_l = ft_printf("MINE:	jleft & sign -->%-+d<--\n", -42);
-	printf("(%d, %d)\n\n", actual_l - 27, my_l - 25);
+//	#3
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft & sign			 -->%-+d<--\n", 42);
+	my_l = ft_printf("MINE:	jleft & sign			 -->%-+d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	actual_l = printf("ACTUAL:	jleft & space -->%- d<--\n", 42);
-	my_l = ft_printf("MINE:	jleft & space -->%- d<--\n", 42);
-	printf("(%d, %d)\n\n", actual_l - 28, my_l - 26);
+//	#4
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft & sign			 -->%-+d<--\n", -42);
+	my_l = ft_printf("MINE:	jleft & sign			 -->%-+d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	actual_l = printf("ACTUAL:	jleft & space -->%- d<--\n", -42);
-	my_l = ft_printf("MINE:	jleft & space -->%- d<--\n", -42);
-	printf("(%d, %d)\n\n", actual_l - 28, my_l - 26);
+//	#5
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft & space			 -->%- d<--\n", 42);
+	my_l = ft_printf("MINE:	jleft & space			 -->%- d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	actual_l = printf("ACTUAL:	sign -->%+d<--\n", 42);
-	my_l = ft_printf("MINE:	sign -->%+d<--\n", 42);
-	printf("(%d, %d)\n\n", actual_l - 19, my_l - 17);
+//	#6
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft & space			 -->%- d<--\n", -42);
+	my_l = ft_printf("MINE:	jleft & space			 -->%- d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	actual_l = printf("ACTUAL:	sign -->%+d<--\n", -42);
-	my_l = ft_printf("MINE:	sign -->%+d<--\n", -42);
-	printf("(%d, %d)\n\n", actual_l - 19, my_l - 17);
+//	#7
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	sign				 -->%+d<--\n", 42);
+	my_l = ft_printf("MINE:	sign				 -->%+d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	actual_l = printf("ACTUAL:	sign & zero -->%+0d<--\n", 42);
-	my_l = ft_printf("MINE:	sign & zero -->%+0d<--\n", 42);
-	printf("(%d, %d)\n\n", actual_l - 26, my_l - 24);
+//	#8
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	sign				 -->%+d<--\n", -42);
+	my_l = ft_printf("MINE:	sign				 -->%+d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	actual_l = printf("ACTUAL:	sign & zero -->%+0d<--\n", -42);
-	my_l = ft_printf("MINE:	sign & zero -->%+0d<--\n", -42);
-	printf("(%d, %d)\n\n", actual_l - 26, my_l - 24);
+//	#9
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	sign & zero			 -->%+0d<--\n", 42);
+	my_l = ft_printf("MINE:	sign & zero			 -->%+0d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	actual_l = printf("ACTUAL:	space -->% d<--\n", 42);
-	my_l = ft_printf("MINE:	space -->% d<--\n", 42);
-	printf("(%d, %d)\n\n", actual_l - 20, my_l - 18);
+//	#10
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	sign & zero			 -->%+0d<--\n", -42);
+	my_l = ft_printf("MINE:	sign & zero			 -->%+0d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	actual_l = printf("ACTUAL:	space -->% d<--\n", -42);
-	my_l = ft_printf("MINE:	space -->% d<--\n", -42);
-	printf("(%d, %d)\n\n", actual_l - 20, my_l - 18);
+//	#11
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	space				 -->% d<--\n", 42);
+	my_l = ft_printf("MINE:	space				 -->% d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	actual_l = printf("ACTUAL:	space & zero -->% 0d<--\n", 42);
-	my_l = ft_printf("MINE:	space & zero -->% 0d<--\n", 42);
-	printf("(%d, %d)\n\n", actual_l - 27, my_l - 25);
+//	#12
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	space				 -->% d<--\n", -42);
+	my_l = ft_printf("MINE:	space				 -->% d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	actual_l = printf("ACTUAL:	space & zero -->% 0d<--\n", -42);
-	my_l = ft_printf("MINE:	space & zero -->% 0d<--\n", -42);
-	printf("(%d, %d)\n\n", actual_l - 27, my_l - 25);
+//	#13
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	space & zero			 -->% 0d<--\n", 42);
+	my_l = ft_printf("MINE:	space & zero			 -->% 0d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	actual_l = printf("ACTUAL:	zero -->%0d<--\n", 42);
-	my_l = ft_printf("MINE:	zero -->%0d<--\n", 42);
-	printf("(%d, %d)\n\n", actual_l - 19, my_l - 17);
+//	#14
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	space & zero			 -->% 0d<--\n", -42);
+	my_l = ft_printf("MINE:	space & zero			 -->% 0d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	actual_l = printf("ACTUAL:	zero -->%0d<--\n", -42);
-	my_l = ft_printf("MINE:	zero -->%0d<--\n", -42);
-	printf("(%d, %d)\n\n\n\n", actual_l - 19, my_l - 17);
+//	#15
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	zero				 -->%0d<--\n", 42);
+	my_l = ft_printf("MINE:	zero				 -->%0d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#16
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	zero				 -->%0d<--\n", -42);
+	my_l = ft_printf("MINE:	zero				 -->%0d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#17
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft				 -->%-d<--\n", 0);
+	my_l = ft_printf("MINE:	jleft				 -->%-d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#18
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft & sign			 -->%-+d<--\n", 0);
+	my_l = ft_printf("MINE:	jleft & sign			 -->%-+d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#19
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft & space			 -->%- d<--\n", 0);
+	my_l = ft_printf("MINE:	jleft & space			 -->%- d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#20
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	sign				 -->%+d<--\n", 0);
+	my_l = ft_printf("MINE:	sign				 -->%+d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#21
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	sign & zero			 -->%+0d<--\n", 0);
+	my_l = ft_printf("MINE:	sign & zero			 -->%+0d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#22
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	space				 -->% d<--\n", 0);
+	my_l = ft_printf("MINE:	space				 -->% d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#23
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	space & zero			 -->% 0d<--\n", 0);
+	my_l = ft_printf("MINE:	space & zero			 -->% 0d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#24
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	zero				 -->%0d<--\n", 0);
+	my_l = ft_printf("MINE:	zero				 -->%0d<--\n", 0);
+	printf("					   (%d, %d)\n\n\n\n", actual_l, my_l + 2);
 
 /******************************************************************
 ***						WIDTH SPECIFIERS						***
@@ -98,69 +179,149 @@ int	main(void)
 
 	printf("||||||||||WIDTH SPECIFERS||||||||||\n\n");
 
-	actual_l = printf("ACTUAL:	jleft -->%-5d<--\n", 42);
-	my_l = ft_printf("MINE:	jleft -->%-5d<--\n", 42);
-	printf("(%d, %d)\n\n", actual_l - 20, my_l - 18);
+//	#25
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft				 -->%-5d<--\n", 42);
+	my_l = ft_printf("MINE:	jleft				 -->%-5d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	actual_l = printf("ACTUAL:	jleft -->%-5d<--\n", -42);
-	my_l = ft_printf("MINE:	jleft -->%-5d<--\n", -42);
-	printf("(%d, %d)\n\n", actual_l - 20, my_l - 18);
+//	#26
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft				 -->%-5d<--\n", -42);
+	my_l = ft_printf("MINE:	jleft				 -->%-5d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	actual_l = printf("ACTUAL:	jleft & sign -->%-+5d<--\n", 42);
-	my_l = ft_printf("MINE:	jleft & sign -->%-+5d<--\n", 42);
-	printf("(%d, %d)\n\n", actual_l - 27, my_l - 25);
+//	#27
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft & sign			 -->%-+5d<--\n", 42);
+	my_l = ft_printf("MINE:	jleft & sign			 -->%-+5d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	actual_l = printf("ACTUAL:	jleft & sign -->%-+5d<--\n", -42);
-	my_l = ft_printf("MINE:	jleft & sign -->%-+5d<--\n", -42);
-	printf("(%d, %d)\n\n", actual_l - 27, my_l - 25);
+//	#28
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft & sign			 -->%-+5d<--\n", -42);
+	my_l = ft_printf("MINE:	jleft & sign			 -->%-+5d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	actual_l = printf("ACTUAL:	jleft & space -->%- 5d<--\n", 42);
-	my_l = ft_printf("MINE:	jleft & space -->%- 5d<--\n", 42);
-	printf("(%d, %d)\n\n", actual_l - 28, my_l - 26);
+//	#29
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft & space			 -->%- 5d<--\n", 42);
+	my_l = ft_printf("MINE:	jleft & space			 -->%- 5d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	actual_l = printf("ACTUAL:	jleft & space -->%- 5d<--\n", -42);
-	my_l = ft_printf("MINE:	jleft & space -->%- 5d<--\n", -42);
-	printf("(%d, %d)\n\n", actual_l - 28, my_l - 26);
+//	#30
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft & space			 -->%- 5d<--\n", -42);
+	my_l = ft_printf("MINE:	jleft & space			 -->%- 5d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	actual_l = printf("ACTUAL:	sign -->%+5d<--\n", 42);
-	my_l = ft_printf("MINE:	sign -->%+5d<--\n", 42);
-	printf("(%d, %d)\n\n", actual_l - 19, my_l - 17);
+//	#31
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	sign				 -->%+5d<--\n", 42);
+	my_l = ft_printf("MINE:	sign				 -->%+5d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	actual_l = printf("ACTUAL:	sign -->%+5d<--\n", -42);
-	my_l = ft_printf("MINE:	sign -->%+5d<--\n", -42);
-	printf("(%d, %d)\n\n", actual_l - 19, my_l - 17);
+//	#32
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	sign				 -->%+5d<--\n", -42);
+	my_l = ft_printf("MINE:	sign				 -->%+5d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	actual_l = printf("ACTUAL:	sign & zero -->%+05d<--\n", 42);
-	my_l = ft_printf("MINE:	sign & zero -->%+05d<--\n", 42);
-	printf("(%d, %d)\n\n", actual_l - 26, my_l - 24);
+//	#33
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	sign & zero			 -->%+05d<--\n", 42);
+	my_l = ft_printf("MINE:	sign & zero			 -->%+05d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	actual_l = printf("ACTUAL:	sign & zero -->%+05d<--\n", -42);
-	my_l = ft_printf("MINE:	sign & zero -->%+05d<--\n", -42);
-	printf("(%d, %d)\n\n", actual_l - 26, my_l - 24);
+//	#34
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	sign & zero			 -->%+05d<--\n", -42);
+	my_l = ft_printf("MINE:	sign & zero			 -->%+05d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	actual_l = printf("ACTUAL:	space -->% 5d<--\n", 42);
-	my_l = ft_printf("MINE:	space -->% 5d<--\n", 42);
-	printf("(%d, %d)\n\n", actual_l - 20, my_l - 18);
+//	#35
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	space				 -->% 5d<--\n", 42);
+	my_l = ft_printf("MINE:	space				 -->% 5d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	actual_l = printf("ACTUAL:	space -->% 5d<--\n", -42);
-	my_l = ft_printf("MINE:	space -->% 5d<--\n", -42);
-	printf("(%d, %d)\n\n", actual_l - 20, my_l - 18);
+//	#36
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	space				 -->% 5d<--\n", -42);
+	my_l = ft_printf("MINE:	space				 -->% 5d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	actual_l = printf("ACTUAL:	space & zero -->% 05d<--\n", 42);
-	my_l = ft_printf("MINE:	space & zero -->% 05d<--\n", 42);
-	printf("(%d, %d)\n\n", actual_l - 27, my_l - 25);
+//	#37
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	space & zero			 -->% 05d<--\n", 42);
+	my_l = ft_printf("MINE:	space & zero			 -->% 05d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	actual_l = printf("ACTUAL:	space & zero -->% 05d<--\n", -42);
-	my_l = ft_printf("MINE:	space & zero -->% 05d<--\n", -42);
-	printf("(%d, %d)\n\n", actual_l - 27, my_l - 25);
+//	#38
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	space & zero			 -->% 05d<--\n", -42);
+	my_l = ft_printf("MINE:	space & zero			 -->% 05d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	actual_l = printf("ACTUAL:	zero -->%05d<--\n", 42);
-	my_l = ft_printf("MINE:	zero -->%05d<--\n", 42);
-	printf("(%d, %d)\n\n", actual_l - 19, my_l - 17);
+//	#39
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	zero				 -->%05d<--\n", 42);
+	my_l = ft_printf("MINE:	zero				 -->%05d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	actual_l = printf("ACTUAL:	zero -->%05d<--\n", -42);
-	my_l = ft_printf("MINE:	zero -->%05d<--\n", -42);
-	printf("(%d, %d)\n\n\n\n", actual_l - 19, my_l - 17);
+//	#40
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	zero				 -->%05d<--\n", -42);
+	my_l = ft_printf("MINE:	zero				 -->%05d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#41
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft				 -->%-5d<--\n", 0);
+	my_l = ft_printf("MINE:	jleft				 -->%-5d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#42
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft & sign			 -->%-+5d<--\n", 0);
+	my_l = ft_printf("MINE:	jleft & sign			 -->%-+5d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#43
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft & space			 -->%- 5d<--\n", 0);
+	my_l = ft_printf("MINE:	jleft & space			 -->%- 5d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#44
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	sign				 -->%+5d<--\n", 0);
+	my_l = ft_printf("MINE:	sign				 -->%+5d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#45
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	sign & zero			 -->%+05d<--\n", 0);
+	my_l = ft_printf("MINE:	sign & zero			 -->%+05d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#46
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	space				 -->% 5d<--\n", 0);
+	my_l = ft_printf("MINE:	space				 -->% 5d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#47
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	space & zero			 -->% 05d<--\n", 0);
+	my_l = ft_printf("MINE:	space & zero			 -->% 05d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#48
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	zero				 -->%05d<--\n", 0);
+	my_l = ft_printf("MINE:	zero				 -->%05d<--\n", 0);
+	printf("					   (%d, %d)\n\n\n\n", actual_l, my_l + 2);
 
 /******************************************************************
 ***					PRECISION SPECIFIERS						***
@@ -169,86 +330,293 @@ int	main(void)
 
 	printf("||||||||||PRECISION SPECIFIERS||||||||||\n\n");
 
-	actual_l = printf("ACTUAL:	jleft -->%-.0d<--\n", 0);
-	my_l = ft_printf("MINE:	jleft -->%-.0d<--\n", 0);
-	printf("(%d, %d)\n\n", actual_l - 20, my_l - 18);
+//	#49
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft				 -->%-.5d<--\n", 42);
+	my_l = ft_printf("MINE:	jleft				 -->%-.5d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	actual_l = printf("ACTUAL:	jleft -->%-.0d<--\n", 0);
-	my_l = ft_printf("MINE:	jleft -->%-.0d<--\n", 0);
-	printf("(%d, %d)\n\n", actual_l - 20, my_l - 18);
+//	#50
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft				 -->%-.5d<--\n", -42);
+	my_l = ft_printf("MINE:	jleft				 -->%-.5d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	actual_l = printf("ACTUAL:	jleft -->%-.d<--\n", 42);
-	my_l = ft_printf("MINE:	jleft -->%-.d<--\n", 42);
-	printf("(%d, %d)\n\n", actual_l - 20, my_l - 18);
+//	#51
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft & sign			 -->%-+.5d<--\n", 42);
+	my_l = ft_printf("MINE:	jleft & sign			 -->%-+.5d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	actual_l = printf("ACTUAL:	jleft -->%-.d<--\n", -42);
-	my_l = ft_printf("MINE:	jleft -->%-.d<--\n", -42);
-	printf("(%d, %d)\n\n", actual_l - 20, my_l - 18);
+//	#52
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft & sign			 -->%-+.5d<--\n", -42);
+	my_l = ft_printf("MINE:	jleft & sign			 -->%-+.5d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	actual_l = printf("ACTUAL:	jleft -->%-.5d<--\n", 42);
-	my_l = ft_printf("MINE:	jleft -->%-.5d<--\n", 42);
-	printf("(%d, %d)\n\n", actual_l - 20, my_l - 18);
+//	#53
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft & space			 -->%- .5d<--\n", 42);
+	my_l = ft_printf("MINE:	jleft & space			 -->%- .5d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	actual_l = printf("ACTUAL:	jleft -->%-.5d<--\n", -42);
-	my_l = ft_printf("MINE:	jleft -->%-.5d<--\n", -42);
-	printf("(%d, %d)\n\n", actual_l - 20, my_l - 18);
+//	#54
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft & space			 -->%- .5d<--\n", -42);
+	my_l = ft_printf("MINE:	jleft & space			 -->%- .5d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	actual_l = printf("ACTUAL:	jleft & sign -->%-+.5d<--\n", 42);
-	my_l = ft_printf("MINE:	jleft & sign -->%-+.5d<--\n", 42);
-	printf("(%d, %d)\n\n", actual_l - 27, my_l - 25);
+//	#55
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	sign				 -->%+.5d<--\n", 42);
+	my_l = ft_printf("MINE:	sign				 -->%+.5d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	actual_l = printf("ACTUAL:	jleft & sign -->%-+.5d<--\n", -42);
-	my_l = ft_printf("MINE:	jleft & sign -->%-+.5d<--\n", -42);
-	printf("(%d, %d)\n\n", actual_l - 27, my_l - 25);
+//	#56
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	sign				 -->%+.5d<--\n", -42);
+	my_l = ft_printf("MINE:	sign				 -->%+.5d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	actual_l = printf("ACTUAL:	jleft & space -->%- .5d<--\n", 42);
-	my_l = ft_printf("MINE:	jleft & space -->%- .5d<--\n", 42);
-	printf("(%d, %d)\n\n", actual_l - 28, my_l - 26);
+//	#57
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	sign & zero			 -->%+0.5d<--\n", 42);
+	my_l = ft_printf("MINE:	sign & zero			 -->%+0.5d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	actual_l = printf("ACTUAL:	jleft & space -->%- .5d<--\n", -42);
-	my_l = ft_printf("MINE:	jleft & space -->%- .5d<--\n", -42);
-	printf("(%d, %d)\n\n", actual_l - 28, my_l - 26);
+//	#58
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	sign & zero			 -->%+0.5d<--\n", -42);
+	my_l = ft_printf("MINE:	sign & zero			 -->%+0.5d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	actual_l = printf("ACTUAL:	sign -->%+.5d<--\n", 42);
-	my_l = ft_printf("MINE:	sign -->%+.5d<--\n", 42);
-	printf("(%d, %d)\n\n", actual_l - 19, my_l - 17);
+//	#59
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	space				 -->% .5d<--\n", 42);
+	my_l = ft_printf("MINE:	space				 -->% .5d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	actual_l = printf("ACTUAL:	sign -->%+.5d<--\n", -42);
-	my_l = ft_printf("MINE:	sign -->%+.5d<--\n", -42);
-	printf("(%d, %d)\n\n", actual_l - 19, my_l - 17);
+//	#60
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	space				 -->% .5d<--\n", -42);
+	my_l = ft_printf("MINE:	space				 -->% .5d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	actual_l = printf("ACTUAL:	sign & zero -->%+0.5d<--\n", 42);
-	my_l = ft_printf("MINE:	sign & zero -->%+0.5d<--\n", 42);
-	printf("(%d, %d)\n\n", actual_l - 26, my_l - 24);
+//	#61
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	space & zero			 -->% 0.5d<--\n", 42);
+	my_l = ft_printf("MINE:	space & zero			 -->% 0.5d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	actual_l = printf("ACTUAL:	sign & zero -->%+0.5d<--\n", -42);
-	my_l = ft_printf("MINE:	sign & zero -->%+0.5d<--\n", -42);
-	printf("(%d, %d)\n\n", actual_l - 26, my_l - 24);
+//	#62
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	space & zero			 -->% 0.5d<--\n", -42);
+	my_l = ft_printf("MINE:	space & zero			 -->% 0.5d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	actual_l = printf("ACTUAL:	space -->% .5d<--\n", 42);
-	my_l = ft_printf("MINE:	space -->% .5d<--\n", 42);
-	printf("(%d, %d)\n\n", actual_l - 20, my_l - 18);
+//	#63
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	zero				 -->%0.5d<--\n", 42);
+	my_l = ft_printf("MINE:	zero				 -->%0.5d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	actual_l = printf("ACTUAL:	space -->% .5d<--\n", -42);
-	my_l = ft_printf("MINE:	space -->% .5d<--\n", -42);
-	printf("(%d, %d)\n\n", actual_l - 20, my_l - 18);
+//	#64
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	zero				 -->%0.5d<--\n", -42);
+	my_l = ft_printf("MINE:	zero				 -->%0.5d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	actual_l = printf("ACTUAL:	space & zero -->% 0.5d<--\n", 42);
-	my_l = ft_printf("MINE:	space & zero -->% 0.5d<--\n", 42);
-	printf("(%d, %d)\n\n", actual_l - 27, my_l - 25);
+//	#65
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft				 -->%-.5d<--\n", 0);
+	my_l = ft_printf("MINE:	jleft				 -->%-.5d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	actual_l = printf("ACTUAL:	space & zero -->% 0.5d<--\n", -42);
-	my_l = ft_printf("MINE:	space & zero -->% 0.5d<--\n", -42);
-	printf("(%d, %d)\n\n", actual_l - 27, my_l - 25);
+//	#66
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft & sign			 -->%-+.5d<--\n", 0);
+	my_l = ft_printf("MINE:	jleft & sign			 -->%-+.5d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	actual_l = printf("ACTUAL:	zero -->%0.5d<--\n", 42);
-	my_l = ft_printf("MINE:	zero -->%0.5d<--\n", 42);
-	printf("(%d, %d)\n\n", actual_l - 19, my_l - 17);
+//	#67
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft & space			 -->%- .5d<--\n", 0);
+	my_l = ft_printf("MINE:	jleft & space			 -->%- .5d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	actual_l = printf("ACTUAL:	zero -->%0.5d<--\n", -42);
-	my_l = ft_printf("MINE:	zero -->%0.5d<--\n", -42);
-	printf("(%d, %d)\n\n", actual_l - 19, my_l - 17);
+//	#68
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	sign				 -->%+.5d<--\n", 0);
+	my_l = ft_printf("MINE:	sign				 -->%+.5d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
+//	#69
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	sign & zero			 -->%+0.5d<--\n", 0);
+	my_l = ft_printf("MINE:	sign & zero			 -->%+0.5d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#70
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	space				 -->% .5d<--\n", 0);
+	my_l = ft_printf("MINE:	space				 -->% .5d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#71
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	space & zero			 -->% 0.5d<--\n", 0);
+	my_l = ft_printf("MINE:	space & zero			 -->% 0.5d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#72
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	zero				 -->%0.5d<--\n", 0);
+	my_l = ft_printf("MINE:	zero				 -->%0.5d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#73
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft				 -->%-.0d<--\n", 42);
+	my_l = ft_printf("MINE:	jleft				 -->%-.0d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#74
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft				 -->%-.0d<--\n", -42);
+	my_l = ft_printf("MINE:	jleft				 -->%-.0d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#75
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft & sign			 -->%-+.0d<--\n", 42);
+	my_l = ft_printf("MINE:	jleft & sign			 -->%-+.0d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#76
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft & sign			 -->%-+.0d<--\n", -42);
+	my_l = ft_printf("MINE:	jleft & sign			 -->%-+.0d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#77
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft & space			 -->%- .0d<--\n", 42);
+	my_l = ft_printf("MINE:	jleft & space			 -->%- .0d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#78
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft & space			 -->%- .0d<--\n", -42);
+	my_l = ft_printf("MINE:	jleft & space			 -->%- .0d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#79
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	sign				 -->%+.0d<--\n", 42);
+	my_l = ft_printf("MINE:	sign				 -->%+.0d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#80
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	sign				 -->%+.0d<--\n", -42);
+	my_l = ft_printf("MINE:	sign				 -->%+.0d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#81
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	sign & zero			 -->%+0.0d<--\n", 42);
+	my_l = ft_printf("MINE:	sign & zero			 -->%+0.0d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#82
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	sign & zero			 -->%+0.0d<--\n", -42);
+	my_l = ft_printf("MINE:	sign & zero			 -->%+0.0d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#83
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	space				 -->% .0d<--\n", 42);
+	my_l = ft_printf("MINE:	space				 -->% .0d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#84
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	space				 -->% .0d<--\n", -42);
+	my_l = ft_printf("MINE:	space				 -->% .0d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#85
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	space & zero			 -->% 0.0d<--\n", 42);
+	my_l = ft_printf("MINE:	space & zero			 -->% 0.0d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#86
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	space & zero			 -->% 0.0d<--\n", -42);
+	my_l = ft_printf("MINE:	space & zero			 -->% 0.0d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#87
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	zero				 -->%0.0d<--\n", 42);
+	my_l = ft_printf("MINE:	zero				 -->%0.0d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#88
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	zero				 -->%0.0d<--\n", -42);
+	my_l = ft_printf("MINE:	zero				 -->%0.0d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#89
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft				 -->%-.0d<--\n", 0);
+	my_l = ft_printf("MINE:	jleft				 -->%-.0d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#90
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft & sign			 -->%-+.0d<--\n", 0);
+	my_l = ft_printf("MINE:	jleft & sign			 -->%-+.0d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#91
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft & space			 -->%- .0d<--\n", 0);
+	my_l = ft_printf("MINE:	jleft & space			 -->%- .0d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#92
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	sign				 -->%+.0d<--\n", 0);
+	my_l = ft_printf("MINE:	sign				 -->%+.0d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#93
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	sign & zero			 -->%+0.0d<--\n", 0);
+	my_l = ft_printf("MINE:	sign & zero			 -->%+0.0d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#94
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	space				 -->% .0d<--\n", 0);
+	my_l = ft_printf("MINE:	space				 -->% .0d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#95
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	space & zero			 -->% 0.0d<--\n", 0);
+	my_l = ft_printf("MINE:	space & zero			 -->% 0.0d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#96
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	zero				 -->%0.0d<--\n", 0);
+	my_l = ft_printf("MINE:	zero				 -->%0.0d<--\n", 0);
+	printf("					   (%d, %d)\n\n\n\n", actual_l, my_l + 2);
 
 /******************************************************************
 ***				PRECISION && WIDTH SPECIFIERS					***
@@ -257,95 +625,527 @@ int	main(void)
 
 	printf("||||||||||PRECISION && WIDTH SPECIFIERS||||||||||\n\n");
 
-	//#1
-	actual_l = printf("ACTUAL:	jleft -->%-10.0d<--\n", 42);
-	my_l = ft_printf("MINE:	jleft -->%-10.0d<--\n", 42);
-	printf("(%d, %d)\n\n", actual_l - 20, my_l - 18);
+//	#97
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft				 -->%-5.10d<--\n", 42);
+	my_l = ft_printf("MINE:	jleft				 -->%-5.10d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	//#2
-	actual_l = printf("ACTUAL:	jleft -->%-10.0d<--\n", 0);
-	my_l = ft_printf("MINE:	jleft -->%-10.0d<--\n", 0);
-	printf("(%d, %d)\n\n", actual_l - 20, my_l - 18);
+//	#98
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft				 -->%-5.10d<--\n", -42);
+	my_l = ft_printf("MINE:	jleft				 -->%-5.10d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	//#3
-	actual_l = printf("ACTUAL:	jleft -->%-10.d<--\n", 0);
-	my_l = ft_printf("MINE:	jleft -->%-10.d<--\n", 0);
-	printf("(%d, %d)\n\n", actual_l - 20, my_l - 18);
+//	#99
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft & sign			 -->%-+5.10d<--\n", 42);
+	my_l = ft_printf("MINE:	jleft & sign			 -->%-+5.10d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	//#4
-	actual_l = printf("ACTUAL:	jleft -->%-10.d<--\n", -42);
-	my_l = ft_printf("MINE:	jleft -->%-10.d<--\n", -42);
-	printf("(%d, %d)\n\n", actual_l - 20, my_l - 18);
+//	#100
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft & sign			 -->%-+5.10d<--\n", -42);
+	my_l = ft_printf("MINE:	jleft & sign			 -->%-+5.10d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	//#5
-	actual_l = printf("ACTUAL:	jleft -->%-5.10d<--\n", -42);
-	my_l = ft_printf("MINE:	jleft -->%-5.10d<--\n", -42);
-	printf("(%d, %d)\n\n", actual_l - 20, my_l - 18);
+//	#101
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft & space			 -->%- 5.10d<--\n", 42);
+	my_l = ft_printf("MINE:	jleft & space			 -->%- 5.10d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	//#6
-	actual_l = printf("ACTUAL:	jleft -->%-5.10d<--\n", 42);
-	my_l = ft_printf("MINE:	jleft -->%-5.10d<--\n", 42);
-	printf("(%d, %d)\n\n", actual_l - 20, my_l - 18);
+//	#102
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft & space			 -->%- 5.10d<--\n", -42);
+	my_l = ft_printf("MINE:	jleft & space			 -->%- 5.10d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	//#7
-	actual_l = printf("ACTUAL:	jleft -->%-10.5d<--\n", 42);
-	my_l = ft_printf("MINE:	jleft -->%-10.5d<--\n", 42);
-	printf("(%d, %d)\n\n", actual_l - 20, my_l - 18);
+//	#103
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	sign				 -->%+5.10d<--\n", 42);
+	my_l = ft_printf("MINE:	sign				 -->%+5.10d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	//#8
-	actual_l = printf("ACTUAL:	jleft -->%-10.5d<--\n", -42);
-	my_l = ft_printf("MINE:	jleft -->%-10.5d<--\n", -42);
-	printf("(%d, %d)\n\n", actual_l - 20, my_l - 18);
+//	#104
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	sign				 -->%+5.10d<--\n", -42);
+	my_l = ft_printf("MINE:	sign				 -->%+5.10d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	//#9
-	actual_l = printf("ACTUAL:	space -->% 5.10d<--\n", -42);
-	my_l = ft_printf("MINE:	space -->% 5.10d<--\n", -42);
-	printf("(%d, %d)\n\n", actual_l - 20, my_l - 18);
+//	#105
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	sign & zero			 -->%+05.10d<--\n", 42);
+	my_l = ft_printf("MINE:	sign & zero			 -->%+05.10d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	//#10
-	actual_l = printf("ACTUAL:	space -->% 5.10d<--\n", 42);
-	my_l = ft_printf("MINE:	space -->% 5.10d<--\n", 42);
-	printf("(%d, %d)\n\n", actual_l - 20, my_l - 18);
+//	#106
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	sign & zero			 -->%+05.10d<--\n", -42);
+	my_l = ft_printf("MINE:	sign & zero			 -->%+05.10d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	//#11
-	actual_l = printf("ACTUAL:	space -->% 10.5d<--\n", 42);
-	my_l = ft_printf("MINE:	space -->% 10.5d<--\n", 42);
-	printf("(%d, %d)\n\n", actual_l - 20, my_l - 18);
+//	#107
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	space				 -->% 5.10d<--\n", 42);
+	my_l = ft_printf("MINE:	space				 -->% 5.10d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	//#12
-	actual_l = printf("ACTUAL:	space -->% 10.5d<--\n", -42);
-	my_l = ft_printf("MINE:	space -->% 10.5d<--\n", -42);
-	printf("(%d, %d)\n\n", actual_l - 20, my_l - 18);
+//	#108
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	space				 -->% 5.10d<--\n", -42);
+	my_l = ft_printf("MINE:	space				 -->% 5.10d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	//#13
-	actual_l = printf("ACTUAL:	sign -->%+10.0d<--\n", 42);
-	my_l = ft_printf("MINE:	sign -->%+10.0d<--\n", 42);
-	printf("(%d, %d)\n\n", actual_l - 20, my_l - 18);
+//	#109
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	space & zero			 -->% 05.10d<--\n", 42);
+	my_l = ft_printf("MINE:	space & zero			 -->% 05.10d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	//#14
-	actual_l = printf("ACTUAL:	sign -->%+10.0d<--\n", 0);
-	my_l = ft_printf("MINE:	sign -->%+10.0d<--\n", 0);
-	printf("(%d, %d)\n\n", actual_l - 20, my_l - 18);
+//	#110
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	space & zero			 -->% 05.10d<--\n", -42);
+	my_l = ft_printf("MINE:	space & zero			 -->% 05.10d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	//#15
-	actual_l = printf("ACTUAL:	zero -->%010.5d<--\n", 42);
-	my_l = ft_printf("MINE:	zero -->%010.5d<--\n", 42);
-	printf("(%d, %d)\n\n", actual_l - 20, my_l - 18);
+//	#111
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	zero				 -->%05.10d<--\n", 42);
+	my_l = ft_printf("MINE:	zero				 -->%05.10d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	//#16
-	actual_l = printf("ACTUAL:	zero -->%010.5d<--\n", -42);
-	my_l = ft_printf("MINE:	zero -->%010.5d<--\n", -42);
-	printf("(%d, %d)\n\n", actual_l - 20, my_l - 18);
+//	#112
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	zero				 -->%05.10d<--\n", -42);
+	my_l = ft_printf("MINE:	zero				 -->%05.10d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	//#17
-	actual_l = printf("ACTUAL:	space && sign -->% +10.0d<--\n", 42);
-	my_l = ft_printf("MINE:	space && sign -->% +10.0d<--\n", 42);
-	printf("(%d, %d)\n\n", actual_l - 20, my_l - 18);
+//	#113
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft				 -->%-10.5d<--\n", 42);
+	my_l = ft_printf("MINE:	jleft				 -->%-10.5d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
-	//#18
-	actual_l = printf("ACTUAL:	space && sign -->% +10.0d<--\n", 0);
-	my_l = ft_printf("MINE:	space && sign -->% +10.0d<--\n", 0);
-	printf("(%d, %d)\n\n", actual_l - 20, my_l - 18);
+//	#114
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft				 -->%-10.5d<--\n", -42);
+	my_l = ft_printf("MINE:	jleft				 -->%-10.5d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#115
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft & sign			 -->%-+10.5d<--\n", 42);
+	my_l = ft_printf("MINE:	jleft & sign			 -->%-+10.5d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#116
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft & sign			 -->%-+10.5d<--\n", -42);
+	my_l = ft_printf("MINE:	jleft & sign			 -->%-+10.5d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#117
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft & space			 -->%- 10.5d<--\n", 42);
+	my_l = ft_printf("MINE:	jleft & space			 -->%- 10.5d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#118
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft & space			 -->%- 10.5d<--\n", -42);
+	my_l = ft_printf("MINE:	jleft & space			 -->%- 10.5d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#119
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	sign				 -->%+10.5d<--\n", 42);
+	my_l = ft_printf("MINE:	sign				 -->%+10.5d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#120
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	sign				 -->%+10.5d<--\n", -42);
+	my_l = ft_printf("MINE:	sign				 -->%+10.5d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#121
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	sign & zero			 -->%+010.5d<--\n", 42);
+	my_l = ft_printf("MINE:	sign & zero			 -->%+010.5d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#122
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	sign & zero			 -->%+010.5d<--\n", -42);
+	my_l = ft_printf("MINE:	sign & zero			 -->%+010.5d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#123
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	space				 -->% 10.5d<--\n", 42);
+	my_l = ft_printf("MINE:	space				 -->% 10.5d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#124
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	space				 -->% 10.5d<--\n", -42);
+	my_l = ft_printf("MINE:	space				 -->% 10.5d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#125
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	space & zero			 -->% 010.5d<--\n", 42);
+	my_l = ft_printf("MINE:	space & zero			 -->% 010.5d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#126
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	space & zero			 -->% 010.5d<--\n", -42);
+	my_l = ft_printf("MINE:	space & zero			 -->% 010.5d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#127
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	zero				 -->%010.5d<--\n", 42);
+	my_l = ft_printf("MINE:	zero				 -->%010.5d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#128
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	zero				 -->%010.5d<--\n", -42);
+	my_l = ft_printf("MINE:	zero				 -->%010.5d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#129
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft				 -->%-5.5d<--\n", 42);
+	my_l = ft_printf("MINE:	jleft				 -->%-5.5d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#130
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft				 -->%-5.5d<--\n", -42);
+	my_l = ft_printf("MINE:	jleft				 -->%-5.5d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#131
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft & sign			 -->%-+5.5d<--\n", 42);
+	my_l = ft_printf("MINE:	jleft & sign			 -->%-+5.5d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#132
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft & sign			 -->%-+5.5d<--\n", -42);
+	my_l = ft_printf("MINE:	jleft & sign			 -->%-+5.5d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#133
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft & space			 -->%- 5.5d<--\n", 42);
+	my_l = ft_printf("MINE:	jleft & space			 -->%- 5.5d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#134
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft & space			 -->%- 5.5d<--\n", -42);
+	my_l = ft_printf("MINE:	jleft & space			 -->%- 5.5d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#135
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	sign				 -->%+5.5d<--\n", 42);
+	my_l = ft_printf("MINE:	sign				 -->%+5.5d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#136
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	sign				 -->%+5.5d<--\n", -42);
+	my_l = ft_printf("MINE:	sign				 -->%+5.5d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#137
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	sign & zero			 -->%+05.5d<--\n", 42);
+	my_l = ft_printf("MINE:	sign & zero			 -->%+05.5d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#138
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	sign & zero			 -->%+05.5d<--\n", -42);
+	my_l = ft_printf("MINE:	sign & zero			 -->%+05.5d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#139
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	space				 -->% 5.5d<--\n", 42);
+	my_l = ft_printf("MINE:	space				 -->% 5.5d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#140
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	space				 -->% 5.5d<--\n", -42);
+	my_l = ft_printf("MINE:	space				 -->% 5.5d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#141
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	space & zero			 -->% 05.5d<--\n", 42);
+	my_l = ft_printf("MINE:	space & zero			 -->% 05.5d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#142
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	space & zero			 -->% 05.5d<--\n", -42);
+	my_l = ft_printf("MINE:	space & zero			 -->% 05.5d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#143
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	zero				 -->%05.5d<--\n", 42);
+	my_l = ft_printf("MINE:	zero				 -->%05.5d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#144
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	zero				 -->%05.5d<--\n", -42);
+	my_l = ft_printf("MINE:	zero				 -->%05.5d<--\n", -42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#145
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft				 -->%-5.10d<--\n", 0);
+	my_l = ft_printf("MINE:	jleft				 -->%-5.10d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#146
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft & sign			 -->%-+5.10d<--\n", 0);
+	my_l = ft_printf("MINE:	jleft & sign			 -->%-+5.10d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#147
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft & space			 -->%- 5.10d<--\n", 0);
+	my_l = ft_printf("MINE:	jleft & space			 -->%- 5.10d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#148
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	sign				 -->%+5.10d<--\n", 0);
+	my_l = ft_printf("MINE:	sign				 -->%+5.10d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#149
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	sign & zero			 -->%+05.10d<--\n", 0);
+	my_l = ft_printf("MINE:	sign & zero			 -->%+05.10d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#150
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	space				 -->% 5.10d<--\n", 0);
+	my_l = ft_printf("MINE:	space				 -->% 5.10d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#151
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	space & zero			 -->% 05.10d<--\n", 0);
+	my_l = ft_printf("MINE:	space & zero			 -->% 05.10d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#152
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	zero				 -->%05.10d<--\n", 0);
+	my_l = ft_printf("MINE:	zero				 -->%05.10d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#153
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft				 -->%-10.5d<--\n", 0);
+	my_l = ft_printf("MINE:	jleft				 -->%-10.5d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#154
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft & sign			 -->%-+10.5d<--\n", 0);
+	my_l = ft_printf("MINE:	jleft & sign			 -->%-+10.5d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#155
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft & space			 -->%- 10.5d<--\n", 0);
+	my_l = ft_printf("MINE:	jleft & space			 -->%- 10.5d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#156
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	sign				 -->%+10.5d<--\n", 0);
+	my_l = ft_printf("MINE:	sign				 -->%+10.5d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#157
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	sign & zero			 -->%+010.5d<--\n", 0);
+	my_l = ft_printf("MINE:	sign & zero			 -->%+010.5d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#158
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	space				 -->% 10.5d<--\n", 0);
+	my_l = ft_printf("MINE:	space				 -->% 10.5d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#159
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	space & zero			 -->% 010.5d<--\n", 0);
+	my_l = ft_printf("MINE:	space & zero			 -->% 010.5d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#160
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	zero				 -->%010.5d<--\n", 0);
+	my_l = ft_printf("MINE:	zero				 -->%010.5d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#161
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft				 -->%-5.5d<--\n", 0);
+	my_l = ft_printf("MINE:	jleft				 -->%-5.5d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#162
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft & sign			 -->%-+5.5d<--\n", 0);
+	my_l = ft_printf("MINE:	jleft & sign			 -->%-+5.5d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#163
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft & space			 -->%- 5.5d<--\n", 0);
+	my_l = ft_printf("MINE:	jleft & space			 -->%- 5.5d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#164
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	sign				 -->%+5.5d<--\n", 0);
+	my_l = ft_printf("MINE:	sign				 -->%+5.5d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#165
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	sign & zero			 -->%+05.5d<--\n", 0);
+	my_l = ft_printf("MINE:	sign & zero			 -->%+05.5d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#166
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	space				 -->% 5.5d<--\n", 0);
+	my_l = ft_printf("MINE:	space				 -->% 5.5d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#167
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	space & zero			 -->% 05.5d<--\n", 0);
+	my_l = ft_printf("MINE:	space & zero			 -->% 05.5d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#168
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	zero				 -->%05.5d<--\n", 0);
+	my_l = ft_printf("MINE:	zero				 -->%05.5d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#169
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft				 -->%-5.0d<--\n", 0);
+	my_l = ft_printf("MINE:	jleft				 -->%-5.0d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#170
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft & sign			 -->%-+5.0d<--\n", 0);
+	my_l = ft_printf("MINE:	jleft & sign			 -->%-+5.0d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#171
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft & space			 -->%- 5.0d<--\n", 0);
+	my_l = ft_printf("MINE:	jleft & space			 -->%- 5.0d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#172
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	sign				 -->%+5.0d<--\n", 0);
+	my_l = ft_printf("MINE:	sign				 -->%+5.0d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#173
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	sign & zero			 -->%+05.0d<--\n", 0);
+	my_l = ft_printf("MINE:	sign & zero			 -->%+05.0d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#174
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	space				 -->% 5.0d<--\n", 0);
+	my_l = ft_printf("MINE:	space				 -->% 5.0d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#175
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	space & zero			 -->% 05.0d<--\n", 0);
+	my_l = ft_printf("MINE:	space & zero			 -->% 05.0d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#176
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	zero				 -->%05.0d<--\n", 0);
+	my_l = ft_printf("MINE:	zero				 -->%05.0d<--\n", 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+
+
+	printf("42FC TEST #127\n");
+	actual_l = printf("ACTUAL:					 -->%5d<--\n", 42);
+	my_l = ft_printf("MINE:					 -->%5d<--\n", 42);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+	printf("42FC TEST #139\n");
+	actual_l = printf("ACTUAL:					 -->%hd<--\n", 32768);
+	my_l = ft_printf("MINE:					 -->%hd<--\n", 32768);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+	printf("42FC TEST #142\n");
+	actual_l = printf("ACTUAL:					 -->%hhd<--\n", 128);
+	my_l = ft_printf("MINE:					 -->%hhd<--\n", 128);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+	printf("42FC TEST #144\n");
+	actual_l = printf("ACTUAL:					 -->%hhd<--\n", -129);
+	my_l = ft_printf("MINE:					 -->%hhd<--\n", -129);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+	printf("42FC TEST #150\n");
+	actual_l = printf("ACTUAL:					 -->%lld<--\n", -9223372036854775808);
+	my_l = ft_printf("MINE:					 -->%lld<--\n", -9223372036854775808);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+	printf("42FC TEST #163\n");
+	actual_l = printf("ACTUAL:					 -->%.2d<--\n", 4242);
+	my_l = ft_printf("MINE:					 -->%.2d<--\n", 4242);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+	printf("42FC TEST #165\n");
+	actual_l = printf("ACTUAL:					 -->%10.5d<--\n", 4242);
+	my_l = ft_printf("MINE:					 -->%10.5d<--\n", 4242);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
+
+	printf("42FC TEST #176\n");
+	actual_l = printf("ACTUAL:					 -->@moulitest: %5.d %5.0d<--\n", 0, 0);
+	my_l = ft_printf("MINE:					 -->@moulitest: %5.d %5.0d<--\n", 0, 0);
+	printf("					   (%d, %d)\n\n", actual_l, my_l + 2);
 
 // 	printf("size of int is: %lu\n", sizeof(int));
 // 	printf("size of long int is: %lu\n", sizeof(long int));

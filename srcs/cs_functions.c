@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:41:54 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/13 17:10:03 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/15 20:42:20 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,104 +28,84 @@ int		g_cs_lc_d(char **fmt, t_badge *badge, va_list ap)
 	return (len);
 }
 
-void	reset_flags(t_badge *badge, t_type *d)
-{
-	if (badge->jleft)
-		badge->zero = 0;
-	if (badge->sign || d->ll_int < 0)
-		badge->space = 0;
-}
 
-int		len_type(int num, t_badge *badge, t_type *d, char **fmt)
+
+int		len_type(int num, t_badge *badge, t_type *type, char **fmt)
 {
 	int			len;
-	long long	nbr;
 
 	len = 0;
-	nbr = d->ll_int;
 	if (badge->pound)
 		return (-1);
 	if (badge->min_w > badge->prec && badge->min_w > num && badge->prec >= 0)
-		len += cs_lc_d_wp(nbr, badge, fmt);
+		len += cs_lc_d_wp(type, badge, fmt);
 	else if (badge->prec >= 0)
 	{
-		len += cs_lc_d_prec(nbr, badge, fmt);//calls -> flags() calls -> print()
+		len += badge->prec == 0 && type->ll_int < 0 ? -1 : 0;
+		len += cs_lc_d_prec(type, badge, fmt);
 		num += badge->prec;
 	}
 	if (badge->min_w > num && badge->prec < 0)
-		len += cs_lc_d_width(nbr, badge, fmt);//calls -> flags() calls -> print()
+		len += cs_lc_d_width(type, badge, fmt);
 	if (badge->min_w < 0 && badge->prec < 0)
-		len += cs_lc_d_def(nbr, badge, fmt);//calls -> print()
+		len += cs_lc_d_def(type, badge, fmt);
 	return (len);
 }
 
-int		cs_lc_d_wp(long long int d, t_badge *badge, char **fmt)
+int		cs_lc_d_wp(t_type *type, t_badge *badge, char **fmt)
 {
-	int	len;
+	int			len;
 
-	//badge->min_w -= badge->prec;
-	// cs_lc_d_prec(d, badge, fmt);
 	len = badge->min_w;
 	if (badge->jleft)
 	{
-		cs_lc_d_prec(d, badge, fmt);
-		badge->sign && d >= 0 ? ft_putchar('+') : 0;
-		badge->space ? ft_putchar(' ') : 0;//means sign is 0 b/c of reset.
+		cs_lc_d_prec(type, badge, fmt);
+		ft_padding(badge, type, ' ', MOD_WP);
+	}
+	else if (badge->zero)
+	{
+		!badge->sign && !badge->space && type->ll_int >= 0 ? 0 : badge->min_w--;
+		ft_padding(badge, type, ' ', MOD_WP);
+		cs_lc_d_prec(type, badge, fmt);
+	}
+	else
+	{
 		badge->sign || badge->space ? badge->min_w-- : 0;
-		ft_padding(badge, d, ' ', MOD_WP);
-	}
-	else if (badge->zero)
-	{
-		badge->sign && d >= 0 ? ft_putchar('+') : 0;
-		d < 0 ? ft_putchar('-') : 0;
-		badge->space ? ft_putchar(' ') : 0;//means sign is 0 b/c of reset.
-		badge->space || (badge->sign && d >= 0) ? badge->min_w-- : 0;
-		ft_padding(badge, d, '0', MOD_WP);
-		cs_lc_d_prec(d, badge, fmt);
-	}
-	else
-	{
-		badge->sign && d >= 0 ? badge->min_w-- : 0;
-		ft_padding(badge, d, ' ', MOD_WP);
-		badge->sign && d >= 0 ? ft_putchar('+') : 0;
-		cs_lc_d_prec(d, badge, fmt);
+		ft_padding(badge, type, ' ', MOD_WP);
+		cs_lc_d_prec(type, badge, fmt);
 	}
 	return (len);
 }
 
-int		cs_lc_d_width(long long int d, t_badge *badge, char **fmt)
+int		cs_lc_d_width(t_type *type, t_badge *badge, char **fmt)
 {
-	int	len;
+	int			len;
+
 	len = badge->min_w;
 	if (badge->jleft)
 	{
-		badge->sign && d >= 0 ? ft_putchar('+') : 0;
-		badge->space ? ft_putchar(' ') : 0;//means sign is 0 b/c of reset.
-		(badge->sign && d >= 0) || badge->space ? badge->min_w-- : 0;
-		putnbr(d);
-		ft_padding(badge, d, ' ', MOD_W);
+		f_sign_space(badge, type, MOD_W);
+		putnbr(type->ll_int);
+		ft_padding(badge, type, ' ', MOD_W);
 	}
 	else if (badge->zero)
 	{
-		badge->sign && d >= 0 ? ft_putchar('+') : 0;
-		d < 0 ? ft_putchar('-') : 0;
-		badge->space ? ft_putchar(' ') : 0;//means sign is 0 b/c of reset.
-		badge->space || (badge->sign && d >= 0) ? badge->min_w-- : 0;
-		ft_padding(badge, d, '0', MOD_W);
-		d < 0 ? putnbr(-d) : putnbr(d);//will need to handle special cases for sizes in putnbr.
+		f_sign_space(badge, type, MOD_W);
+		ft_padding(badge, type, '0', MOD_W);
+		putnbr(type->ll_int);
 	}
 	else
 	{
-		badge->sign && d >= 0 ? badge->min_w-- : 0;
-		ft_padding(badge, d, ' ', MOD_W);
-		badge->sign && d >= 0 ? ft_putchar('+') : 0;
-		putnbr(d);
+		f_sign_space(badge, type, MOD_ELSE);
+		ft_padding(badge, type, ' ', MOD_W);
+		f_sign_space(badge, type, MOD_W);
+		putnbr(type->ll_int);
 	}
 	(*fmt)++;
 	return (len);
 }
 
-int		cs_lc_d_def(long long int d, t_badge *badge, char **fmt)
+int		cs_lc_d_def(t_type *type, t_badge *badge, char **fmt)
 {
 	int len;
 
@@ -133,41 +113,40 @@ int		cs_lc_d_def(long long int d, t_badge *badge, char **fmt)
 	if (badge->sign || badge->space)
 	{
 		badge->space ? ft_putchar(' ') : 0;
-		badge->sign && d >= 0 ? ft_putchar('+') : 0;
-		d >= 0 || badge->space ? len++ : 0;
+		badge->sign && type->ll_int >= 0 ? ft_putchar('+') : 0;
+		type->ll_int >= 0 || badge->space ? len++ : 0;
 	}
-	putnbr(d);
-	len += count_digit_lli(d);
+	putnbr(type->ll_int);
+	len += count_digit_lli(type);
 	(*fmt)++;
 	return (len);
 }
 
-int		cs_lc_d_prec(long long int d, t_badge *badge, char **fmt)
+int		cs_lc_d_prec(t_type *type, t_badge *badge, char **fmt)
 {
-	int	len;
+	int			len;
 
-	len = badge->prec;
-	// printf("PRECISION = %d\n", badge->prec);
-	if ((badge->space || badge->sign) && d > 0 && badge->prec >= 0)
+	len = count_digit_lli(type);
+	len = badge->prec > len ? badge->prec : len;
+	len = badge->prec == 0 && type->ll_int == 0 ? 0 : len;
+	if (badge->prec == 0 && type->ll_int == 0)
 	{
-		badge->space ? ft_putchar(' ') : ft_putchar('+');
-		len++;
+		f_sign_space(badge, type, MOD_P);
+		len += badge->sign || badge->space ? 1 : 0;
 	}
-	if (badge->prec > 0 && d < 0)
+	else if (badge->prec > 0 && type->ll_int == 0)
 	{
-		ft_putchar('-');
-		d *= -1;
-		len++;
-	}
-	if (len != 0)
-	{
-		ft_padding(badge, d, '0', MOD_P);
-		putnbr(d);
+		f_sign_space(badge, type, MOD_P);
+		ft_padding(badge, type, '0', MOD_P);
+		len += badge->sign || badge->space ? 1 : 0;
 	}
 	else
 	{
-		d == 0 ? 0 : putnbr(d);
-		d != 0 ? len += count_digit_lli(d) : 0;
+		len += badge->sign || badge->space || type->ll_int < 0 ? 1 : 0;
+		f_sign_space(badge, type, MOD_P);
+		ft_padding(badge, type, '0', MOD_P);
+		putnbr(type->ll_int);
+//		len += badge->prec == 0 ? count_digit_lli(type) : 0;
 	}
 	(*fmt)++;
 	return (len);

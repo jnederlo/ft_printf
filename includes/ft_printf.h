@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:42:04 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/13 16:14:41 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/15 15:51:48 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@
 # define MOD_W		1
 # define MOD_P		2
 # define MOD_WP		3
+# define MOD_ELSE	4
 # define MIN_SINT	-32768
 # define MAX_SINT	32767
 # define MIN_INT	-2147483648
@@ -127,11 +128,11 @@ void					len_mod_set(t_badge *badge, char **fmt, va_list ap);
 int						conv_spec(char **fmt, t_badge *badge, va_list ap);
 
 
-int						cs_lc_d_width(long long int d, t_badge *badge, char **fmt);
-int						cs_lc_d_def(long long int d, t_badge *badge, char **fmt);
-void					ft_padding(t_badge *badge, long long d, char c, int mod);
-int						cs_lc_d_prec(long long int d,t_badge *badge, char **fmt);
-int						cs_lc_d_wp(long long int d, t_badge *badge, char **fmt);
+int						cs_lc_d_width(t_type *type, t_badge *badge, char **fmt);
+int						cs_lc_d_def(t_type *type, t_badge *badge, char **fmt);
+void					ft_padding(t_badge *badge, t_type *type, char c, int mod);
+int						cs_lc_d_prec(t_type *type,t_badge *badge, char **fmt);
+int						cs_lc_d_wp(t_type *type, t_badge *badge, char **fmt);
 
 /*
 **|||||||||||REMOVE|||||||||||
@@ -140,9 +141,10 @@ int						cs_lc_d_wp(long long int d, t_badge *badge, char **fmt);
 void					print_badge(t_badge *badge);
 void					t_type_reset(t_type *type);
 int						len_type(int num, t_badge *badge, t_type *d, char **fmt);
-int						len_badge_set(t_type *d, t_badge *badge, va_list ap);
-int						count_digit_lli(long long int d);
-void					putnbr(long long int d);
+int						len_badge_set(t_type *type, t_badge *badge, va_list ap);
+int						count_digit_lli(t_type *type);
+void					putnbr(long long nb);
 void					reset_flags(t_badge *badge, t_type *d);
-
+void					f_sign_space(t_badge *badge, t_type *type, int mod);
+int						set_number(t_badge *badge, t_type *type, int mod);
 #endif
