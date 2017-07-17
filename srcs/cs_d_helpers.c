@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/13 19:08:56 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/16 15:41:29 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/16 18:34:22 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,16 +61,21 @@ int		count_digit_lli(t_type *type)
 
 void	putnbr_lli(long long nb)
 {
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = -nb;
-	}
-	if (nb >= 10)
-	{
-		putnbr_lli(nb / 10);
-		putnbr_lli(nb % 10);
-	}
+	if (nb < -9223372036854775807)
+		ft_putstr("-9223372036854775808");
 	else
-		ft_putchar(nb + 48);
+	{
+		if (nb < 0)
+		{
+			ft_putchar('-');
+			nb = -nb;
+		}
+		if (nb >= 10)
+		{
+			putnbr_lli(nb / 10);
+			putnbr_lli(nb % 10);
+		}
+		else
+			ft_putchar(nb + 48);
+	}
 }

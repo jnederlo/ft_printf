@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/16 10:53:20 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/16 13:45:32 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/16 18:14:29 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ void	len_mod_set(t_badge *badge, char **fmt)
 		else if (*(*fmt) == 'l' && *(*fmt + 1) == 'l')
 			badge->ll = 'L';
 		else if (*(*fmt) == 'h' && *(*fmt + 1) == 'h')
-			badge->h = 'H';
+			badge->hh = 'H';
 		(*fmt) += 2;
 	}
 	//print_badge(badge);//WILL NEED TO REMOVE THIS!!!!!!!!!!!!!!!

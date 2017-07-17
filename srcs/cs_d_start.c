@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/16 13:19:19 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/16 13:47:26 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/16 18:34:06 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,16 +49,25 @@ int		choose_len(t_type *type, t_badge *badge, va_list ap)
 
 	if (badge->l || badge->ll || badge->j || badge->z)
 	{
-		type->ll_int = va_arg(ap, long);
+		type->ll_int = va_arg(ap, long long);
 		return (num = count_digit_lli(type));
 	}
+	// else if (badge->ll)
+	// {
+	// 	type->ll_int = va_arg(ap, long long);
+	// 	return (num = count_digit_lli(type));
+	// }
 	else if (badge->h)
 	{
 		type->ll_int = va_arg(ap, int);//won't let me specify it as "short"
+		edge_cases(type, badge);
 		return (num = count_digit_lli(type));
 	}
 	else
+	{
 		type->ll_int = va_arg(ap, int);
+		edge_cases(type, badge);
+	}
 	return (num = count_digit_lli(type));
 }
 
@@ -77,4 +86,21 @@ void	arg_type_reset(t_type *type)
 {
 	type->ll_int = 0;
 	type->ull_int = 0;
+}
+
+void	edge_cases(t_type *type, t_badge *badge)
+{
+	
+	if (badge->h)
+	{
+		type->ll_int == 32768 ? type->ll_int = MIN_SINT : 0;
+		type->ll_int == -32769 ? type->ll_int = MAX_SINT : 0;
+		return ;
+	}
+	else if (badge->hh)
+	{
+		type->ll_int == 128 ? type->ll_int = MIN_CHAR : 0;
+		type->ll_int == -129 ? type->ll_int = MAX_CHAR : 0;
+		return ;
+	}
 }

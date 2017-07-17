@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:42:04 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/16 15:40:00 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/16 18:29:40 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@
 # define MAX_SINT	32767
 # define MIN_INT	-2147483648
 # define MAX_INT	2147483648
-# define MIN_LINT	-9223372036854775808 //or -9223372036854775808...
+# define MIN_LINT	-9223372036854775808
 # define MAX_LINT	9223372036854775807
-# define MIX_LLINT	-9223372036854775808 //or -9223372036854775808...
+# define MIX_LLINT	-9223372036854775808
 # define MAX_LLINT	9223372036854775807
 # define MAX_USINT	65535
 # define MAX_UINT	4294967295
@@ -142,6 +142,7 @@ int						choose_field(int num, t_badge *badge, t_type *d, char **fmt);
 void					arg_type_reset(t_type *type);
 void					flag_rules(t_badge *badge, t_type *d);
 int						choose_len(t_type *type, t_badge *badge, va_list ap);
+void					edge_cases(t_type *type, t_badge *badge);
 
 /*
 **Functions in cs_d_print.c
