@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:41:54 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/17 16:03:57 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/17 16:23:49 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,7 +142,6 @@ int		g_cs_lc_s(char **fmt, t_badge *badge, va_list ap)
 	len = badge->min_w > length ? badge->min_w : length;
 	if (badge->sign || badge->space || badge->zero || badge->pound)
 	{
-		ft_putstr("UNDEFINED");
 		(*fmt)++;
 		return (-1);
 	}
