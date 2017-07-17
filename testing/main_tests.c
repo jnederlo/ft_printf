@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:39:51 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/17 15:02:17 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/17 15:50:47 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -1198,303 +1198,309 @@ int	main(void)
 *******************************************************************
 ******************************************************************/
 
-	printf("||||||||||NO WIDTH OR PREC SPECIFERS||||||||||\n\n");
+// 	printf("||||||||||NO WIDTH OR PREC SPECIFERS||||||||||\n\n");
 
-//	#188
+// //	#188
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:	jleft				 -->%-s<--\n", "wubba lubba dub dub");
+// 	my_l = ft_printf("MINE:	jleft				 -->%-s<--\n", "wubba lubba dub dub");
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// //	#189
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:	jleft & sign			 -->%-+s<--\n", "wubba lubba dub dub");
+// 	my_l = ft_printf("MINE:	jleft & sign			 -->%-+s<--\n", "wubba lubba dub dub");
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// //	#190
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:	jleft & space			 -->%- s<--\n", "wubba lubba dub dub");
+// 	my_l = ft_printf("MINE:	jleft & space			 -->%- s<--\n", "wubba lubba dub dub");
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// //	#191
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:	sign				 -->%+s<--\n", "wubba lubba dub dub");
+// 	my_l = ft_printf("MINE:	sign				 -->%+s<--\n", "wubba lubba dub dub");
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// //	#192
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:	sign & zero			 -->%+0s<--\n", "wubba lubba dub dub");
+// 	my_l = ft_printf("MINE:	sign & zero			 -->%+0s<--\n", "wubba lubba dub dub");
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// //	#193
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:	space				 -->% s<--\n", "wubba lubba dub dub");
+// 	my_l = ft_printf("MINE:	space				 -->% s<--\n", "wubba lubba dub dub");
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// //	#194
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:	space & zero			 -->% 0s<--\n", "wubba lubba dub dub");
+// 	my_l = ft_printf("MINE:	space & zero			 -->% 0s<--\n", "wubba lubba dub dub");
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// //	#195
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:	zero				 -->%0s<--\n", "wubba lubba dub dub");
+// 	my_l = ft_printf("MINE:	zero				 -->%0s<--\n", "wubba lubba dub dub");
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// //	#196
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:	jleft				 -->%-s<--\n", "J");
+// 	my_l = ft_printf("MINE:	jleft				 -->%-s<--\n", "J");
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// //	#197
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:	jleft & sign			 -->%-+s<--\n", "J");
+// 	my_l = ft_printf("MINE:	jleft & sign			 -->%-+s<--\n", "J");
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// //	#198
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:	jleft & space			 -->%- s<--\n", "J");
+// 	my_l = ft_printf("MINE:	jleft & space			 -->%- s<--\n", "J");
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// //	#199
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:	sign				 -->%+s<--\n", "J");
+// 	my_l = ft_printf("MINE:	sign				 -->%+s<--\n", "J");
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// //	#200
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:	sign & zero			 -->%+0s<--\n", "J");
+// 	my_l = ft_printf("MINE:	sign & zero			 -->%+0s<--\n", "J");
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// //	#201
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:	space				 -->% s<--\n", "J");
+// 	my_l = ft_printf("MINE:	space				 -->% s<--\n", "J");
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// //	#202
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:	space & zero			 -->% 0s<--\n", "J");
+// 	my_l = ft_printf("MINE:	space & zero			 -->% 0s<--\n", "J");
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// //	#203
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:	zero				 -->%0s<--\n", "J");
+// 	my_l = ft_printf("MINE:	zero				 -->%0s<--\n", "J");
+// 	printf("(%d, %d)\n\n\n\n", actual_l, my_l + 2);
+
+// /******************************************************************
+// ***						WIDTH SPECIFIERS						***
+// *******************************************************************
+// ******************************************************************/
+
+// 	printf("||||||||||WIDTH SPECIFERS||||||||||\n\n");
+
+// //	#204
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:	jleft				 -->%-5s<--\n", "wubba lubba dub dub");
+// 	my_l = ft_printf("MINE:	jleft				 -->%-5s<--\n", "wubba lubba dub dub");
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// //	#205
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:	jleft & sign			 -->%-+5s<--\n", "wubba lubba dub dub");
+// 	my_l = ft_printf("MINE:	jleft & sign			 -->%-+5s<--\n", "wubba lubba dub dub");
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// //	#206
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:	jleft & space			 -->%- 5s<--\n", "wubba lubba dub dub");
+// 	my_l = ft_printf("MINE:	jleft & space			 -->%- 5s<--\n", "wubba lubba dub dub");
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// //	#207
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:	jleft & zero			 -->%-05s<--\n", "wubba lubba dub dub");
+// 	my_l = ft_printf("MINE:	jleft & zero			 -->%-05s<--\n", "wubba lubba dub dub");
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// //	#208
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:	sign				 -->%+5s<--\n", "wubba lubba dub dub");
+// 	my_l = ft_printf("MINE:	sign				 -->%+5s<--\n", "wubba lubba dub dub");
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// //	#209
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:	sign & zero			 -->%+05s<--\n", "wubba lubba dub dub");
+// 	my_l = ft_printf("MINE:	sign & zero			 -->%+05s<--\n", "wubba lubba dub dub");
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// //	#210
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:	space				 -->% 5s<--\n", "wubba lubba dub dub");
+// 	my_l = ft_printf("MINE:	space				 -->% 5s<--\n", "wubba lubba dub dub");
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// //	#211
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:	space & zero			 -->% 05s<--\n", "wubba lubba dub dub");
+// 	my_l = ft_printf("MINE:	space & zero			 -->% 05s<--\n", "wubba lubba dub dub");
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// //	#212
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:	zero				 -->%05s<--\n", "wubba lubba dub dub");
+// 	my_l = ft_printf("MINE:	zero				 -->%05s<--\n", "wubba lubba dub dub");
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// //	#213
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:	jleft				 -->%-25s<--\n", "wubba lubba dub dub");
+// 	my_l = ft_printf("MINE:	jleft				 -->%-25s<--\n", "wubba lubba dub dub");
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// //	#214
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:	jleft & sign			 -->%-+25s<--\n", "wubba lubba dub dub");
+// 	my_l = ft_printf("MINE:	jleft & sign			 -->%-+25s<--\n", "wubba lubba dub dub");
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// //	#215
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:	jleft & space			 -->%- 25s<--\n", "wubba lubba dub dub");
+// 	my_l = ft_printf("MINE:	jleft & space			 -->%- 25s<--\n", "wubba lubba dub dub");
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// //	#216
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:	jleft & zero			 -->%-025s<--\n", "wubba lubba dub dub");
+// 	my_l = ft_printf("MINE:	jleft & zero			 -->%-025s<--\n", "wubba lubba dub dub");
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// //	#217
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:	sign				 -->%+25s<--\n", "wubba lubba dub dub");
+// 	my_l = ft_printf("MINE:	sign				 -->%+25s<--\n", "wubba lubba dub dub");
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// //	#218
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:	sign & zero			 -->%+025s<--\n", "wubba lubba dub dub");
+// 	my_l = ft_printf("MINE:	sign & zero			 -->%+025s<--\n", "wubba lubba dub dub");
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// //	#219
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:	space				 -->% 25s<--\n", "wubba lubba dub dub");
+// 	my_l = ft_printf("MINE:	space				 -->% 25s<--\n", "wubba lubba dub dub");
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// //	#220
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:	space & zero			 -->% 025s<--\n", "wubba lubba dub dub");
+// 	my_l = ft_printf("MINE:	space & zero			 -->% 025s<--\n", "wubba lubba dub dub");
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// //	#221
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:	zero				 -->%025s<--\n", "wubba lubba dub dub");
+// 	my_l = ft_printf("MINE:	zero				 -->%025s<--\n", "wubba lubba dub dub");
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// //	#222
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:	jleft				 -->%-5s<--\n", "J");
+// 	my_l = ft_printf("MINE:	jleft				 -->%-5s<--\n", "J");
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// //	#223
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:	jleft & sign			 -->%-+5s<--\n", "J");
+// 	my_l = ft_printf("MINE:	jleft & sign			 -->%-+5s<--\n", "J");
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// //	#224
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:	jleft & space			 -->%- 5s<--\n", "J");
+// 	my_l = ft_printf("MINE:	jleft & space			 -->%- 5s<--\n", "J");
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// //	#225
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:	sign				 -->%+5s<--\n", "J");
+// 	my_l = ft_printf("MINE:	sign				 -->%+5s<--\n", "J");
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// //	#226
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:	sign & zero			 -->%+05s<--\n", "J");
+// 	my_l = ft_printf("MINE:	sign & zero			 -->%+05s<--\n", "J");
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// //	#227
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:	space				 -->% 5s<--\n", "J");
+// 	my_l = ft_printf("MINE:	space				 -->% 5s<--\n", "J");
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// //	#228
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:	space & zero			 -->% 05s<--\n", "J");
+// 	my_l = ft_printf("MINE:	space & zero			 -->% 05s<--\n", "J");
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// //	#229
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:	zero				 -->%05s<--\n", "J");
+// 	my_l = ft_printf("MINE:	zero				 -->%05s<--\n", "J");
+// 	printf("(%d, %d)\n\n\n\n", actual_l, my_l + 2);
+
+// /******************************************************************
+// ***					PRECISION SPECIFIERS						***
+// *******************************************************************
+// ******************************************************************/
+
+// 	printf("||||||||||PRECISION SPECIFIERS||||||||||\n\n");
+
+// //	#49
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:	jleft				 -->%-.5s<--\n", "wubba lubba dub dub");
+// 	my_l = ft_printf("MINE:	jleft				 -->%-.5s<--\n", "wubba lubba dub dub");
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// //	#50
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:	jleft				 -->%-.25s<--\n", "wubba lubba dub dub");
+// 	my_l = ft_printf("MINE:	jleft				 -->%-.25s<--\n", "wubba lubba dub dub");
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// //	#49
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:					 -->%.5s<--\n", "wubba lubba dub dub");
+// 	my_l = ft_printf("MINE:					 -->%.5s<--\n", "wubba lubba dub dub");
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// //	#50
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:					 -->%.25s<--\n", "wubba lubba dub dub");
+// 	my_l = ft_printf("MINE:					 -->%.25s<--\n", "wubba lubba dub dub");
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+
 	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:	jleft				 -->%-s<--\n", "wubba lubba dub dub");
-	my_l = ft_printf("MINE:	jleft				 -->%-s<--\n", "wubba lubba dub dub");
+	actual_l = printf("ACTUAL:					 -->{%s}<--\n", 0);
+	my_l = ft_printf("MINE:					 -->{%s}<--\n", 0);
 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
 
-//	#189
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:	jleft & sign			 -->%-+s<--\n", "wubba lubba dub dub");
-	my_l = ft_printf("MINE:	jleft & sign			 -->%-+s<--\n", "wubba lubba dub dub");
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
 
-//	#190
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:	jleft & space			 -->%- s<--\n", "wubba lubba dub dub");
-	my_l = ft_printf("MINE:	jleft & space			 -->%- s<--\n", "wubba lubba dub dub");
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-//	#191
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:	sign				 -->%+s<--\n", "wubba lubba dub dub");
-	my_l = ft_printf("MINE:	sign				 -->%+s<--\n", "wubba lubba dub dub");
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-//	#192
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:	sign & zero			 -->%+0s<--\n", "wubba lubba dub dub");
-	my_l = ft_printf("MINE:	sign & zero			 -->%+0s<--\n", "wubba lubba dub dub");
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-//	#193
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:	space				 -->% s<--\n", "wubba lubba dub dub");
-	my_l = ft_printf("MINE:	space				 -->% s<--\n", "wubba lubba dub dub");
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-//	#194
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:	space & zero			 -->% 0s<--\n", "wubba lubba dub dub");
-	my_l = ft_printf("MINE:	space & zero			 -->% 0s<--\n", "wubba lubba dub dub");
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-//	#195
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:	zero				 -->%0s<--\n", "wubba lubba dub dub");
-	my_l = ft_printf("MINE:	zero				 -->%0s<--\n", "wubba lubba dub dub");
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-//	#196
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:	jleft				 -->%-s<--\n", "J");
-	my_l = ft_printf("MINE:	jleft				 -->%-s<--\n", "J");
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-//	#197
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:	jleft & sign			 -->%-+s<--\n", "J");
-	my_l = ft_printf("MINE:	jleft & sign			 -->%-+s<--\n", "J");
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-//	#198
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:	jleft & space			 -->%- s<--\n", "J");
-	my_l = ft_printf("MINE:	jleft & space			 -->%- s<--\n", "J");
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-//	#199
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:	sign				 -->%+s<--\n", "J");
-	my_l = ft_printf("MINE:	sign				 -->%+s<--\n", "J");
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-//	#200
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:	sign & zero			 -->%+0s<--\n", "J");
-	my_l = ft_printf("MINE:	sign & zero			 -->%+0s<--\n", "J");
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-//	#201
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:	space				 -->% s<--\n", "J");
-	my_l = ft_printf("MINE:	space				 -->% s<--\n", "J");
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-//	#202
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:	space & zero			 -->% 0s<--\n", "J");
-	my_l = ft_printf("MINE:	space & zero			 -->% 0s<--\n", "J");
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-//	#203
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:	zero				 -->%0s<--\n", "J");
-	my_l = ft_printf("MINE:	zero				 -->%0s<--\n", "J");
-	printf("(%d, %d)\n\n\n\n", actual_l, my_l + 2);
-
-/******************************************************************
-***						WIDTH SPECIFIERS						***
-*******************************************************************
-******************************************************************/
-
-	printf("||||||||||WIDTH SPECIFERS||||||||||\n\n");
-
-//	#204
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:	jleft				 -->%-5s<--\n", "wubba lubba dub dub");
-	my_l = ft_printf("MINE:	jleft				 -->%-5s<--\n", "wubba lubba dub dub");
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-//	#205
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:	jleft & sign			 -->%-+5s<--\n", "wubba lubba dub dub");
-	my_l = ft_printf("MINE:	jleft & sign			 -->%-+5s<--\n", "wubba lubba dub dub");
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-//	#206
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:	jleft & space			 -->%- 5s<--\n", "wubba lubba dub dub");
-	my_l = ft_printf("MINE:	jleft & space			 -->%- 5s<--\n", "wubba lubba dub dub");
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-//	#207
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:	jleft & zero			 -->%-05s<--\n", "wubba lubba dub dub");
-	my_l = ft_printf("MINE:	jleft & zero			 -->%-05s<--\n", "wubba lubba dub dub");
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-//	#208
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:	sign				 -->%+5s<--\n", "wubba lubba dub dub");
-	my_l = ft_printf("MINE:	sign				 -->%+5s<--\n", "wubba lubba dub dub");
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-//	#209
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:	sign & zero			 -->%+05s<--\n", "wubba lubba dub dub");
-	my_l = ft_printf("MINE:	sign & zero			 -->%+05s<--\n", "wubba lubba dub dub");
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-//	#210
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:	space				 -->% 5s<--\n", "wubba lubba dub dub");
-	my_l = ft_printf("MINE:	space				 -->% 5s<--\n", "wubba lubba dub dub");
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-//	#211
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:	space & zero			 -->% 05s<--\n", "wubba lubba dub dub");
-	my_l = ft_printf("MINE:	space & zero			 -->% 05s<--\n", "wubba lubba dub dub");
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-//	#212
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:	zero				 -->%05s<--\n", "wubba lubba dub dub");
-	my_l = ft_printf("MINE:	zero				 -->%05s<--\n", "wubba lubba dub dub");
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-//	#213
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:	jleft				 -->%-25s<--\n", "wubba lubba dub dub");
-	my_l = ft_printf("MINE:	jleft				 -->%-25s<--\n", "wubba lubba dub dub");
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-//	#214
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:	jleft & sign			 -->%-+25s<--\n", "wubba lubba dub dub");
-	my_l = ft_printf("MINE:	jleft & sign			 -->%-+25s<--\n", "wubba lubba dub dub");
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-//	#215
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:	jleft & space			 -->%- 25s<--\n", "wubba lubba dub dub");
-	my_l = ft_printf("MINE:	jleft & space			 -->%- 25s<--\n", "wubba lubba dub dub");
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-//	#216
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:	jleft & zero			 -->%-025s<--\n", "wubba lubba dub dub");
-	my_l = ft_printf("MINE:	jleft & zero			 -->%-025s<--\n", "wubba lubba dub dub");
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-//	#217
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:	sign				 -->%+25s<--\n", "wubba lubba dub dub");
-	my_l = ft_printf("MINE:	sign				 -->%+25s<--\n", "wubba lubba dub dub");
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-//	#218
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:	sign & zero			 -->%+025s<--\n", "wubba lubba dub dub");
-	my_l = ft_printf("MINE:	sign & zero			 -->%+025s<--\n", "wubba lubba dub dub");
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-//	#219
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:	space				 -->% 25s<--\n", "wubba lubba dub dub");
-	my_l = ft_printf("MINE:	space				 -->% 25s<--\n", "wubba lubba dub dub");
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-//	#220
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:	space & zero			 -->% 025s<--\n", "wubba lubba dub dub");
-	my_l = ft_printf("MINE:	space & zero			 -->% 025s<--\n", "wubba lubba dub dub");
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-//	#221
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:	zero				 -->%025s<--\n", "wubba lubba dub dub");
-	my_l = ft_printf("MINE:	zero				 -->%025s<--\n", "wubba lubba dub dub");
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-//	#222
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:	jleft				 -->%-5s<--\n", "J");
-	my_l = ft_printf("MINE:	jleft				 -->%-5s<--\n", "J");
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-//	#223
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:	jleft & sign			 -->%-+5s<--\n", "J");
-	my_l = ft_printf("MINE:	jleft & sign			 -->%-+5s<--\n", "J");
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-//	#224
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:	jleft & space			 -->%- 5s<--\n", "J");
-	my_l = ft_printf("MINE:	jleft & space			 -->%- 5s<--\n", "J");
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-//	#225
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:	sign				 -->%+5s<--\n", "J");
-	my_l = ft_printf("MINE:	sign				 -->%+5s<--\n", "J");
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-//	#226
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:	sign & zero			 -->%+05s<--\n", "J");
-	my_l = ft_printf("MINE:	sign & zero			 -->%+05s<--\n", "J");
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-//	#227
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:	space				 -->% 5s<--\n", "J");
-	my_l = ft_printf("MINE:	space				 -->% 5s<--\n", "J");
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-//	#228
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:	space & zero			 -->% 05s<--\n", "J");
-	my_l = ft_printf("MINE:	space & zero			 -->% 05s<--\n", "J");
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-//	#229
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:	zero				 -->%05s<--\n", "J");
-	my_l = ft_printf("MINE:	zero				 -->%05s<--\n", "J");
-	printf("(%d, %d)\n\n\n\n", actual_l, my_l + 2);
-
-/******************************************************************
-***					PRECISION SPECIFIERS						***
-*******************************************************************
-******************************************************************/
-
-	printf("||||||||||PRECISION SPECIFIERS||||||||||\n\n");
-
-//	#49
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:	jleft				 -->%-.5s<--\n", "wubba lubba dub dub");
-	my_l = ft_printf("MINE:	jleft				 -->%-.5s<--\n", "wubba lubba dub dub");
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-//	#50
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:	jleft				 -->%-.25s<--\n", "wubba lubba dub dub");
-	my_l = ft_printf("MINE:	jleft				 -->%-.25s<--\n", "wubba lubba dub dub");
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-//	#49
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:					 -->%.5s<--\n", "wubba lubba dub dub");
-	my_l = ft_printf("MINE:					 -->%.5s<--\n", "wubba lubba dub dub");
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-//	#50
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:					 -->%.25s<--\n", "wubba lubba dub dub");
-	my_l = ft_printf("MINE:					 -->%.25s<--\n", "wubba lubba dub dub");
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-
-
-
-
-
+	// printf("Test #%d\n", i++);
+	// actual_l = printf("ACTUAL:					 -->{%s}<--\n", "");
+	// my_l = ft_printf("MINE:					 -->{%s}<--\n", "");
+	// printf("(%d, %d)\n\n", actual_l, my_l + 2);
 
 
 
