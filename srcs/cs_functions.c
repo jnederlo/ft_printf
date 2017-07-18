@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:41:54 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/17 16:50:03 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/17 16:59:58 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,9 +128,9 @@ int		g_cs_uc_s(char **fmt, t_badge *badge, va_list ap)
 
 int		g_cs_lc_s(char **fmt, t_badge *badge, va_list ap)
 {
-	// char	*str;
-	// int		length;
-	// int		len;
+	char	*str;
+	int		length;
+	int		len;
 
 	// if ((str = va_arg(ap, char*)) == 0)
 	// {
@@ -138,88 +138,83 @@ int		g_cs_lc_s(char **fmt, t_badge *badge, va_list ap)
 	// 	(*fmt)++;
 	// 	return (6);
 	// }
-	// length = ft_strlen(str);
-	// len = badge->min_w > length ? badge->min_w : length;
-	// if (badge->sign || badge->space || badge->zero || badge->pound)
-	// {
-	// 	(*fmt)++;
-	// 	return (-1);
-	// }
-	// if (badge->prec < length && badge->prec >= 0 && badge->min_w > badge->prec)
-	// {
-	// 	len = badge->min_w;
-	// 	badge->min_w = badge->min_w - badge->prec;
-	// 	if (badge->jleft)
-	// 	{
-	// 		while (badge->prec > 0)
-	// 		{
-	// 			ft_putchar(*str);
-	// 			str++;
-	// 			badge->prec--;
-	// 		}
-	// 		while (badge->min_w > 0)
-	// 		{
-	// 			ft_putchar(' ');
-	// 			badge->min_w--;
-	// 		}
-	// 	}
-	// 	else
-	// 	{
-	// 		while (badge->min_w > 0)
-	// 		{
-	// 			ft_putchar(' ');
-	// 			badge->min_w--;
-	// 		}
-	// 		while (badge->prec > 0)
-	// 		{
-	// 			ft_putchar(*str);
-	// 			str++;
-	// 			badge->prec--;
-	// 		}
-	// 	}
-	// }
-	// else if (badge->prec < length && badge->prec >= 0)
-	// {
-	// 	len = badge->prec;
-	// 	while (badge->prec > 0)
-	// 	{
-	// 		ft_putchar(*str);
-	// 		str++;
-	// 		badge->prec--;
-	// 	}
-	// }
-	// else if (badge->min_w > length)
-	// {
-	// 	badge->min_w = badge->min_w - length;
-	// 	// printf("badge min_w = %d\n", badge->min_w);
-	// 	if (badge->jleft)
-	// 	{
-	// 		ft_putstr(str);
-	// 		while (badge->min_w > 0)
-	// 		{
-	// 			ft_putchar(' ');
-	// 			badge->min_w--;
-	// 		}
-	// 	}
-	// 	else
-	// 	{
-	// 		while (badge->min_w > 0)
-	// 		{
-	// 			ft_putchar(' ');
-	// 			badge->min_w--;
-	// 		}
-	// 		ft_putstr(str);
-	// 	}
-	// }
-	// else
-	// 	ft_putstr(str);
-	// (*fmt)++;
-	// return (len);
-
-	(void)fmt;
-	(void)badge;
-	(void)ap;
-	return (0);
+	length = ft_strlen(str);
+	len = badge->min_w > length ? badge->min_w : length;
+	if (badge->sign || badge->space || badge->zero || badge->pound)
+	{
+		(*fmt)++;
+		return (-1);
+	}
+	if (badge->prec < length && badge->prec >= 0 && badge->min_w > badge->prec)
+	{
+		len = badge->min_w;
+		badge->min_w = badge->min_w - badge->prec;
+		if (badge->jleft)
+		{
+			while (badge->prec > 0)
+			{
+				ft_putchar(*str);
+				str++;
+				badge->prec--;
+			}
+			while (badge->min_w > 0)
+			{
+				ft_putchar(' ');
+				badge->min_w--;
+			}
+		}
+		else
+		{
+			while (badge->min_w > 0)
+			{
+				ft_putchar(' ');
+				badge->min_w--;
+			}
+			while (badge->prec > 0)
+			{
+				ft_putchar(*str);
+				str++;
+				badge->prec--;
+			}
+		}
+	}
+	else if (badge->prec < length && badge->prec >= 0)
+	{
+		len = badge->prec;
+		while (badge->prec > 0)
+		{
+			ft_putchar(*str);
+			str++;
+			badge->prec--;
+		}
+	}
+	else if (badge->min_w > length)
+	{
+		badge->min_w = badge->min_w - length;
+		// printf("badge min_w = %d\n", badge->min_w);
+		if (badge->jleft)
+		{
+			ft_putstr(str);
+			while (badge->min_w > 0)
+			{
+				ft_putchar(' ');
+				badge->min_w--;
+			}
+		}
+		else
+		{
+			while (badge->min_w > 0)
+			{
+				ft_putchar(' ');
+				badge->min_w--;
+			}
+			ft_putstr(str);
+		}
+	}
+	else
+		ft_putstr(str);
+	(*fmt)++;
+	return (len);
 }
 
 int		g_cs_lc_p(char **fmt, t_badge *badge, va_list ap)
