@@ -6,11 +6,12 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/16 10:53:20 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/17 13:29:04 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/17 18:04:02 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
 /*
 **Sets the width to a value in t_badge struct.

@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:41:54 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/17 17:14:49 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/17 17:56:13 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,9 +132,12 @@ int		g_cs_lc_s(char **fmt, t_badge *badge, va_list ap)
 	int		length;
 	int		len;
 
-	str = malloc(sizeof(char *) * 1000);
-	ft_bzero(str, 1000);
-	if ((str = va_arg(ap, char*)) == 0)
+	if (badge->sign || badge->space || badge->zero || badge->pound)
+	{
+		(*fmt)++;
+		return (-1);
+	}
+	if ((str = va_arg(ap, char *)) == 0)
 	{
 		ft_putstr("(null)");
 		(*fmt)++;
@@ -142,11 +145,6 @@ int		g_cs_lc_s(char **fmt, t_badge *badge, va_list ap)
 	}
 	length = ft_strlen(str);
 	len = badge->min_w > length ? badge->min_w : length;
-	if (badge->sign || badge->space || badge->zero || badge->pound)
-	{
-		(*fmt)++;
-		return (-1);
-	}
 	if (badge->prec < length && badge->prec >= 0 && badge->min_w > badge->prec)
 	{
 		len = badge->min_w;
@@ -193,7 +191,6 @@ int		g_cs_lc_s(char **fmt, t_badge *badge, va_list ap)
 	else if (badge->min_w > length)
 	{
 		badge->min_w = badge->min_w - length;
-		// printf("badge min_w = %d\n", badge->min_w);
 		if (badge->jleft)
 		{
 			ft_putstr(str);

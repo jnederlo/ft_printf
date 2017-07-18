@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:39:51 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/17 16:48:11 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/17 18:00:56 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -1375,11 +1375,11 @@ int	main(void)
 // 	my_l = ft_printf("MINE:	jleft & space			 -->%- 25s<--\n", "wubba lubba dub dub");
 // 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
 
-// //	#216
-// 	printf("Test #%d\n", i++);
-// 	actual_l = printf("ACTUAL:	jleft & zero			 -->%-025s<--\n", "wubba lubba dub dub");
-// 	my_l = ft_printf("MINE:	jleft & zero			 -->%-025s<--\n", "wubba lubba dub dub");
-// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+//	#216
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft & zero			 -->%-025s<--\n", "wubba lubba dub dub");
+	my_l = ft_printf("MINE:	jleft & zero			 -->%-025s<--\n", "wubba lubba dub dub");
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
 
 // //	#217
 // 	printf("Test #%d\n", i++);
@@ -1504,14 +1504,42 @@ int	main(void)
 
 
 
+	// printf("Test #%d\n", i++);
+	// actual_l = printf("Lalalala, %d%% des gens qui parlent Ly adhorent %.s %d %u %c\n", 100, "Ly.", 2, 10, ',');
+	// my_l = ft_printf("Lalalala, %d%% des gens qui parlent Ly adhorent %.s %d %u %c\n", 100, "Ly.", 2, 10, ',');
+	// printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+
+	// printf("Test #%d\n", i++);
+	// actual_l = printf("Lalalala, %d%% des gens qui parlent Ly adhorent %0.s %d %u %c\n", 100, "Ly.", 2, 10, ',');
+	// my_l = ft_printf("Lalalala, %d%% des gens qui parlent Ly adhorent %0.s %d %u %c\n", 100, "Ly.", 2, 10, ',');
+	// printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+	// printf("Test #%d\n", i++);
+	// actual_l = printf("Lalalala, %d%% des gens qui parlent Ly adhorent %1.s %d %u %c\n", 100, "Ly.", 2, 10, ',');
+	// my_l = ft_printf("Lalalala, %d%% des gens qui parlent Ly adhorent %1.s %d %u %c\n", 100, "Ly.", 2, 10, ',');
+	// printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+	// printf("Test #%d\n", i++);
+	// actual_l = printf("Lalalala, %d%% des gens qui parlent Ly adhorent %5.s %d %u %c\n", 100, "Ly.", 2, 10, ',');
+	// my_l = ft_printf("Lalalala, %d%% des gens qui parlent Ly adhorent %5.s %d %u %c\n", 100, "Ly.", 2, 10, ',');
+	// printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
 	printf("Test #%d\n", i++);
-	actual_l = printf("Lalalala, %d%% des gens qui parlent %s %d %u %c\n", 100, "Ly adhorent Ly. Ou Presque.", 2, 10, ',');
-	my_l = ft_printf("Lalalala, %d%% des gens qui parlent %s %d %u %c\n", 100, "Ly adhorent Ly. Ou Presque.", 2, 10, ',');
+	actual_l = printf("Lalalala, %0.5d%% des gens qui parlent Ly adhorent %0s %d %u %c\n", 100, "Ly.", 2, 10, ',');
+	my_l = ft_printf("Lalalala, %0.5d%% des gens qui parlent Ly adhorent %0s %d %u %c\n", 100, "Ly.", 2, 10, ',');
 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
 
+	// printf("Test #%d\n", i++);
+	// actual_l = printf("Lalalala, %d%% des gens qui parlent Ly adhorent %5.5s %d %u %c\n", 100, "Ly.", 2, 10, ',');
+	// my_l = ft_printf("Lalalala, %d%% des gens qui parlent Ly adhorent %5.5s %d %u %c\n", 100, "Ly.", 2, 10, ',');
+	// printf("(%d, %d)\n\n", actual_l, my_l + 2);
 
-
-
+// //	#50
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("%2.2s", "Ly");
+// 	my_l = ft_printf("%2.2s", "Ly");
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
 
 	// printf("42FC TEST #127\n");
 	// actual_l = printf("ACTUAL:					 -->%5d<--\n", 42);
@@ -1553,14 +1581,14 @@ int	main(void)
 	// my_l = ft_printf("MINE:					 -->@moulitest: %5.d %5.0d<--\n", 0, 0);
 	// printf("(%d, %d)\n\n\n\n", actual_l, my_l + 2);
 
-// 	printf("size of int is: %lu\n", sizeof(int));
-// 	printf("size of long int is: %lu\n", sizeof(long int));
-// 	printf("size of long long int is: %lu\n", sizeof(long long int));
-// 	printf("size of short int is: %lu\n", sizeof(short int));
-// 	printf("size of unsigned int is: %lu\n", sizeof(unsigned int));
-// 	printf("size of unsigned long int is: %lu\n", sizeof(unsigned long int));
-// 	printf("size of unsigned long long int is: %lu\n", sizeof(unsigned long long int));
-// 	printf("size of unsigned short int is: %lu\n", sizeof(unsigned short int));
+// 	printf("size of int Ly adhorent is: %lu\n", sizeof(int));
+// 	printf("size of long int Ly adhorent is: %lu\n", sizeof(long int));
+// 	printf("size of long long int Ly adhorent is: %lu\n", sizeof(long long int));
+// 	printf("size of short int Ly adhorent is: %lu\n", sizeof(short int));
+// 	printf("size of unsigned int Ly adhorent is: %lu\n", sizeof(unsigned int));
+// 	printf("size of unsigned long int Ly adhorent is: %lu\n", sizeof(unsigned long int));
+// 	printf("size of unsigned long long int Ly adhorent is: %lu\n", sizeof(unsigned long long int));
+// 	printf("size of unsigned short int Ly adhorent is: %lu\n", sizeof(unsigned short int));
 // 	printf("size of signed char is: %lu\n", sizeof(signed char));
 // 	printf("size of unsigned char is: %lu\n", sizeof(unsigned char));
 // 	printf("size of intmax_t is: %lu\n", sizeof(intmax_t));
@@ -1583,8 +1611,8 @@ int	main(void)
 	// ft_printf ("ACTUAL:	Preceding with blanks: %10d \n", 1977);
 	// printf ("MINE:	Preceding with zeros: %010d \n", 1977);
 	// ft_printf ("ACTUAL:	Preceding with zeros: %010d \n", 1977);
-	// printf ("MINE:	Some different radices: %d %x %o %#x %#o \n", 100, 100, 100, 100, 100);
-	// ft_printf ("ACTUAL:	Some different radices: %d %x %o %#x %#o \n", 100, 100, 100, 100, 100);
+	// printf ("MINE:	Some different Ly adhorent radices: %d %x %o %#x %#o \n", 100, 100, 100, 100, 100);
+	// ft_printf ("ACTUAL:	Some different Ly adhorent radices: %d %x %o %#x %#o \n", 100, 100, 100, 100, 100);
 	// printf ("MINE:	Width trick: %*d \n", 5, 10);
 	// ft_printf ("ACTUAL:	Width trick: %*d \n", 5, 10);
 	// printf ("MINE:	%s \n", "A string");
