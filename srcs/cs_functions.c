@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:41:54 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/17 17:56:13 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/18 12:40:06 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,84 +132,33 @@ int		g_cs_lc_s(char **fmt, t_badge *badge, va_list ap)
 	int		length;
 	int		len;
 
+	// if ((str = va_arg(ap, char *)) == 0)
+	// {
+	// 	ft_putstr("(null)");
+	// 	(*fmt)++;
+	// 	return (6);
+	// }
+	str = va_arg(ap, char *);
+	if (!str)
+	{	
+		ft_putstr("(null)");
+		(*fmt)++;
+		return (6);
+	}
 	if (badge->sign || badge->space || badge->zero || badge->pound)
 	{
 		(*fmt)++;
 		return (-1);
 	}
-	if ((str = va_arg(ap, char *)) == 0)
-	{
-		ft_putstr("(null)");
-		(*fmt)++;
-		return (6);
-	}
 	length = ft_strlen(str);
-	len = badge->min_w > length ? badge->min_w : length;
-	if (badge->prec < length && badge->prec >= 0 && badge->min_w > badge->prec)
-	{
-		len = badge->min_w;
-		badge->min_w = badge->min_w - badge->prec;
-		if (badge->jleft)
-		{
-			while (badge->prec > 0)
-			{
-				ft_putchar(*str);
-				str++;
-				badge->prec--;
-			}
-			while (badge->min_w > 0)
-			{
-				ft_putchar(' ');
-				badge->min_w--;
-			}
-		}
-		else
-		{
-			while (badge->min_w > 0)
-			{
-				ft_putchar(' ');
-				badge->min_w--;
-			}
-			while (badge->prec > 0)
-			{
-				ft_putchar(*str);
-				str++;
-				badge->prec--;
-			}
-		}
-	}
-	else if (badge->prec < length && badge->prec >= 0)
-	{
-		len = badge->prec;
-		while (badge->prec > 0)
-		{
-			ft_putchar(*str);
-			str++;
-			badge->prec--;
-		}
-	}
-	else if (badge->min_w > length)
-	{
-		badge->min_w = badge->min_w - length;
-		if (badge->jleft)
-		{
-			ft_putstr(str);
-			while (badge->min_w > 0)
-			{
-				ft_putchar(' ');
-				badge->min_w--;
-			}
-		}
-		else
-		{
-			while (badge->min_w > 0)
-			{
-				ft_putchar(' ');
-				badge->min_w--;
-			}
-			ft_putstr(str);
-		}
-	}
+	// printf("strlen is originally %d\n", length);
+	len = length;
+	if (badge->prec >= 0 && badge->min_w > 0 && badge->prec < len)
+		len = cs_lc_s_wp(str, badge, length);
+	else if (badge->prec >= 0 && badge->prec < length && badge->min_w < 0)
+		len = cs_lc_s_p(str, badge, length);
+	else if ((badge->prec < 0 || badge->prec > length) && badge->min_w > length)
+		len = cs_lc_s_width(str, badge, length);
 	else
 		ft_putstr(str);
 	(*fmt)++;

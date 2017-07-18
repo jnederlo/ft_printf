@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:42:04 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/16 18:29:40 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/18 11:50:18 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -187,5 +187,12 @@ int						cs_lc_u_def(t_type *type, t_badge *badge, char **fmt);
 void					f_sign_space_u(t_badge *badge, t_type *type, int mod);
 int						count_digit_ulli(t_type *type);
 void					putnbr_ulli(unsigned long long nb);
+
+/*
+**Functions in cs_s_print.c
+*/
+int						cs_lc_s_wp(char *str, t_badge *badge, int len);
+int						cs_lc_s_p(char *str, t_badge *badge, int len);
+int						cs_lc_s_width(char *str, t_badge *badge, int len);
 
 #endif

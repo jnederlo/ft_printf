@@ -6,7 +6,7 @@
 #    By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/07/08 14:42:13 by jnederlo          #+#    #+#              #
-#    Updated: 2017/07/17 17:32:04 by jnederlo         ###   ########.fr        #
+#    Updated: 2017/07/18 11:49:50 by jnederlo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ FILES				=	ft_printf.c \
 						cs_u_start.c \
 						cs_u_print.c \
 						cs_u_helpers.c \
+						cs_s_print.c \
 
 #custom messages to display compilation process.
 MESS_BLANK			=	@echo ""
