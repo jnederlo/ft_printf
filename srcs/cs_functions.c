@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:41:54 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/17 16:59:58 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/17 17:02:02 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,6 +138,7 @@ int		g_cs_lc_s(char **fmt, t_badge *badge, va_list ap)
 	// 	(*fmt)++;
 	// 	return (6);
 	// }
+	str = va_arg(ap, char *);//REMOVE AFTER!
 	length = ft_strlen(str);
 	len = badge->min_w > length ? badge->min_w : length;
 	if (badge->sign || badge->space || badge->zero || badge->pound)
