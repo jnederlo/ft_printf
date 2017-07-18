@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:41:54 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/17 17:02:02 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/17 17:14:49 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,13 +132,14 @@ int		g_cs_lc_s(char **fmt, t_badge *badge, va_list ap)
 	int		length;
 	int		len;
 
-	// if ((str = va_arg(ap, char*)) == 0)
-	// {
-	// 	ft_putstr("(null)");
-	// 	(*fmt)++;
-	// 	return (6);
-	// }
-	str = va_arg(ap, char *);//REMOVE AFTER!
+	str = malloc(sizeof(char *) * 1000);
+	ft_bzero(str, 1000);
+	if ((str = va_arg(ap, char*)) == 0)
+	{
+		ft_putstr("(null)");
+		(*fmt)++;
+		return (6);
+	}
 	length = ft_strlen(str);
 	len = badge->min_w > length ? badge->min_w : length;
 	if (badge->sign || badge->space || badge->zero || badge->pound)
