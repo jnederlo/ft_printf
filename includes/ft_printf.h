@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:42:04 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/18 11:50:18 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/18 21:51:54 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -194,5 +194,11 @@ void					putnbr_ulli(unsigned long long nb);
 int						cs_lc_s_wp(char *str, t_badge *badge, int len);
 int						cs_lc_s_p(char *str, t_badge *badge, int len);
 int						cs_lc_s_width(char *str, t_badge *badge, int len);
+
+/*
+**Functions in cs_c_print.c
+*/
+void					cs_c_print_w(t_badge *badge);
+int						cs_c_print(char **fmt, t_badge *badge, va_list ap);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:41:54 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/18 21:18:23 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/18 21:55:25 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,36 +109,9 @@ int		g_cs_uc_c(char **fmt, t_badge *badge, va_list ap)
 
 int		g_cs_lc_c(char **fmt, t_badge *badge, va_list ap)
 {
-	char	c;
-	int		len;
+	int	len;
 
-	c = va_arg(ap, int);
-	len = 1;
-	if (badge->min_w > 1)
-	{
-		len = badge->min_w;
-		if (badge->jleft)
-		{
-			ft_putchar(c);
-			while (badge->min_w > 1)
-			{
-				ft_putchar(' ');
-				badge->min_w--;
-			}
-		}
-		else
-		{
-			while (badge->min_w > 1)
-			{
-				ft_putchar(' ');
-				badge->min_w--;
-			}
-			ft_putchar(c);
-		}
-	}
-	else
-		ft_putchar(c);
-	(*fmt)++;
+	len = cs_c_print(fmt, badge, ap);
 	return (len);
 }
 
@@ -156,13 +129,7 @@ int		g_cs_lc_s(char **fmt, t_badge *badge, va_list ap)
 	int		length;
 	int		len;
 
-	str = va_arg(ap, char *);
-	// if ((str = va_arg(ap, char *)) == NULL)
-	// {
-	// 	printf("str = NULL\n");
-	// 	return (0);
-	// }
-	if (!str)
+	if ((str = va_arg(ap, char *)) == NULL)
 	{	
 		ft_putstr("(null)");
 		(*fmt)++;
