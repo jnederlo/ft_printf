@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:41:54 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/18 12:40:06 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/18 21:18:23 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,13 +109,37 @@ int		g_cs_uc_c(char **fmt, t_badge *badge, va_list ap)
 
 int		g_cs_lc_c(char **fmt, t_badge *badge, va_list ap)
 {
-	char c;
+	char	c;
+	int		len;
 
-	(void)badge;//to silence compile error -Werror
 	c = va_arg(ap, int);
-	write(1, &c, 1);
+	len = 1;
+	if (badge->min_w > 1)
+	{
+		len = badge->min_w;
+		if (badge->jleft)
+		{
+			ft_putchar(c);
+			while (badge->min_w > 1)
+			{
+				ft_putchar(' ');
+				badge->min_w--;
+			}
+		}
+		else
+		{
+			while (badge->min_w > 1)
+			{
+				ft_putchar(' ');
+				badge->min_w--;
+			}
+			ft_putchar(c);
+		}
+	}
+	else
+		ft_putchar(c);
 	(*fmt)++;
-	return (1);
+	return (len);
 }
 
 int		g_cs_uc_s(char **fmt, t_badge *badge, va_list ap)
@@ -132,13 +156,12 @@ int		g_cs_lc_s(char **fmt, t_badge *badge, va_list ap)
 	int		length;
 	int		len;
 
-	// if ((str = va_arg(ap, char *)) == 0)
-	// {
-	// 	ft_putstr("(null)");
-	// 	(*fmt)++;
-	// 	return (6);
-	// }
 	str = va_arg(ap, char *);
+	// if ((str = va_arg(ap, char *)) == NULL)
+	// {
+	// 	printf("str = NULL\n");
+	// 	return (0);
+	// }
 	if (!str)
 	{	
 		ft_putstr("(null)");
@@ -151,7 +174,6 @@ int		g_cs_lc_s(char **fmt, t_badge *badge, va_list ap)
 		return (-1);
 	}
 	length = ft_strlen(str);
-	// printf("strlen is originally %d\n", length);
 	len = length;
 	if (badge->prec >= 0 && badge->min_w > 0 && badge->prec < len)
 		len = cs_lc_s_wp(str, badge, length);
