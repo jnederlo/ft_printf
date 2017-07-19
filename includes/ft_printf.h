@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:42:04 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/18 22:55:46 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/19 12:45:01 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,7 +148,7 @@ void					edge_cases(t_type *type, t_badge *badge);
 **Functions in cs_d_print.c
 */
 int						cs_lc_d_wp(t_type *type, t_badge *badge, char **fmt);
-int						cs_lc_d_prec(t_type *type,t_badge *badge, char **fmt);
+int						cs_lc_d_prec(t_type *type, t_badge *badge, char **fmt);
 int						cs_lc_d_width(t_type *type, t_badge *badge, char **fmt);
 int						cs_lc_d_def(t_type *type, t_badge *badge, char **fmt);
 
@@ -177,7 +177,7 @@ int						choose_len_u(t_type *type, t_badge *badge, va_list ap);
 **Functions in cs_u_print.c
 */
 int						cs_lc_u_wp(t_type *type, t_badge *badge, char **fmt);
-int						cs_lc_u_prec(t_type *type,t_badge *badge, char **fmt);
+int						cs_lc_u_prec(t_type *type, t_badge *badge, char **fmt);
 int						cs_lc_u_width(t_type *type, t_badge *badge, char **fmt);
 int						cs_lc_u_def(t_type *type, t_badge *badge, char **fmt);
 
@@ -202,5 +202,22 @@ void					cs_lc_s_print_w(int	width);
 void					cs_c_print_w(t_badge *badge);
 int						cs_c_print(char **fmt, t_badge *badge, va_list ap);
 int						cs_lc_s_print(char **fmt, t_badge *badge, va_list ap);
+
+/*
+**Funtions in cs_o_start.c
+*/
+int						choose_field_o(int num, t_badge *badge, t_type *d, char **fmt);
+void					arg_type_reset_o(t_type *type);
+void					flag_rules_o(t_badge *badge, t_type *d);
+int						choose_len_o(t_type *type, t_badge *badge, va_list ap);
+
+/*
+**Functions in cs_o_print.c
+*/
+int						cs_lc_o_wp(t_type *type, t_badge *badge, char **fmt);
+int						cs_lc_o_prec(t_type *type, t_badge *badge, char **fmt);
+int						cs_lc_o_width(t_type *type, t_badge *badge, char **fmt);
+int						cs_lc_o_def(t_type *type, t_badge *badge, char **fmt);
+char					*base_less_10(int value, int base);
 
 #endif

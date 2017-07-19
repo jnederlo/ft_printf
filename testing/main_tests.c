@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:39:51 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/18 21:30:53 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/19 12:34:22 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -1464,29 +1464,29 @@ int	main(void)
 
 
 
-//	#1
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:	jleft				 -->%c<--\n", 0);
-	my_l = ft_printf("MINE:	jleft				 -->%c<--\n", 0);
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+// //	#1
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:	jleft				 -->%c<--\n", 0);
+// 	my_l = ft_printf("MINE:	jleft				 -->%c<--\n", 0);
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
 
-//	#1
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:	jleft				 -->%5c<--\n",0 );
-	my_l = ft_printf("MINE:	jleft				 -->%5c<--\n", 0);
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+// //	#1
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:	jleft				 -->%5c<--\n",0 );
+// 	my_l = ft_printf("MINE:	jleft				 -->%5c<--\n", 0);
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
 
-	//	#1
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:	jleft				 -->%-5c<--\n", 0);
-	my_l = ft_printf("MINE:	jleft				 -->%-5c<--\n", 0);
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+// 	//	#1
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:	jleft				 -->%-5c<--\n", 0);
+// 	my_l = ft_printf("MINE:	jleft				 -->%-5c<--\n", 0);
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
 
-		//	#1
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:	jleft				 -->%-.c<--\n", 0);
-	my_l = ft_printf("MINE:	jleft				 -->%-.c<--\n", 0);
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+// 		//	#1
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:	jleft				 -->%-.c<--\n", 0);
+// 	my_l = ft_printf("MINE:	jleft				 -->%-.c<--\n", 0);
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
 
 
 // 	printf("Test #%d\n", i++);
@@ -1502,42 +1502,6 @@ int	main(void)
 
 
 
-	// printf("Test #%d\n", i++);
-	// actual_l = printf("Lalalala, %d%% des gens qui parlent Ly adhorent %.s %d %u %c\n", 100, "Ly.", 2, 10, ',');
-	// my_l = ft_printf("Lalalala, %d%% des gens qui parlent Ly adhorent %.s %d %u %c\n", 100, "Ly.", 2, 10, ',');
-	// printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-
-	// printf("Test #%d\n", i++);
-	// actual_l = printf("Lalalala, %d%% des gens qui parlent Ly adhorent %0.s %d %u %c\n", 100, "Ly.", 2, 10, ',');
-	// my_l = ft_printf("Lalalala, %d%% des gens qui parlent Ly adhorent %0.s %d %u %c\n", 100, "Ly.", 2, 10, ',');
-	// printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-	// printf("Test #%d\n", i++);
-	// actual_l = printf("Lalalala, %d%% des gens qui parlent Ly adhorent %1.s %d %u %c\n", 100, "Ly.", 2, 10, ',');
-	// my_l = ft_printf("Lalalala, %d%% des gens qui parlent Ly adhorent %1.s %d %u %c\n", 100, "Ly.", 2, 10, ',');
-	// printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-	// printf("Test #%d\n", i++);
-	// actual_l = printf("Lalalala, %d%% des gens qui parlent Ly adhorent %5.s %d %u %c\n", 100, "Ly.", 2, 10, ',');
-	// my_l = ft_printf("Lalalala, %d%% des gens qui parlent Ly adhorent %5.s %d %u %c\n", 100, "Ly.", 2, 10, ',');
-	// printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-	printf("Test #%d\n", i++);
-	actual_l = printf("Lalalala, %d%% des gens qui parlent Ly adhorent %.3s Ou Presque. %d, %u, %X%c\n", 100, "Ly.", 2, 10, 10000, ',');
-	my_l = ft_printf("Lalalala, %d%% des gens qui parlent Ly adhorent %.3s Ou Presque. %d, %u, %X%c\n", 100, "Ly.", 2, 10, 10000, ',');
-	printf("(%d, %d)\n\n", actual_l, my_l);
-
-	// printf("Test #%d\n", i++);
-	// actual_l = printf("Lalalala, %d%% des gens qui parlent Ly adhorent %5.5s %d %u %c\n", 100, "Ly.", 2, 10, ',');
-	// my_l = ft_printf("Lalalala, %d%% des gens qui parlent Ly adhorent %5.5s %d %u %c\n", 100, "Ly.", 2, 10, ',');
-	// printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-// //	#50
-// 	printf("Test #%d\n", i++);
-// 	actual_l = printf("%2.2s", "Ly");
-// 	my_l = ft_printf("%2.2s", "Ly");
-// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
 
 	// printf("42FC TEST #127\n");
 	// actual_l = printf("ACTUAL:					 -->%5d<--\n", 42);
@@ -1578,6 +1542,448 @@ int	main(void)
 	// actual_l = printf("ACTUAL:					 -->@moulitest: %5.d %5.0d<--\n", 0, 0);
 	// my_l = ft_printf("MINE:					 -->@moulitest: %5.d %5.0d<--\n", 0, 0);
 	// printf("(%d, %d)\n\n\n\n", actual_l, my_l + 2);
+
+
+
+/******************************************************************
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+||||||||||||||||||||||					|||||||||||||||||||||||||||
+||||||||||||||||||||||		cs_lc_o		|||||||||||||||||||||||||||
+||||||||||||||||||||||					|||||||||||||||||||||||||||
+******************************************************************/
+
+/******************************************************************
+***				NO WIDTH OR PREC SPECIFIERS						***
+*******************************************************************
+******************************************************************/
+
+	printf("||||||||||NO WIDTH OR PREC SPECIFERS||||||||||\n\n");
+
+//	#1
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft				 -->%-o<--\n", 42);
+	my_l = ft_printf("MINE:	jleft				 -->%-o<--\n", 42);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#15
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	zero				 -->%0o<--\n", 42);
+	my_l = ft_printf("MINE:	zero				 -->%0o<--\n", 42);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#15
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	pound				 -->%#o<--\n", 42);
+	my_l = ft_printf("MINE:	pound				 -->%#o<--\n", 42);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#15
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft && pound			 -->%-#o<--\n", 42);
+	my_l = ft_printf("MINE:	jleft && pound			 -->%-#o<--\n", 42);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+	//	#15
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	pound && zero			 -->%#0o<--\n", 42);
+	my_l = ft_printf("MINE:	pound && zero			 -->%#0o<--\n", 42);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#17
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft				 -->%-o<--\n", 0);
+	my_l = ft_printf("MINE:	jleft				 -->%-o<--\n", 0);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#24
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	zero				 -->%0o<--\n", -42);
+	my_l = ft_printf("MINE:	zero				 -->%0o<--\n", -42);
+	printf("(%d, %d)\n\n\n\n", actual_l, my_l + 2);
+
+//	#24
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	pound && zero			 -->%###0o<--\n", 0);
+	my_l = ft_printf("MINE:	pound && zero			 -->%###0o<--\n", 0);
+	printf("(%d, %d)\n\n\n\n", actual_l, my_l + 2);
+
+/******************************************************************
+***						WIDTH SPECIFIERS						***
+*******************************************************************
+******************************************************************/
+
+	printf("||||||||||WIDTH SPECIFERS||||||||||\n\n");
+
+//	#25
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft				 -->%-5o<--\n", 42);
+	my_l = ft_printf("MINE:	jleft				 -->%-5o<--\n", 42);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#39
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	zero				 -->%05o<--\n", 42);
+	my_l = ft_printf("MINE:	zero				 -->%05o<--\n", 42);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#15
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	pound				 -->%#o<--\n", 42);
+	my_l = ft_printf("MINE:	pound				 -->%#o<--\n", 42);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#15
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft && pound			 -->%-#5o<--\n", 42);
+	my_l = ft_printf("MINE:	jleft && pound			 -->%-#5o<--\n", 42);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#15
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	pound && zero			 -->%#05o<--\n", 42);
+	my_l = ft_printf("MINE:	pound && zero			 -->%#05o<--\n", 42);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#41
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft				 -->%-5o<--\n", 0);
+	my_l = ft_printf("MINE:	jleft				 -->%-5o<--\n", 0);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#48
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	zero				 -->%05o<--\n", 0);
+	my_l = ft_printf("MINE:	zero				 -->%05o<--\n", 0);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#15
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	pound				 -->%#o<--\n", 0);
+	my_l = ft_printf("MINE:	pound				 -->%#o<--\n", 0);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#15
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft && pound			 -->%-#o<--\n", 0);
+	my_l = ft_printf("MINE:	jleft && pound			 -->%-#o<--\n", 0);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#15
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	pound && zero			 -->%#0o<--\n", 0);
+	my_l = ft_printf("MINE:	pound && zero			 -->%#0o<--\n", 0);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+
+/******************************************************************
+***					PRECISION SPECIFIERS						***
+*******************************************************************
+******************************************************************/
+
+	printf("||||||||||PRECISION SPECIFIERS||||||||||\n\n");
+
+//	#49
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft				 -->%-.5o<--\n", 42);
+	my_l = ft_printf("MINE:	jleft				 -->%-.5o<--\n", 42);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#63
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	zero				 -->%0.5o<--\n", 42);
+	my_l = ft_printf("MINE:	zero				 -->%0.5o<--\n", 42);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#15
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	pound				 -->%#.5o<--\n", 42);
+	my_l = ft_printf("MINE:	pound				 -->%#.5o<--\n", 42);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#15
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft && pound			 -->%-#.5o<--\n", 42);
+	my_l = ft_printf("MINE:	jleft && pound			 -->%-#.5o<--\n", 42);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#15
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	pound && zero			 -->%#0.5o<--\n", 42);
+	my_l = ft_printf("MINE:	pound && zero			 -->%#0.5o<--\n", 42);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#65
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft				 -->%-.5o<--\n", 0);
+	my_l = ft_printf("MINE:	jleft				 -->%-.5o<--\n", 0);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#72
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	zero				 -->%0.5o<--\n", 0);
+	my_l = ft_printf("MINE:	zero				 -->%0.5o<--\n", 0);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#15
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	pound				 -->%#.5o<--\n", 0);
+	my_l = ft_printf("MINE:	pound				 -->%#.5o<--\n", 0);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#15
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft && pound			 -->%-#.5o<--\n", 0);
+	my_l = ft_printf("MINE:	jleft && pound			 -->%-#.5o<--\n", 0);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+	//	#15
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	pound && zero			 -->%#0.5o<--\n", 0);
+	my_l = ft_printf("MINE:	pound && zero			 -->%#0.5o<--\n", 0);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+
+//	#73
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft				 -->%-.0o<--\n", 42);
+	my_l = ft_printf("MINE:	jleft				 -->%-.0o<--\n", 42);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#15!!!!!!!!!!!!!!!!!!!!!
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	pound				 -->%#.o<--\n", 42);
+	my_l = ft_printf("MINE:	pound				 -->%#.o<--\n", 42);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#15!!!!!!!!!!!!!!!!!!!!!!!!
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft && pound			 -->%-#.o<--\n", 42);
+	my_l = ft_printf("MINE:	jleft && pound			 -->%-#.o<--\n", 42);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#15!!!!!!!!!!!!!!!!!!!!!!!!
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	pound && zero			 -->%#0.o<--\n", 42);
+	my_l = ft_printf("MINE:	pound && zero			 -->%#0.o<--\n", 42);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#87
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	zero				 -->%0.0o<--\n", 42);
+	my_l = ft_printf("MINE:	zero				 -->%0.0o<--\n", 42);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#89
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft				 -->%-.0o<--\n", 0);
+	my_l = ft_printf("MINE:	jleft				 -->%-.0o<--\n", 0);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#96
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	zero				 -->%0.0o<--\n", 0);
+	my_l = ft_printf("MINE:	zero				 -->%0.0o<--\n", 0);
+	printf("(%d, %d)\n\n\n\n", actual_l, my_l + 2);
+
+//	#15
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	pound				 -->%#.o<--\n", 0);
+	my_l = ft_printf("MINE:	pound				 -->%#.o<--\n", 0);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#15
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft && pound			 -->%-#.o<--\n", 0);
+	my_l = ft_printf("MINE:	jleft && pound			 -->%-#.o<--\n", 0);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+	//	#15
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	pound && zero			 -->%#0.o<--\n", 0);
+	my_l = ft_printf("MINE:	pound && zero			 -->%#0.o<--\n", 0);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+/******************************************************************
+***				PRECISION && WIDTH SPECIFIERS					***
+*******************************************************************
+******************************************************************/
+
+	printf("||||||||||PRECISION && WIDTH SPECIFIERS||||||||||\n\n");
+
+//	#97
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft				 -->%-5.10o<--\n", 42);
+	my_l = ft_printf("MINE:	jleft				 -->%-5.10o<--\n", 42);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#111
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	zero				 -->%05.10o<--\n", 42);
+	my_l = ft_printf("MINE:	zero				 -->%05.10o<--\n", 42);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#15
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	pound				 -->%#5.10o<--\n", 42);
+	my_l = ft_printf("MINE:	pound				 -->%#5.10o<--\n", 42);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#15
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft && pound			 -->%-#5.10o<--\n", 42);
+	my_l = ft_printf("MINE:	jleft && pound			 -->%-#5.10o<--\n", 42);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+	//	#15
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	pound && zero			 -->%#05.10o<--\n", 42);
+	my_l = ft_printf("MINE:	pound && zero			 -->%#05.10o<--\n", 42);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#113
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft				 -->%-10.5o<--\n", 42);
+	my_l = ft_printf("MINE:	jleft				 -->%-10.5o<--\n", 42);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#127
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	zero				 -->%010.5o<--\n", 42);
+	my_l = ft_printf("MINE:	zero				 -->%010.5o<--\n", 42);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#15
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	pound				 -->%#10.5o<--\n", 42);
+	my_l = ft_printf("MINE:	pound				 -->%#10.5o<--\n", 42);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#15
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft && pound			 -->%-#10.5o<--\n", 42);
+	my_l = ft_printf("MINE:	jleft && pound			 -->%-#10.5o<--\n", 42);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+	//	#15
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	pound && zero			 -->%#010.5o<--\n", 42);
+	my_l = ft_printf("MINE:	pound && zero			 -->%#010.5o<--\n", 42);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#129
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft				 -->%-5.5o<--\n", 42);
+	my_l = ft_printf("MINE:	jleft				 -->%-5.5o<--\n", 42);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#143
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	zero				 -->%05.5o<--\n", 42);
+	my_l = ft_printf("MINE:	zero				 -->%05.5o<--\n", 42);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#15
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	pound				 -->%#5.5o<--\n", 42);
+	my_l = ft_printf("MINE:	pound				 -->%#5.5o<--\n", 42);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#15
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft && pound			 -->%-#5.5o<--\n", 42);
+	my_l = ft_printf("MINE:	jleft && pound			 -->%-#5.5o<--\n", 42);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+	//	#15
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	pound && zero			 -->%#05.5o<--\n", 42);
+	my_l = ft_printf("MINE:	pound && zero			 -->%#05.5o<--\n", 42);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#145
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft				 -->%-5.10o<--\n", 0);
+	my_l = ft_printf("MINE:	jleft				 -->%-5.10o<--\n", 0);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#152
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	zero				 -->%05.10o<--\n", 0);
+	my_l = ft_printf("MINE:	zero				 -->%05.10o<--\n", 0);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#15
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	pound				 -->%#5.10o<--\n", 0);
+	my_l = ft_printf("MINE:	pound				 -->%#5.10o<--\n", 0);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#15
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft && pound			 -->%-#5.10o<--\n", 0);
+	my_l = ft_printf("MINE:	jleft && pound			 -->%-#5.10o<--\n", 0);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+	//	#15
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	pound && zero			 -->%#05.10o<--\n", 0);
+	my_l = ft_printf("MINE:	pound && zero			 -->%#05.10o<--\n", 0);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#153
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft				 -->%-10.5o<--\n", 0);
+	my_l = ft_printf("MINE:	jleft				 -->%-10.5o<--\n", 0);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#160
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	zero				 -->%010.5o<--\n", 0);
+	my_l = ft_printf("MINE:	zero				 -->%010.5o<--\n", 0);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#161
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft				 -->%-5.5o<--\n", 0);
+	my_l = ft_printf("MINE:	jleft				 -->%-5.5o<--\n", 0);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#168
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	zero				 -->%05.5o<--\n", 0);
+	my_l = ft_printf("MINE:	zero				 -->%05.5o<--\n", 0);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#169
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft				 -->%-5.0o<--\n", 0);
+	my_l = ft_printf("MINE:	jleft				 -->%-5.0o<--\n", 0);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#176
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	zero				 -->%05.0o<--\n", 0);
+	my_l = ft_printf("MINE:	zero				 -->%05.0o<--\n", 0);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#15
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	pound				 -->%#5.0o<--\n", 0);
+	my_l = ft_printf("MINE:	pound				 -->%#5.0o<--\n", 0);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+//	#15
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	jleft && pound			 -->%-#5.0o<--\n", 0);
+	my_l = ft_printf("MINE:	jleft && pound			 -->%-#5.0o<--\n", 0);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+	//	#15
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:	pound && zero			 -->%#05.0o<--\n", 0);
+	my_l = ft_printf("MINE:	pound && zero			 -->%#05.0o<--\n", 0);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
 
 // 	printf("size of int Ly adhorent is: %lu\n", sizeof(int));
 // 	printf("size of long int Ly adhorent is: %lu\n", sizeof(long int));

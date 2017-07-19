@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/16 11:03:29 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/18 22:57:16 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/18 23:01:08 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int		cs_lc_s_print(char **fmt, t_badge *badge, va_list ap)
 	int		len;
 
 	if ((str = va_arg(ap, char *)) == NULL)
-	{	
+	{
 		ft_putstr("(null)");
 		(*fmt)++;
 		return (6);

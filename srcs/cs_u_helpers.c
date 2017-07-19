@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/13 19:08:56 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/16 15:41:15 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/18 23:02:26 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	f_sign_space_u(t_badge *badge, t_type *type, int mod)
 {
-	// if (mod == MOD_ELSE && (badge->sign || badge->space))
-	// 	type->ll_int >= 0 ? badge->min_w-- : 0;
 	(void)type;
 	if (mod == MOD_W || mod == MOD_P)
 	{
