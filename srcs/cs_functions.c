@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:41:54 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/19 12:44:51 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/19 14:40:58 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,10 +72,22 @@ int		g_cs_lc_u(char **fmt, t_badge *badge, va_list ap)
 
 int		g_cs_lc_x(char **fmt, t_badge *badge, va_list ap)
 {
-	(void)fmt;
-	(void)badge;
-	(void)ap;
-	return (0);
+	t_type	*d;
+	int		len;
+	int		num;
+
+	num = 0;
+	d = malloc(sizeof(t_type));
+	arg_type_reset_x(d);
+	num = choose_len_x(d, badge, ap);
+	if (badge->sign || badge->space)
+	{
+		(*fmt)++;
+		return (-1);
+	}
+	flag_rules_x(badge, d);
+	len = choose_field_x(num, badge, d, fmt);
+	return (len);
 }
 
 int		g_cs_uc_x(char **fmt, t_badge *badge, va_list ap)
