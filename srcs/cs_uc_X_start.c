@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cs_x_start.c                                       :+:      :+:    :+:   */
+/*   cs_uc_X_start.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/16 13:19:19 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/19 20:56:05 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/19 21:24:40 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,27 +17,27 @@
 **precision field, or no field, and then sends to appropriate function.
 */
 
-int		choose_field_x(int num, t_badge *badge, t_type *type, char **fmt)
+int		choose_field_X(int num, t_badge *badge, t_type *type, char **fmt)
 {
 	int			len;
 	int			width;
 
 	width = badge->min_w;
-	if ((len = nullinator(badge, fmt, type)) >= 0)
+	if ((len = nullinator_X(badge, fmt, type)) >= 0)
 		return (len);
 	len = 0;
 	if (width < num && badge->prec < num)
-		len += cs_lc_x_def(type, badge, fmt);
+		len += cs_uc_X_def(type, badge, fmt);
 	else if (width > num && badge->prec > num)
-		len += cs_lc_x_wp(type, badge, fmt);
+		len += cs_uc_X_wp(type, badge, fmt);
 	else if (badge->prec > num)
 	{
 //		len += badge->prec == 0 && type->ull_int < 0 ? -1 : 0;
-		len += cs_lc_x_prec(type, badge, fmt);
+		len += cs_uc_X_prec(type, badge, fmt);
 //		num += badge->prec;
 	}
 	else if (width > num && badge->prec < num)
-		len += cs_lc_x_width(type, badge, fmt);
+		len += cs_uc_X_width(type, badge, fmt);
 	return (len);
 }
 
@@ -45,7 +45,7 @@ int		choose_field_x(int num, t_badge *badge, t_type *type, char **fmt)
 **Determines what 'type' va_arg is: long long, long, int, short, etc.
 */
 
-int		choose_len_x(t_type *type, t_badge *badge, va_list ap)
+int		choose_len_X(t_type *type, t_badge *badge, va_list ap)
 {
 	unsigned long long	num;
 
@@ -64,7 +64,7 @@ int		choose_len_x(t_type *type, t_badge *badge, va_list ap)
 	return (num = count_digit_ulli(type));
 }
 
-void	flag_rules_x(t_badge *badge, t_type *type)
+void	flag_rules_X(t_badge *badge, t_type *type)
 {
 	long long	nb;
 
@@ -75,14 +75,13 @@ void	flag_rules_x(t_badge *badge, t_type *type)
 		badge->space = 0;
 }
 
-void	arg_type_reset_x(t_type *type)
+void	arg_type_reset_X(t_type *type)
 {
 	type->ll_int = 0;
 	type->ull_int = 0;
 }
 	
-	
-int		nullinator(t_badge *badge, char **fmt, t_type *type)
+int		nullinator_X(t_badge *badge, char **fmt, t_type *type)
 {
 	int			width;
 

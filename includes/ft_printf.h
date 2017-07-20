@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:42:04 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/19 17:24:36 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/19 21:21:06 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@
 # define MOD_P		2
 # define MOD_WP		3
 # define MOD_ELSE	4
-# define MOD_W_LC_X	5
+# define MOD_W_X	5
+# define MOD_P_X	6
 # define MIN_SINT	-32768
 # define MAX_SINT	32767
 # define MIN_INT	-2147483648
@@ -222,20 +223,39 @@ int						cs_lc_o_def(t_type *type, t_badge *badge, char **fmt);
 char					*base_less_10(int value, int base);
 
 /*
-**Funtions in cs_o_start.c
+**Funtions in cs_x_start.c
 */
 int						choose_field_x(int num, t_badge *badge, t_type *d, char **fmt);
 void					arg_type_reset_x(t_type *type);
 void					flag_rules_x(t_badge *badge, t_type *d);
 int						choose_len_x(t_type *type, t_badge *badge, va_list ap);
+int						nullinator(t_badge *badge, char **fmt, t_type *type);
 
 /*
-**Functions in cs_o_print.c
+**Functions in cs_x_print.c
 */
 int						cs_lc_x_wp(t_type *type, t_badge *badge, char **fmt);
 int						cs_lc_x_prec(t_type *type, t_badge *badge, char **fmt);
 int						cs_lc_x_width(t_type *type, t_badge *badge, char **fmt);
 int						cs_lc_x_def(t_type *type, t_badge *badge, char **fmt);
-char					*base_greater_10(int value, int base);
+char					*base_greater_10_x(int value, int base);
+
+/*
+**Funtions in cs_uc_X_start.c
+*/
+int						choose_field_X(int num, t_badge *badge, t_type *d, char **fmt);
+void					arg_type_reset_X(t_type *type);
+void					flag_rules_X(t_badge *badge, t_type *d);
+int						choose_len_X(t_type *type, t_badge *badge, va_list ap);
+int						nullinator_X(t_badge *badge, char **fmt, t_type *type);
+
+/*
+**Functions in cs_uc_X_print.c
+*/
+int						cs_uc_X_wp(t_type *type, t_badge *badge, char **fmt);
+int						cs_uc_X_prec(t_type *type, t_badge *badge, char **fmt);
+int						cs_uc_X_width(t_type *type, t_badge *badge, char **fmt);
+int						cs_uc_X_def(t_type *type, t_badge *badge, char **fmt);
+char					*base_greater_10_X(int value, int base);
 
 #endif

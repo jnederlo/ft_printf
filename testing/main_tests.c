@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:39:51 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/19 16:20:32 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/19 21:01:40 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -2029,21 +2029,42 @@ int	main(void)
 	actual_l = printf("ACTUAL:	jleft				 -->%2.2x<--\n", 2400);
 	my_l = ft_printf("MINE:	jleft				 -->%2.2x<--\n", 2400);
 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
-	
+
 	//	#25
 	printf("Test #%d\n", i++);
 	printf("width more && precision less #\n");
 	actual_l = printf("ACTUAL:	jleft				 -->%6.2x<--\n", 2400);
 	my_l = ft_printf("MINE:	jleft				 -->%6.2x<--\n", 2400);
 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+	//	#25
+	printf("Test #%d\n", i++);
+	printf("width less && precision more #\n");
+	actual_l = printf("ACTUAL:						 -->%#2.6x<--\n", 2400);
+	my_l = ft_printf("MINE:						 -->%#2.6x<--\n", 2400);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+	//	#25
+	printf("Test #%d\n", i++);
+	printf("width less && precision more #\n");
+	actual_l = printf("ACTUAL:	jleft				 -->%#-08x<--\n", 2400);
+	my_l = ft_printf("MINE:	jleft				 -->%#-08x<--\n", 2400);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+	
 	
 	//	#25
 	printf("Test #%d\n", i++);
 	printf("width less && precision more #\n");
-	actual_l = printf("ACTUAL:	jleft				 -->%2.6x<--\n", 2400);
-	my_l = ft_printf("MINE:	jleft				 -->%2.6x<--\n", 2400);
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+	actual_l = printf("@moulitest: %#5.x %#5.0x\n", 0, 0);
+	my_l = ft_printf("@moulitest: %#5.x %#5.0x\n", 0, 0);
+	printf("(%d, %d)\n\n", actual_l, my_l);
 	
+	//	#25
+	printf("Test #%d\n", i++);
+	printf("width less && precision more #\n");
+	actual_l = printf("@moulitest: %05.x %#5.0x\n", 0, 0);
+	my_l = ft_printf("@moulitest: %05.x %#5.0x\n", 0, 0);
+	printf("(%d, %d)\n\n", actual_l, my_l);
 
 // 	printf("size of int Ly adhorent is: %lu\n", sizeof(int));
 // 	printf("size of long int Ly adhorent is: %lu\n", sizeof(long int));

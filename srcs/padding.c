@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/09 17:48:50 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/19 17:19:39 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/19 20:17:11 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,14 @@ void	padding_wp(t_badge *badge, t_type *type, char c, int mod)
 	int	nb;
 
 	nb = type->ll_int ? type->ll_int : type->ull_int;
-	nbd = set_digit(badge, type, mod);
-	if (badge->prec >= 0)
+	nbd = mod == MOD_W_X ? 0 : set_digit(badge, type, mod);
+	mod == MOD_P_X ? nbd = 0 : 0;
+	if (badge->prec >= 0 && mod != MOD_W_X)
 		width = badge->min_w - badge->prec;
 	else
 		width = badge->min_w;
 	prec = badge->prec;
-	if (mod == MOD_W || mod == MOD_WP)
+	if (mod == MOD_W || mod == MOD_WP || mod == MOD_W_X)
 		specifier = width;
 	else
 		specifier = prec;
