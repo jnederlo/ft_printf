@@ -6,11 +6,12 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:41:54 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/19 21:22:46 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/20 11:32:15 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
 int		g_cs_lc_d(char **fmt, t_badge *badge, va_list ap)
 {
@@ -152,10 +153,16 @@ int		g_cs_lc_c(char **fmt, t_badge *badge, va_list ap)
 
 int		g_cs_uc_s(char **fmt, t_badge *badge, va_list ap)
 {
-	(void)fmt;
-	(void)badge;
-	(void)ap;
-	return (0);
+	int	len;
+
+	if (badge->sign || badge->space || badge->zero || badge->pound)
+	{
+		(*fmt)++;
+		return (-1);
+	}
+	else
+		len = cs_uc_s_print(fmt, badge, ap);
+	return (len);
 }
 
 int		g_cs_lc_s(char **fmt, t_badge *badge, va_list ap)
@@ -178,4 +185,26 @@ int		g_cs_lc_p(char **fmt, t_badge *badge, va_list ap)
 	(void)badge;
 	(void)ap;
 	return (0);
+}
+
+int		g_cs_pc_s(char **fmt, t_badge *badge, va_list ap)
+{
+	int	len;
+
+	(void)ap;
+	len = badge->min_w > 0 ? badge->min_w : 1;
+	if (badge->sign || badge->zero || badge->pound)
+	{
+		(*fmt)++;
+		return (-1);
+	}
+	badge->jleft ? ft_putchar('%') : 0;
+	while (badge->min_w > 1)
+	{
+		ft_putchar(' ');
+		badge->min_w--;
+	}
+	!badge->jleft ? ft_putchar('%') : 0;
+	(*fmt)++;
+	return (len);
 }

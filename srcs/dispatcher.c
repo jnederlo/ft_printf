@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:42:30 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/20 10:28:46 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/20 11:26:40 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,10 @@ const	t_cs_badge	g_cs_list[] = {
 	{'U', CS_UC_U, g_cs_uc_u},
 	{'C', CS_UC_C, g_cs_lc_c},
 	{'c', CS_LC_C, g_cs_lc_c},
-	{'S', CS_UC_S, g_cs_lc_s},//set UC_S to LC_S
+	{'S', CS_UC_S, g_cs_uc_s},
 	{'s', CS_LC_S, g_cs_lc_s},
 	{'p', CS_LC_P, g_cs_lc_p},
+	{'%', CS_PC_S, g_cs_pc_s},
 };
 
 /*
@@ -57,11 +58,11 @@ int		sub_fmt(char **fmt, t_badge *badge, va_list ap)
 	min_width_set(badge, fmt, ap);
 	if (conv_spec(fmt))
 		len = g_cs_list[g_cs_type].choose_cs(fmt, badge, ap);
-	else if (*(*fmt) == '%')
-	{
-		(*fmt)++;
-		len += write(1, "%", 1);
-	}
+	// else if (*(*fmt) == '%')
+	// {
+	// 	(*fmt)++;
+	// 	len += write(1, "%", 1);
+	// }
 	return (len);
 }
 

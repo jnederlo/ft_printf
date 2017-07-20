@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:42:04 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/19 21:21:06 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/20 11:38:44 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@
 # define CS_UC_S	11
 # define CS_LC_S	12
 # define CS_LC_P	13
+# define CS_PC_S	14
 # define MOD_W		1
 # define MOD_P		2
 # define MOD_WP		3
@@ -115,6 +116,7 @@ extern t_choose_cs		g_cs_lc_c;
 extern t_choose_cs		g_cs_uc_s;
 extern t_choose_cs		g_cs_lc_s;
 extern t_choose_cs		g_cs_lc_p;
+extern t_choose_cs		g_cs_pc_s;
 
 /*
 **Funtions in ft_printf.c
@@ -193,17 +195,26 @@ void					putnbr_ulli(unsigned long long nb);
 /*
 **Functions in cs_s_print.c
 */
+int						cs_lc_s_print(char **fmt, t_badge *badge, va_list ap);
 int						cs_lc_s_wp(char *str, t_badge *badge, int len);
 int						cs_lc_s_p(char *str, t_badge *badge, int len);
 int						cs_lc_s_width(char *str, t_badge *badge, int len);
 void					cs_lc_s_print_w(int	width);
 
 /*
+**Functions in cs_uc_S_print.c
+*/
+int						cs_uc_s_print(char **fmt, t_badge *badge, va_list ap);
+int						cs_uc_s_wp(wchar_t *str, t_badge *badge, int len);
+int						cs_uc_s_p(wchar_t *str, t_badge *badge, int len);
+int						cs_uc_s_width(wchar_t *str, t_badge *badge, int len);
+void					cs_uc_s_print_w(int	width);
+
+/*
 **Functions in cs_c_print.c
 */
 void					cs_c_print_w(t_badge *badge);
 int						cs_c_print(char **fmt, t_badge *badge, va_list ap);
-int						cs_lc_s_print(char **fmt, t_badge *badge, va_list ap);
 
 /*
 **Funtions in cs_o_start.c
