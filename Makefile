@@ -6,7 +6,7 @@
 #    By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/07/08 14:42:13 by jnederlo          #+#    #+#              #
-#    Updated: 2017/07/20 11:31:02 by jnederlo         ###   ########.fr        #
+#    Updated: 2017/07/20 18:43:06 by jnederlo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -91,7 +91,7 @@ build:
 	@mkdir build/
 
 build/%.o: srcs/%.c $(DEPS) | build
-	$(CC) $(FLAGS) -c $< -o $@
+	$(CC) $(FLAGS) -c $< -o $@ -g
 
 run: all $(EXEC)
 

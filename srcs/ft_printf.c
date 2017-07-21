@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:41:42 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/16 13:39:00 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/20 19:03:24 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ int		ft_printf(char *fmt, ...)
 	t_badge	badge;
 
 	va_start(ap, fmt);
-	//DO I NEED TO MALLOC FOR MY STRUCTS AT ALL???? WHY NOT???
 	badge_reset(&badge);//do this here or below?
 	len = 0;
 	while (*fmt)

@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:39:51 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/20 11:14:56 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/20 12:22:19 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -2066,11 +2066,14 @@ int	main(void)
 // 	my_l = ft_printf("@moulitest: %05.x %#5.0x\n", 0, 0);
 // 	printf("(%d, %d)\n\n", actual_l, my_l);
 
+wchar_t *variable = L"Wide Character String";
+
 	//	#25
 	printf("Test #%d\n", i++);
-	actual_l = printf("%%\n");
-	my_l = ft_printf("%%\n");
+	actual_l = printf("%ls\n", variable);
+	my_l = ft_printf("%S\n", variable);
 	printf("(%d, %d)\n\n", actual_l, my_l);
+
 
 // 	printf("size of int Ly adhorent is: %lu\n", sizeof(int));
 // 	printf("size of long int Ly adhorent is: %lu\n", sizeof(long int));

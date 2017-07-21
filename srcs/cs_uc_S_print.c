@@ -6,11 +6,12 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/16 11:03:29 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/20 11:43:23 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/20 12:58:01 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
 int		cs_uc_s_print(char **fmt, t_badge *badge, va_list ap)
 {
@@ -24,7 +25,7 @@ int		cs_uc_s_print(char **fmt, t_badge *badge, va_list ap)
 		(*fmt)++;
 		return (6);
 	}
-	length = ft_strlen((char *)str);//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	length = w_strlen(str);//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	len = length;
 	if (badge->prec >= 0 && badge->min_w > 0 && badge->prec < len)
 		len = cs_uc_s_wp(str, badge, length);
@@ -92,7 +93,7 @@ int		cs_uc_s_width(wchar_t *str, t_badge *badge, int len)
 
 	width = badge->min_w;
 	len = badge->min_w;
-	width = badge->prec != 0 ? width - ft_strlen((char *)str) : width;//!!!!!!!!!!!!!!!!
+	width = badge->prec != 0 ? width - w_strlen(str) : width;//!!!!!!!!!!!!!!!!
 	if (badge->jleft)
 	{
 		badge->prec != 0 ? ft_putstr((char *)str) : 0;//!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -113,4 +114,31 @@ void	cs_uc_s_print_w(int width)
 		ft_putchar(' ');
 		width--;
 	}
+}
+
+int		w_strlen(wchar_t *w_str)
+{
+	int	len;
+
+	len = 0;
+	if (!w_str)
+		return (ft_strlen("(null)"));
+	while (*w_str)
+	{
+		len += w_charlen(*w_str);
+		w_str++;
+	}
+	return (len);
+}
+
+int		w_charlen(wchar_t wc)
+{
+	if ((unsigned int)wc < ONE_BYTE)
+		return (1);
+	else if((unsigned int)wc < TWO_BYTE)
+		return (2);
+	else if((unsigned int)wc < THREE_BYTE)
+		return (3);
+	else
+		return (4);
 }

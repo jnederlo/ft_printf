@@ -6,12 +6,11 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:41:54 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/20 11:32:15 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/20 19:36:25 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 int		g_cs_lc_d(char **fmt, t_badge *badge, va_list ap)
 {
@@ -111,13 +110,13 @@ int		g_cs_uc_x(char **fmt, t_badge *badge, va_list ap)
 	return (len);
 }
 
-int		g_cs_uc_d(char **fmt, t_badge *badge, va_list ap)
-{
-	(void)fmt;
-	(void)badge;
-	(void)ap;
-	return (0);
-}
+// int		g_cs_uc_d(char **fmt, t_badge *badge, va_list ap)
+// {
+// 	(void)fmt;
+// 	(void)badge;
+// 	(void)ap;
+// 	return (0);
+// }
 
 int		g_cs_uc_o(char **fmt, t_badge *badge, va_list ap)
 {

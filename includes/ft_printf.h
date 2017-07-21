@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:42:04 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/20 11:38:44 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/20 19:36:24 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,9 @@
 # define MIN_CHAR	-128
 # define MAX_CHAR	127
 # define MAX_UCHAR	255
+# define ONE_BYTE	128
+# define TWO_BYTE	2048
+# define THREE_BYTE	65536
 
 typedef struct			s_type
 {
@@ -108,7 +111,7 @@ extern t_choose_cs		g_cs_lc_o;
 extern t_choose_cs		g_cs_lc_u;
 extern t_choose_cs		g_cs_lc_x;
 extern t_choose_cs		g_cs_uc_x;
-extern t_choose_cs		g_cs_uc_d;
+// extern t_choose_cs		g_cs_uc_d;
 extern t_choose_cs		g_cs_uc_o;
 extern t_choose_cs		g_cs_uc_u;
 extern t_choose_cs		g_cs_uc_c;
@@ -209,6 +212,8 @@ int						cs_uc_s_wp(wchar_t *str, t_badge *badge, int len);
 int						cs_uc_s_p(wchar_t *str, t_badge *badge, int len);
 int						cs_uc_s_width(wchar_t *str, t_badge *badge, int len);
 void					cs_uc_s_print_w(int	width);
+int						w_strlen(wchar_t *w_str);
+int						w_charlen(wchar_t wc);
 
 /*
 **Functions in cs_c_print.c
