@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/20 20:23:41 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/21 12:14:02 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/21 13:01:44 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -165,7 +165,7 @@ int		w_putchar(wchar_t wc)
 {
 	if ((unsigned int)wc < ONE_BYTE)
 		return (w_putchar_one(wc));
-	else// ((unsigned int)wc < TWO_BYTE)
+	else //((unsigned int)wc < TWO_BYTE)
 		return (w_putchar_two(wc));
 	// else if((unsigned int)wc < THREE_BYTE)
 	// 	return (w_putchar_three(wc));
@@ -199,7 +199,23 @@ int		w_putchar_two(wchar_t wc)
 	return (2);
 }
 
-// int		w_putchar_two(wchar_t wc)
+// int		w_putchar_three(wchar_t wc)
 // {
+// 	unsigned int	temp;
+// 	unsigned int	template;
+// 	unsigned int	zero_out;
+
+// 	template = 14712960;// 1110|0000 1000|0000 1000|0000
+// 	zero_out = 57088;// 1101|1111 0000|0000
+// 	temp = (wc ^ template);// copy to temp
+// 	temp = temp << 8;
+// 	temp = temp >> 8;
+// 	wc = wc & zero_out;
+// 	wc = wc >> 2;
+// 	wc = wc ^ temp;
+// 	wc = wc << 5;
+// 	wc = wc >> 5;
+// 	ft_putchar(wc);
 // 	return (3);
+// }
 // }
