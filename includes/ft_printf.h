@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:42:04 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/20 19:36:24 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/21 12:10:07 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -214,6 +214,10 @@ int						cs_uc_s_width(wchar_t *str, t_badge *badge, int len);
 void					cs_uc_s_print_w(int	width);
 int						w_strlen(wchar_t *w_str);
 int						w_charlen(wchar_t wc);
+int						w_putstr(wchar_t *ws);
+int						w_putchar(wchar_t wc);
+int						w_putchar_one(wchar_t wc);
+int						w_putchar_two(wchar_t wc);
 
 /*
 **Functions in cs_c_print.c
