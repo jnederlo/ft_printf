@@ -6,7 +6,7 @@
 #    By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/07/08 14:42:13 by jnederlo          #+#    #+#              #
-#    Updated: 2017/07/21 13:26:14 by jnederlo         ###   ########.fr        #
+#    Updated: 2017/07/21 20:36:01 by jnederlo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ FILES				=	ft_printf.c \
 						cs_u_helpers.c \
 						cs_s_print.c \
 						cs_c_print.c \
+						cs_uc_C_print.c \
 						cs_o_start.c \
 						cs_o_print.c \
 						cs_x_start.c \

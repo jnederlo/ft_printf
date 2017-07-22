@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:39:51 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/21 18:13:12 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/21 21:32:40 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -2065,15 +2065,71 @@ int	main(void)
 // 	actual_l = printf("@moulitest: %05.x %#5.0x\n", 0, 0);
 // 	my_l = ft_printf("@moulitest: %05.x %#5.0x\n", 0, 0);
 // 	printf("(%d, %d)\n\n", actual_l, my_l);
+#include <locale.h>
 
-wchar_t *variable = L"\u0E5B";
+setlocale(LC_ALL, "en_US");
+
+int not_i = 2097151;
+int unihex = 0x21;
+while (not_i--)
+{
+	ft_printf("%C", unihex);
+	printf("		%lc\n", unihex);
+	ft_printf("%x", unihex);
+	printf("		%x\n\n", unihex);
+	unihex++;
+}
+
+// wchar_t *variable1 = L"\u26A1\u26B0\u26B0\u26B0\u26B0";
+// wchar_t *variable2 = L"\u26B0";
+// wchar_t *variable3 = L"\u26A4";
+// wchar_t *variable4 = L"\u26CF";
+// wchar_t *variable5 = L"\u26D4";
+// wchar_t *variable6 = L"\u26D1";
+// wchar_t *variable7 = L"\u231B";
+// wchar_t *variable8 = L"@@ THIS IS A WCHAR_T * BITCH@@";
+// wchar_t *variable9 = L"\u26F9";
+// wchar_t *variable10 = L"\u26FA";
+// wchar_t *variable11 = L"\u26FD";
+// wchar_t *variable12 = L"\u270C";
+// wchar_t *variable13 = L"\u270A";
+// wchar_t *variable14 = L"\u2713";
+// wchar_t *variable15 = L"\u2714";
+
 
 	//	#25
-	printf("Test #%d\n", i++);
-	actual_l = printf("%ls\n", variable);
-	// printf("sizeof wchar_t * = %lu\n", sizeof(wchar_t *));
-	my_l = ft_printf("%S\n", variable);
-	printf("(%d, %d)\n\n", actual_l, my_l);
+	// printf("Test #%d\n", i++);
+	// actual_l = printf("%ls\n", variable1);
+	// my_l = ft_printf("%S\n", variable1);
+	// actual_l = printf("%ls\n", variable2);
+	// my_l = ft_printf("%S\n", variable2);
+	// actual_l = printf("%ls\n", variable3);
+	// my_l = ft_printf("%S\n", variable3);
+	// actual_l = printf("%ls\n", variable4);
+	// my_l = ft_printf("%S\n", variable4);
+	// actual_l = printf("%ls\n", variable5);
+	// my_l = ft_printf("%S\n", variable5);
+	// actual_l = printf("%ls\n", variable6);
+	// my_l = ft_printf("%S\n", variable6);
+	// actual_l = printf("%ls\n", variable7);
+	// my_l = ft_printf("%S\n", variable7);
+	// actual_l = printf("%ls\n", variable8);
+	// my_l = ft_printf("%S\n", variable8);
+	// actual_l = printf("%ls\n", variable9);
+	// my_l = ft_printf("%S\n", variable9);
+	// actual_l = printf("%ls\n", variable10);
+	// my_l = ft_printf("%S\n", variable10);
+	// actual_l = printf("%ls\n", variable11);
+	// my_l = ft_printf("%S\n", variable11);
+	// actual_l = printf("%ls\n", variable12);
+	// my_l = ft_printf("%S\n", variable12);
+	// actual_l = printf("%ls\n", variable13);
+	// my_l = ft_printf("%S\n", variable13);
+	// actual_l = printf("%ls\n", variable14);
+	// my_l = ft_printf("%S\n", variable14);
+	// actual_l = printf("%ls\n", variable15);
+	// my_l = ft_printf("%S\n", variable15);
+	// printf("(%d, %d)\n\n", actual_l, my_l);
 
 
 // 	printf("size of int Ly adhorent is: %lu\n", sizeof(int));

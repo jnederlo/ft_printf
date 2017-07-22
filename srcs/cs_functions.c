@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:41:54 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/20 19:36:25 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/21 20:33:12 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,9 +136,9 @@ int		g_cs_uc_u(char **fmt, t_badge *badge, va_list ap)
 
 int		g_cs_uc_c(char **fmt, t_badge *badge, va_list ap)
 {
-	(void)fmt;
-	(void)badge;
-	(void)ap;
+	int len;
+
+	len = cs_uc_c_print(fmt, badge, ap);
 	return (0);
 }
 

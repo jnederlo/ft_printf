@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:42:04 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/21 17:21:14 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/21 20:34:07 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -226,6 +226,12 @@ int						w_putchar_four(wchar_t wc);
 */
 void					cs_c_print_w(t_badge *badge);
 int						cs_c_print(char **fmt, t_badge *badge, va_list ap);
+
+/*
+**Functions in cs_uc_C_print.c
+*/
+int						cs_uc_c_print(char **fmt, t_badge *badge, va_list ap);
+void					cs_uc_c_print_w(t_badge *badge);
 
 /*
 **Funtions in cs_o_start.c

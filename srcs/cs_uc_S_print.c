@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/20 20:23:41 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/21 17:52:28 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/21 21:28:11 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -181,54 +181,24 @@ int		w_putchar_one(wchar_t wc)
 
 int		w_putchar_two(wchar_t wc)
 {
-	unsigned long	temp1;
-	unsigned long	temp2;
-	
-	temp1 = wc | 0;
-	temp2 = wc | 0;
-	temp2 = ((temp2 << 26) >> 26);
-	temp1 = temp1 >> 6;
-	ft_putchar(temp1 | 192);
-	ft_putchar(temp2 | 128);
+	ft_putchar(((unsigned int)wc >> 6) | 192);
+	ft_putchar(((unsigned int)wc & 63) | 128);
 	return (2);
 }
 
 int		w_putchar_three(wchar_t wc)
 {
-	unsigned long	temp1;
-	unsigned long	temp2;
-	unsigned long	temp3;
-
-	temp1 = wc | 0;
-	temp2 = wc | 0;
-	temp3 = wc | 0;
-	temp3 = ((temp3 << 26) >> 26);
-	temp2 = ((temp2 << 20) >> 26);
-	temp1 = temp1 >> 12;
-	ft_putchar(temp1 | 224);
-	ft_putchar(temp2 | 128);
-	ft_putchar(temp3 | 128);
+	ft_putchar(((unsigned int)wc >> 12) | 224);
+	ft_putchar((((unsigned int)wc >> 6) & 63) | 128);
+	ft_putchar((((unsigned int)wc) & 63) | 128);
 	return (3);
 }
 
 int		w_putchar_four(wchar_t wc)
 {
-	unsigned long	temp1;
-	unsigned long	temp2;
-	unsigned long	temp3;
-	unsigned long	temp4;
-
-	temp1 = wc | 0;
-	temp2 = wc | 0;
-	temp3 = wc | 0;
-	temp4 = wc | 0;
-	temp4 = ((temp4 << 26) >> 26);
-	temp3 = ((temp3 << 20) >> 26);
-	temp2 = ((temp2 << 14) >> 26);
-	temp1 = temp1 >> 18;
-	ft_putchar(temp1 | 240);
-	ft_putchar(temp2 | 128);
-	ft_putchar(temp3 | 128);
-	ft_putchar(temp4 | 128);
+	ft_putchar(((unsigned int)wc >> 18) | 240);
+	ft_putchar((((unsigned int)wc >> 12) & 63) | 128);
+	ft_putchar((((unsigned int)wc >> 6) & 63) | 128);
+	ft_putchar(((unsigned int)wc & 63) | 128);
 	return (4);
 }
