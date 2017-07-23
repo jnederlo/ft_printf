@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:39:51 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/22 18:45:59 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/22 19:09:56 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -2168,8 +2168,8 @@ str = malloc(sizeof(char) * 10);
 str = "Jarvis";
 
 	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:				 -->%p<--\n", str);
-	my_l = ft_printf("MINE:				 -->%p<--\n", str);
+	actual_l = printf("ACTUAL:				 -->%p<--\n", NULL);
+	my_l = ft_printf("MINE:				 -->%p<--\n", NULL);
 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
 
 	printf("Test #%d\n", i++);

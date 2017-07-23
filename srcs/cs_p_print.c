@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/22 16:42:30 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/22 19:00:29 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/22 19:08:36 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	cs_p_print(char **fmt, t_badge *badge, va_list ap)
 		return (badge->min_w + len);
 	}
 	ft_putstr("0x");
-	ft_putstr(base_greater_10_x(addr, 16));
+	!addr ? ft_putchar('0') : ft_putstr(base_greater_10_x(addr, 16));
 	(*fmt)++;
 	return (len);
 }
