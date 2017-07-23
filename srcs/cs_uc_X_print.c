@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/16 11:03:29 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/19 21:26:30 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/22 18:04:09 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,7 +124,7 @@ int		cs_uc_X_def(t_type *type, t_badge *badge, char **fmt)
 	return (len);
 }
 
-char	*base_greater_10_X(int value, int base)
+char	*base_greater_10_X(unsigned long long value, int base)
 {
 	int				i;
 	unsigned int	nb;

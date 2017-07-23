@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/16 11:03:29 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/19 14:15:01 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/22 18:04:20 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,7 +123,7 @@ int		cs_lc_o_def(t_type *type, t_badge *badge, char **fmt)
 	return (len);
 }
 
-char	*base_less_10(int value, int base)
+char	*base_less_10(unsigned long long value, int base)
 {
 	int				i;
 	unsigned int	nb;

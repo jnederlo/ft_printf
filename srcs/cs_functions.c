@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:41:54 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/21 20:33:12 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/22 18:27:59 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -180,11 +180,18 @@ int		g_cs_lc_s(char **fmt, t_badge *badge, va_list ap)
 
 int		g_cs_lc_p(char **fmt, t_badge *badge, va_list ap)
 {
-	(void)fmt;
-	(void)badge;
-	(void)ap;
-	return (0);
+	int		len;
+
+	if (badge->sign || badge->space || badge->zero || badge->pound ||
+		badge->prec >= 0)
+	{
+		(*fmt)++;
+		return (-1);
+	}
+	len = cs_p_print(fmt, badge, ap);
+	return (len);
 }
+
 
 int		g_cs_pc_s(char **fmt, t_badge *badge, va_list ap)
 {

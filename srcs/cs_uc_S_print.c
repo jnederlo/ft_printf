@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/20 20:23:41 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/21 21:28:11 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/22 15:48:09 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,6 @@ int		cs_uc_s_print(char **fmt, t_badge *badge, va_list ap)
 	(*fmt)++;
 	return (len);
 }
-
-/*
-**Handles if both width and precision fields are specified.
-*/
 
 int		cs_uc_s_wp(wchar_t *str, t_badge *badge, int len)
 {
@@ -116,89 +112,4 @@ void	cs_uc_s_print_w(int width)
 		ft_putchar(' ');
 		width--;
 	}
-}
-
-int		w_strlen(wchar_t *w_str)
-{
-	int	len;
-
-	len = 0;
-	if (!w_str)
-		return (ft_strlen("(null)"));
-	while (*w_str)
-	{
-		len += w_charlen(*w_str);
-		w_str++;
-	}
-	return (len);
-}
-
-int		w_charlen(wchar_t wc)
-{
-	if ((unsigned int)wc < ONE_BYTE)
-		return (1);
-	else if((unsigned int)wc < TWO_BYTE)
-		return (2);
-	else if((unsigned int)wc < THREE_BYTE)
-		return (3);
-	else
-		return (4);
-}
-
-
-int		w_putstr(wchar_t *ws)
-{
-	int len;
-
-	if (!ws)
-		return (ft_printf("(null)"));
-	len = 0;
-	while (*ws)
-	{
-		len += w_putchar(*ws);
-		ws++;
-	}
-	return (len);
-}
-
-int		w_putchar(wchar_t wc)
-{
-	if ((unsigned int)wc < ONE_BYTE)
-		return (w_putchar_one(wc));
-	else if ((unsigned int)wc < TWO_BYTE)
-		return (w_putchar_two(wc));
-	else if((unsigned int)wc < THREE_BYTE)
-		return (w_putchar_three(wc));
-	else
-		return (w_putchar_four(wc));
-}
-
-int		w_putchar_one(wchar_t wc)
-{
-	ft_putchar((unsigned int)wc);
-	return (1);
-}
-
-int		w_putchar_two(wchar_t wc)
-{
-	ft_putchar(((unsigned int)wc >> 6) | 192);
-	ft_putchar(((unsigned int)wc & 63) | 128);
-	return (2);
-}
-
-int		w_putchar_three(wchar_t wc)
-{
-	ft_putchar(((unsigned int)wc >> 12) | 224);
-	ft_putchar((((unsigned int)wc >> 6) & 63) | 128);
-	ft_putchar((((unsigned int)wc) & 63) | 128);
-	return (3);
-}
-
-int		w_putchar_four(wchar_t wc)
-{
-	ft_putchar(((unsigned int)wc >> 18) | 240);
-	ft_putchar((((unsigned int)wc >> 12) & 63) | 128);
-	ft_putchar((((unsigned int)wc >> 6) & 63) | 128);
-	ft_putchar(((unsigned int)wc & 63) | 128);
-	return (4);
 }

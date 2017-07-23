@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:42:04 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/21 20:34:07 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/22 19:00:27 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -212,26 +212,26 @@ int						cs_uc_s_wp(wchar_t *str, t_badge *badge, int len);
 int						cs_uc_s_p(wchar_t *str, t_badge *badge, int len);
 int						cs_uc_s_width(wchar_t *str, t_badge *badge, int len);
 void					cs_uc_s_print_w(int	width);
-int						w_strlen(wchar_t *w_str);
-int						w_charlen(wchar_t wc);
-int						w_putstr(wchar_t *ws);
-int						w_putchar(wchar_t wc);
-int						w_putchar_one(wchar_t wc);
-int						w_putchar_two(wchar_t wc);
-int						w_putchar_three(wchar_t wc);
-int						w_putchar_four(wchar_t wc);
 
 /*
 **Functions in cs_c_print.c
 */
-void					cs_c_print_w(t_badge *badge);
 int						cs_c_print(char **fmt, t_badge *badge, va_list ap);
+void					cs_c_print_w(t_badge *badge);
 
 /*
 **Functions in cs_uc_C_print.c
 */
 int						cs_uc_c_print(char **fmt, t_badge *badge, va_list ap);
 void					cs_uc_c_print_w(t_badge *badge);
+
+/*
+**Functions in wide_char.c
+*/
+int						w_strlen(wchar_t *w_str);
+int						w_charlen(wchar_t wc);
+int						w_putstr(wchar_t *ws);
+int						w_putchar(wchar_t wc);
 
 /*
 **Funtions in cs_o_start.c
@@ -248,7 +248,7 @@ int						cs_lc_o_wp(t_type *type, t_badge *badge, char **fmt);
 int						cs_lc_o_prec(t_type *type, t_badge *badge, char **fmt);
 int						cs_lc_o_width(t_type *type, t_badge *badge, char **fmt);
 int						cs_lc_o_def(t_type *type, t_badge *badge, char **fmt);
-char					*base_less_10(int value, int base);
+char					*base_less_10(unsigned long long value, int base);
 
 /*
 **Funtions in cs_x_start.c
@@ -266,7 +266,7 @@ int						cs_lc_x_wp(t_type *type, t_badge *badge, char **fmt);
 int						cs_lc_x_prec(t_type *type, t_badge *badge, char **fmt);
 int						cs_lc_x_width(t_type *type, t_badge *badge, char **fmt);
 int						cs_lc_x_def(t_type *type, t_badge *badge, char **fmt);
-char					*base_greater_10_x(int value, int base);
+char					*base_greater_10_x(unsigned long long value, int base);
 
 /*
 **Funtions in cs_uc_X_start.c
@@ -284,6 +284,13 @@ int						cs_uc_X_wp(t_type *type, t_badge *badge, char **fmt);
 int						cs_uc_X_prec(t_type *type, t_badge *badge, char **fmt);
 int						cs_uc_X_width(t_type *type, t_badge *badge, char **fmt);
 int						cs_uc_X_def(t_type *type, t_badge *badge, char **fmt);
-char					*base_greater_10_X(int value, int base);
+char					*base_greater_10_X(unsigned long long value, int base);
+
+/*
+**Functions in cs_p_print.c
+*/
+int						cs_p_print(char **fmt, t_badge *badge, va_list ap);
+int						count_digit_li_base(long long addr, int base);
+void					cs_p_print_w(t_badge *badge, long long addr);
 
 #endif

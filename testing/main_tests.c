@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:39:51 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/21 21:32:40 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/22 18:45:59 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -2051,7 +2051,6 @@ int	main(void)
 // 	my_l = ft_printf("MINE:	jleft				 -->%#-08x<--\n", 2400);
 // 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
 	
-	
 // 	//	#25
 // 	printf("Test #%d\n", i++);
 // 	printf("width less && precision more #\n");
@@ -2065,108 +2064,139 @@ int	main(void)
 // 	actual_l = printf("@moulitest: %05.x %#5.0x\n", 0, 0);
 // 	my_l = ft_printf("@moulitest: %05.x %#5.0x\n", 0, 0);
 // 	printf("(%d, %d)\n\n", actual_l, my_l);
-#include <locale.h>
-
-setlocale(LC_ALL, "en_US");
-
-int not_i = 2097151;
-int unihex = 0x21;
-while (not_i--)
-{
-	ft_printf("%C", unihex);
-	printf("		%lc\n", unihex);
-	ft_printf("%x", unihex);
-	printf("		%x\n\n", unihex);
-	unihex++;
-}
-
-// wchar_t *variable1 = L"\u26A1\u26B0\u26B0\u26B0\u26B0";
-// wchar_t *variable2 = L"\u26B0";
-// wchar_t *variable3 = L"\u26A4";
-// wchar_t *variable4 = L"\u26CF";
-// wchar_t *variable5 = L"\u26D4";
-// wchar_t *variable6 = L"\u26D1";
-// wchar_t *variable7 = L"\u231B";
-// wchar_t *variable8 = L"@@ THIS IS A WCHAR_T * BITCH@@";
-// wchar_t *variable9 = L"\u26F9";
-// wchar_t *variable10 = L"\u26FA";
-// wchar_t *variable11 = L"\u26FD";
-// wchar_t *variable12 = L"\u270C";
-// wchar_t *variable13 = L"\u270A";
-// wchar_t *variable14 = L"\u2713";
-// wchar_t *variable15 = L"\u2714";
 
 
-	//	#25
-	// printf("Test #%d\n", i++);
-	// actual_l = printf("%ls\n", variable1);
-	// my_l = ft_printf("%S\n", variable1);
-	// actual_l = printf("%ls\n", variable2);
-	// my_l = ft_printf("%S\n", variable2);
-	// actual_l = printf("%ls\n", variable3);
-	// my_l = ft_printf("%S\n", variable3);
-	// actual_l = printf("%ls\n", variable4);
-	// my_l = ft_printf("%S\n", variable4);
-	// actual_l = printf("%ls\n", variable5);
-	// my_l = ft_printf("%S\n", variable5);
-	// actual_l = printf("%ls\n", variable6);
-	// my_l = ft_printf("%S\n", variable6);
-	// actual_l = printf("%ls\n", variable7);
-	// my_l = ft_printf("%S\n", variable7);
-	// actual_l = printf("%ls\n", variable8);
-	// my_l = ft_printf("%S\n", variable8);
-	// actual_l = printf("%ls\n", variable9);
-	// my_l = ft_printf("%S\n", variable9);
-	// actual_l = printf("%ls\n", variable10);
-	// my_l = ft_printf("%S\n", variable10);
-	// actual_l = printf("%ls\n", variable11);
-	// my_l = ft_printf("%S\n", variable11);
-	// actual_l = printf("%ls\n", variable12);
-	// my_l = ft_printf("%S\n", variable12);
-	// actual_l = printf("%ls\n", variable13);
-	// my_l = ft_printf("%S\n", variable13);
-	// actual_l = printf("%ls\n", variable14);
-	// my_l = ft_printf("%S\n", variable14);
-	// actual_l = printf("%ls\n", variable15);
-	// my_l = ft_printf("%S\n", variable15);
-	// printf("(%d, %d)\n\n", actual_l, my_l);
+// #include <locale.h>
+
+// setlocale(LC_ALL, "en_US");
+
+// int not_i = 20;//2097151 is MAX if only printing one char per while loop.
+// int unihex = 0x1F499;//0x21 is the start
+// while (not_i--)
+// {
+// 	ft_printf("%C	", unihex);
+// 	unihex++;
+// 	ft_printf("%C	", unihex);
+// 	unihex++;
+// 	ft_printf("%C	", unihex);
+// 	unihex++;
+// 	ft_printf("%C	", unihex);
+// 	unihex++;
+// 	ft_printf("%C	", unihex);
+// 	unihex++;
+// 	ft_printf("%C	", unihex);
+// 	unihex++;
+// 	ft_printf("%C	", unihex);
+// 	unihex++;
+// 	ft_printf("%C	", unihex);
+// 	unihex++;
+// 	ft_printf("%C	", unihex);
+// 	unihex++;
+// 	ft_printf("%C	", unihex);
+// 	unihex++;
+// 	ft_printf("%C	", unihex);
+// 	unihex++;
+// 	ft_printf("%C	", unihex);
+// 	unihex++;
+// 	ft_printf("%C	", unihex);
+// 	unihex++;
+// 	ft_printf("%C	", unihex);
+// 	unihex++;
+// 	ft_printf("%C	", unihex);
+// 	unihex++;
+// 	ft_printf("%C	", unihex);
+// 	unihex++;
+// 	ft_printf("%C	", unihex);
+// 	unihex++;
+// 	ft_printf("%C	", unihex);
+// 	unihex++;
+// 	ft_printf("%C	", unihex);
+// 	unihex++;
+// 	ft_printf("%C	", unihex);
+// 	unihex++;
+// 	ft_printf("%C	", unihex);
+// 	unihex++;
+// 	ft_printf("%C	", unihex);
+// 	unihex++;
+// 	ft_printf("%C	", unihex);
+// 	unihex++;
+// 	ft_printf("%C	", unihex);
+// 	unihex++;
+// 	ft_printf("%C	", unihex);
+// 	unihex++;
+// 	ft_printf("%C	", unihex);
+// 	unihex++;
+// 	ft_printf("%C	", unihex);
+// 	unihex++;
+// 	ft_printf("%C	", unihex);
+// 	unihex++;
+// 	ft_printf("%C	", unihex);
+// 	unihex++;
+// 	ft_printf("%C	", unihex);
+// 	unihex++;
+// 	ft_printf("%C	", unihex);
+// 	unihex++;
+// 	ft_printf("%C	", unihex);
+// 	unihex++;
+// 	ft_printf("%C	", unihex);
+// 	unihex++;
+// 	ft_printf("%C	", unihex);
+// 	unihex++;
+// 	ft_printf("%C	", unihex);
+// 	unihex++;
+// 	ft_printf("%C	", unihex);
+// 	unihex++;
+// 	ft_printf("%C	", unihex);
+// 	unihex++;
+// 	ft_printf("%C	", unihex);
+// 	unihex++;
+// 	ft_printf("%C	", unihex);
+// 	unihex++;
+// 	ft_printf("%C	", unihex);
+// 	unihex++;
+// 	ft_printf("%C	", unihex);
+// 	unihex++;
+// 	ft_printf("%C	\n", unihex);
+// 	unihex++;
+// }
+
+//POINTER TESTS
+
+char *str;
+
+str = malloc(sizeof(char) * 10);
+str = "Jarvis";
+
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:				 -->%p<--\n", str);
+	my_l = ft_printf("MINE:				 -->%p<--\n", str);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:				 -->%-p<--\n", str);
+	my_l = ft_printf("MINE:				 -->%-p<--\n", str);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:				 -->%5p<--\n", str);
+	my_l = ft_printf("MINE:				 -->%5p<--\n", str);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:				 -->%-5p<--\n", str);
+	my_l = ft_printf("MINE:				 -->%-5p<--\n", str);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:				 -->%15p<--\n", str);
+	my_l = ft_printf("MINE:				 -->%15p<--\n", str);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:				 -->%-15p<--\n", str);
+	my_l = ft_printf("MINE:				 -->%-15p<--\n", str);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
 
 
-// 	printf("size of int Ly adhorent is: %lu\n", sizeof(int));
-// 	printf("size of long int Ly adhorent is: %lu\n", sizeof(long int));
-// 	printf("size of long long int Ly adhorent is: %lu\n", sizeof(long long int));
-// 	printf("size of short int Ly adhorent is: %lu\n", sizeof(short int));
-// 	printf("size of unsigned int Ly adhorent is: %lu\n", sizeof(unsigned int));
-// 	printf("size of unsigned long int Ly adhorent is: %lu\n", sizeof(unsigned long int));
-// 	printf("size of unsigned long long int Ly adhorent is: %lu\n", sizeof(unsigned long long int));
-// 	printf("size of unsigned short int Ly adhorent is: %lu\n", sizeof(unsigned short int));
-// 	printf("size of signed char is: %lu\n", sizeof(signed char));
-// 	printf("size of unsigned char is: %lu\n", sizeof(unsigned char));
-// 	printf("size of intmax_t is: %lu\n", sizeof(intmax_t));
-// 	printf("size of uintmax_t is: %lu\n", sizeof(uintmax_t));
-// 	printf("size of size_t is: %lu\n", sizeof(size_t));
-// //	printf("size of wint_t is: %lu\n", sizeof(wint_t));
-// 	printf("size of char* is: %lu\n", sizeof(char*));
-// 	printf("size of wchar_t* is: %lu\n", sizeof(wchar_t*));
-// 	printf("size of void* is: %lu\n", sizeof(void*));
-
-	// printf("%20ld\n", 5000000000);
-	// printf("%20lD\n", 5000000000);
-
-	// printf("%d\n", len);
-	// printf ("MINE:	Characters: %c %c \n", 'a', 65);
-	// ft_printf ("ACTUAL:	Characters: %c %c \n", 'a', 65);
-	// printf ("MINE:	Decimals: %d %ld\n", 1977, 650000L);
-	// ft_printf ("ACTUAL:	Decimals: %d %ld\n", 1977, 650000L);
-	// printf ("MINE:	Preceding with blanks: %10d \n", 1977);
-	// ft_printf ("ACTUAL:	Preceding with blanks: %10d \n", 1977);
-	// printf ("MINE:	Preceding with zeros: %010d \n", 1977);
-	// ft_printf ("ACTUAL:	Preceding with zeros: %010d \n", 1977);
-	// printf ("MINE:	Some different Ly adhorent radices: %d %x %o %#x %#o \n", 100, 100, 100, 100, 100);
-	// ft_printf ("ACTUAL:	Some different Ly adhorent radices: %d %x %o %#x %#o \n", 100, 100, 100, 100, 100);
-	// printf ("MINE:	Width trick: %*d \n", 5, 10);
-	// ft_printf ("ACTUAL:	Width trick: %*d \n", 5, 10);
-	// printf ("MINE:	%s \n", "A string");
-	// ft_printf ("ACTUAL:	%s \n", "A string");
 	return (0);
 }
