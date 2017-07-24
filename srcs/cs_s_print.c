@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/16 11:03:29 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/18 23:01:08 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/24 15:01:30 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int		cs_lc_s_print(char **fmt, t_badge *badge, va_list ap)
 	len = length;
 	if (badge->prec >= 0 && badge->min_w > 0 && badge->prec < len)
 		len = cs_lc_s_wp(str, badge, length);
-	else if (badge->prec >= 0 && badge->prec < length && badge->min_w < 0)
+	else if (badge->prec >= 0 && badge->prec < length && badge->min_w == 0)
 		len = cs_lc_s_p(str, badge, length);
 	else if ((badge->prec < 0 || badge->prec > length) && badge->min_w > length)
 		len = cs_lc_s_width(str, badge, length);
@@ -50,7 +50,7 @@ int		cs_lc_s_wp(char *str, t_badge *badge, int len)
 	len = width;
 	if (badge->prec == 0)
 		cs_lc_s_print_w(width);
-	else if (badge->prec < len)
+	else //if (badge->prec < len)
 	{
 		width = badge->min_w - badge->prec;
 		if (badge->jleft)

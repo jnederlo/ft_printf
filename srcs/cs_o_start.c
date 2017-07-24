@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/16 13:19:19 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/24 11:12:36 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/24 14:59:45 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int		choose_field_o(int num, t_badge *badge, t_type *type, char **fmt)
 	}
 	if (badge->min_w > num && badge->prec < 0)
 		len += cs_lc_o_width(type, badge, fmt);
-	if (badge->min_w < 0 && badge->prec < 0)
+	if (badge->min_w == 0 && badge->prec < 0)
 		len += cs_lc_o_def(type, badge, fmt);
 	return (len);
 }
