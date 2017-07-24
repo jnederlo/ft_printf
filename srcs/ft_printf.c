@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:41:42 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/23 19:30:34 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/20 19:03:24 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	badge_reset(t_badge *badge)
 	badge->zero = 0;
 	badge->space = 0;
 	badge->sign = 0;
-	badge->min_w = 0;
+	badge->min_w = -1;
 	badge->prec = -1;
 	badge->l = '\0';
 	badge->ll = '\0';

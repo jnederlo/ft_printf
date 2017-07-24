@@ -6,12 +6,11 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/16 13:19:19 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/23 20:59:25 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/18 23:01:37 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 /*
 **Determines if there is a width field, precision field, both width and
@@ -25,8 +24,6 @@ int		choose_field(int num, t_badge *badge, t_type *type, char **fmt)
 	len = 0;
 	if (badge->pound)
 		return (-1);
-	badge->min_w < 0 ? badge->jleft = 1 : 0;
-	badge->min_w = badge->min_w < 0 ? badge->min_w * -1 : badge->min_w;
 	if (badge->min_w > badge->prec && badge->min_w > num && badge->prec >= 0)
 		len += cs_lc_d_wp(type, badge, fmt);
 	else if (badge->prec >= 0)
@@ -37,7 +34,7 @@ int		choose_field(int num, t_badge *badge, t_type *type, char **fmt)
 	}
 	if (badge->min_w > num && badge->prec < 0)
 		len += cs_lc_d_width(type, badge, fmt);
-	else if (badge->prec < 0)
+	if (badge->min_w < 0 && badge->prec < 0)
 		len += cs_lc_d_def(type, badge, fmt);
 	return (len);
 }
@@ -63,13 +60,13 @@ int		choose_len(t_type *type, t_badge *badge, va_list ap)
 	else if (badge->h)
 	{
 		type->ll_int = va_arg(ap, int);//won't let me specify it as "short"
-		edge_cases_d(type, badge);
+		edge_cases(type, badge);
 		return (num = count_digit_lli(type));
 	}
 	else
 	{
 		type->ll_int = va_arg(ap, int);
-		edge_cases_d(type, badge);
+		edge_cases(type, badge);
 	}
 	return (num = count_digit_lli(type));
 }
@@ -91,55 +88,18 @@ void	arg_type_reset(t_type *type)
 	type->ull_int = 0;
 }
 
-void	edge_cases_d(t_type *type, t_badge *badge)
+void	edge_cases(t_type *type, t_badge *badge)
 {
-	long long	nb;
-
-	nb = type->ll_int;
 	if (badge->h)
 	{
-		if (type->ll_int == 32768)
-		{
-			type->ll_int = MIN_SINT;
-			return ;
-		}
-		if (type->ll_int >= 0)
-		{
-			if ((nb / 32769) % 2)
-				type->ll_int = (nb % 32769) + 32769;
-			else
-				type->ll_int = nb % 32769;
-		}
-		else
-		{
-			if ((nb / 32769) % 2)
-				type->ll_int = (nb % 32769) - 32769;
-			else
-				type->ll_int = nb % 32769;
-		}
+		type->ll_int == 32768 ? type->ll_int = MIN_SINT : 0;
+		type->ll_int == -32769 ? type->ll_int = MAX_SINT : 0;
 		return ;
 	}
 	else if (badge->hh)
 	{
-		if (type->ll_int == -128)
-		{
-			type->ll_int = MIN_CHAR;
-			return ;
-		}
-		if (type->ll_int >= 0)
-		{
-			if ((nb / 128) % 2)
-				type->ll_int = (nb % 128) - 128;
-			else
-				type->ll_int = nb % 128;
-		}
-		else
-		{
-			if ((nb / 128) % 2)
-				type->ll_int = (nb % 128) + 128;
-			else
-				type->ll_int = nb % 128;
-		}
+		type->ll_int == 128 ? type->ll_int = MIN_CHAR : 0;
+		type->ll_int == -129 ? type->ll_int = MAX_CHAR : 0;
 		return ;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/16 11:03:29 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/23 19:38:46 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/16 16:02:53 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,7 @@ int		cs_lc_d_wp(t_type *type, t_badge *badge, char **fmt)
 	}
 	else
 	{
-		badge->prec > count_digit_lli(type) && type->ll_int < 0 ? badge->min_w-- : 0;
-		badge->sign || badge->space ? badge->min_w-- : 0;
+		badge->sign || badge->space || type->ll_int < 0 ? badge->min_w-- : 0;
 		padding_wp(badge, type, ' ', MOD_WP);
 		cs_lc_d_prec(type, badge, fmt);
 	}
@@ -53,7 +52,6 @@ int		cs_lc_d_prec(t_type *type, t_badge *badge, char **fmt)
 	len = count_digit_lli(type);
 	len = badge->prec > len ? badge->prec : len;
 	len = badge->prec == 0 && type->ll_int == 0 ? 0 : len;
-	badge->prec > 0 && badge->prec < len && type->ll_int < 0 ? len-- : 0;
 	if (badge->prec == 0 && type->ll_int == 0)
 	{
 		f_sign_space(badge, type, MOD_P);

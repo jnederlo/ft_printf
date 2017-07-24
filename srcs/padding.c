@@ -6,12 +6,11 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/09 17:48:50 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/23 18:41:51 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/19 20:17:11 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 /*
 **Adds the padding if the width and/or precision fields are specified.
@@ -63,10 +62,8 @@ int		set_digit(t_badge *badge, t_type *type, int mod)
 	}
 	if (mod == MOD_WP)
 	{
-		if (badge->prec > 0 && badge->prec > nbd && badge->min_w > badge->prec)
+		if (badge->prec > 0 && (badge->min_w > badge->prec))
 			nbd = 0;
-		else if (badge->prec > 0 && badge->min_w > badge->prec)
-			nbd = nbd - badge->prec;
 	}
 	return (nbd);
 }
