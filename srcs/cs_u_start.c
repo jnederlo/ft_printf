@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/16 13:19:19 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/24 15:05:41 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/24 15:21:42 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,9 @@ int		choose_field_u(int num, t_badge *badge, t_type *type, char **fmt)
 
 	len = 0;
 	if (badge->pound)
-		return (-1);
+		return (0);
+	badge->min_w < 0 ? badge->jleft = 1 : 0;
+	badge->min_w = badge->min_w < 0 ? badge->min_w * -1 : badge->min_w;
 	if (badge->min_w > badge->prec && badge->min_w > num && badge->prec >= 0)
 		len += cs_lc_u_wp(type, badge, fmt);
 	else if (badge->prec >= 0)
@@ -54,7 +56,7 @@ int		choose_len_u(t_type *type, t_badge *badge, va_list ap)
 	}
 	else if (badge->h)
 	{
-		type->ull_int = va_arg(ap, unsigned long);//won't let me specify it as "short"
+		type->ull_int = va_arg(ap, unsigned long);
 		return (num = count_digit_ulli(type));
 	}
 	else

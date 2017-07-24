@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/16 13:19:19 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/24 14:53:02 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/24 15:16:41 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ int		choose_field(int num, t_badge *badge, t_type *type, char **fmt)
 	len = 0;
 	if (badge->pound)
 		return (-1);
+	badge->min_w < 0 ? badge->jleft = 1 : 0;
+	badge->min_w = badge->min_w < 0 ? badge->min_w * -1 : badge->min_w;
 	if (badge->min_w > badge->prec && badge->min_w > num && badge->prec >= 0)
 		len += cs_lc_d_wp(type, badge, fmt);
 	else if (badge->prec >= 0)
@@ -52,14 +54,9 @@ int		choose_len(t_type *type, t_badge *badge, va_list ap)
 		type->ll_int = va_arg(ap, long long);
 		return (num = count_digit_lli(type));
 	}
-	// else if (badge->ll)
-	// {
-	// 	type->ll_int = va_arg(ap, long long);
-	// 	return (num = count_digit_lli(type));
-	// }
 	else if (badge->h)
 	{
-		type->ll_int = va_arg(ap, int);//won't let me specify it as "short"
+		type->ll_int = va_arg(ap, int);
 		edge_cases_d(type, badge);
 		return (num = count_digit_lli(type));
 	}
