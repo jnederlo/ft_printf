@@ -6,29 +6,11 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/13 19:08:56 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/18 23:02:26 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/24 14:18:11 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-void	f_sign_space_u(t_badge *badge, t_type *type, int mod)
-{
-	(void)type;
-	if (mod == MOD_W || mod == MOD_P)
-	{
-		if (badge->sign)
-		{
-			ft_putchar('+');
-			badge->min_w--;
-		}
-		else if (badge->space)
-		{
-			ft_putchar(' ');
-			badge->min_w--;
-		}
-	}
-}
 
 int		count_digit_ulli(t_type *type)
 {
