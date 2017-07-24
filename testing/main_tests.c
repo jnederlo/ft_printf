@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:39:51 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/23 21:55:25 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/23 22:31:51 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -1426,10 +1426,10 @@ int	main(void)
 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
 
 // //	#7
-// 	printf("Test #%d\n", i++);
-// 	actual_l = printf("ACTUAL:					 -->%25.25s<--\n", "wubba lubba dub dub.");
-// 	my_l = ft_printf("MINE:					 -->%25.25s<--\n", "wubba lubba dub dub.");
-// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+ 	printf("Test #%d\n", i++);
+ 	actual_l = printf("ACTUAL:					 -->%25.25s<--\n", "wubba lubba dub dub.");
+ 	my_l = ft_printf("MINE:					 -->%25.25s<--\n", "wubba lubba dub dub.");
+ 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
 
 // //	#8
 // 	printf("Test #%d\n", i++);
