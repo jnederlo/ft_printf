@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/16 11:03:29 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/24 15:01:30 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/24 15:40:59 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int		cs_lc_s_wp(char *str, t_badge *badge, int len)
 	len = width;
 	if (badge->prec == 0)
 		cs_lc_s_print_w(width);
-	else //if (badge->prec < len)
+	else
 	{
 		width = badge->min_w - badge->prec;
 		if (badge->jleft)
