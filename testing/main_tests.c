@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:39:51 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/22 19:09:56 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/23 20:47:22 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -2162,41 +2162,70 @@ int	main(void)
 
 //POINTER TESTS
 
-char *str;
+// char *str;
 
-str = malloc(sizeof(char) * 10);
-str = "Jarvis";
+// str = malloc(sizeof(char) * 10);
+// str = "Jarvis";
 
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:				 -->%p<--\n", NULL);
+// 	my_l = ft_printf("MINE:				 -->%p<--\n", NULL);
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:				 -->%-p<--\n", str);
+// 	my_l = ft_printf("MINE:				 -->%-p<--\n", str);
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:				 -->%5p<--\n", str);
+// 	my_l = ft_printf("MINE:				 -->%5p<--\n", str);
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:				 -->%-5p<--\n", str);
+// 	my_l = ft_printf("MINE:				 -->%-5p<--\n", str);
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:				 -->%15p<--\n", str);
+// 	my_l = ft_printf("MINE:				 -->%15p<--\n", str);
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:				 -->%-15p<--\n", str);
+// 	my_l = ft_printf("MINE:				 -->%-15p<--\n", str);
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+	// printf("Test #%d\n", i++);
+	// actual_l = printf("ACTUAL:				 -->%lX<--\n", 4294967296);
+	// my_l = ft_printf("MINE:				 -->%llX<--\n", 4294967296);
+	// printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+	// printf("Test #%d\n", i++);
+	// actual_l = printf("ACTUAL:				 -->%5lu<--\n", 4294967295);
+	// my_l = ft_printf("MINE:				 -->%5lu<--\n", 4294967295);
+	// printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+	// printf("Test #%d\n", i++);
+	// actual_l = printf("ACTUAL:				 -->%lu<--\n", 4294967295);
+	// my_l = ft_printf("MINE:				 -->%U<--\n", 4294967295);
+	// printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+	// printf("Test #%d\n", i++);
+	// actual_l = printf("ACTUAL:				 -->%u<--\n", -1);
+	// my_l = ft_printf("MINE:				 -->%u<--\n", -1);
+	// printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+	// printf("Test #%d\n", i++);
+	// actual_l = printf("ACTUAL:				 -->%u<--\n", 4294967296);
+	// my_l = ft_printf("MINE:				 -->%u<--\n", 4294967296);
+	// printf("(%d, %d)\n\n", actual_l, my_l + 2);
+	
 	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:				 -->%p<--\n", NULL);
-	my_l = ft_printf("MINE:				 -->%p<--\n", NULL);
+	actual_l = printf("ACTUAL:				 -->%hhD %hhD<--\n", 0, MAX_USINT);
+	my_l = ft_printf("MINE:				 -->%hhD %hhD<--\n", 0, MAX_USINT);
 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:				 -->%-p<--\n", str);
-	my_l = ft_printf("MINE:				 -->%-p<--\n", str);
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:				 -->%5p<--\n", str);
-	my_l = ft_printf("MINE:				 -->%5p<--\n", str);
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:				 -->%-5p<--\n", str);
-	my_l = ft_printf("MINE:				 -->%-5p<--\n", str);
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:				 -->%15p<--\n", str);
-	my_l = ft_printf("MINE:				 -->%15p<--\n", str);
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:				 -->%-15p<--\n", str);
-	my_l = ft_printf("MINE:				 -->%-15p<--\n", str);
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
-
-
+	
 	return (0);
 }

@@ -6,16 +6,11 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/16 13:19:19 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/16 15:32:20 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/23 19:40:25 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-/*
-**Determines if there is a width field, precision field, both width and
-**precision field, or no field, and then sends to appropriate function.
-*/
 
 int		choose_field_u(int num, t_badge *badge, t_type *type, char **fmt)
 {
@@ -24,24 +19,21 @@ int		choose_field_u(int num, t_badge *badge, t_type *type, char **fmt)
 	len = 0;
 	if (badge->pound)
 		return (-1);
+	badge->min_w < 0 ? badge->jleft = 1 : 0;
+	badge->min_w = badge->min_w < 0 ? badge->min_w * -1 : badge->min_w;
 	if (badge->min_w > badge->prec && badge->min_w > num && badge->prec >= 0)
 		len += cs_lc_u_wp(type, badge, fmt);
 	else if (badge->prec >= 0)
 	{
-//		len += badge->prec == 0 && type->ull_int < 0 ? -1 : 0;
 		len += cs_lc_u_prec(type, badge, fmt);
 		num += badge->prec;
 	}
 	if (badge->min_w > num && badge->prec < 0)
 		len += cs_lc_u_width(type, badge, fmt);
-	if (badge->min_w < 0 && badge->prec < 0)
+	else if (badge->prec < 0)
 		len += cs_lc_u_def(type, badge, fmt);
 	return (len);
 }
-
-/*
-**Determines what 'type' va_arg is: long long, long, int, short, etc.
-*/
 
 int		choose_len_u(t_type *type, t_badge *badge, va_list ap)
 {
@@ -49,16 +41,16 @@ int		choose_len_u(t_type *type, t_badge *badge, va_list ap)
 
 	if (badge->l || badge->ll || badge->j || badge->z)
 	{
-		type->ull_int = va_arg(ap, unsigned long);
+		type->ull_int = va_arg(ap, unsigned long long);
 		return (num = count_digit_ulli(type));
 	}
 	else if (badge->h)
 	{
-		type->ull_int = va_arg(ap, unsigned int);//won't let me specify it as "short"
+		type->ull_int = va_arg(ap, unsigned);
 		return (num = count_digit_ulli(type));
 	}
 	else
-		type->ull_int = va_arg(ap, unsigned int);
+		type->ull_int = va_arg(ap, unsigned);
 	return (num = count_digit_ulli(type));
 }
 

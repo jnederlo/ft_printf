@@ -6,15 +6,11 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/16 11:03:29 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/16 15:34:14 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/23 17:18:17 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-/*
-**Handles if both width and precision fields are specified.
-*/
 
 int		cs_lc_u_wp(t_type *type, t_badge *badge, char **fmt)
 {
@@ -28,22 +24,16 @@ int		cs_lc_u_wp(t_type *type, t_badge *badge, char **fmt)
 	}
 	else if (badge->zero)
 	{
-		!badge->sign && !badge->space ? 0 : badge->min_w--;
 		padding_wp(badge, type, ' ', MOD_WP);
 		cs_lc_u_prec(type, badge, fmt);
 	}
 	else
 	{
-		badge->sign || badge->space ? badge->min_w-- : 0;
 		padding_wp(badge, type, ' ', MOD_WP);
 		cs_lc_u_prec(type, badge, fmt);
 	}
 	return (len);
 }
-
-/*
-**Handles if the precision field is specified.
-*/
 
 int		cs_lc_u_prec(t_type *type, t_badge *badge, char **fmt)
 {
@@ -53,30 +43,20 @@ int		cs_lc_u_prec(t_type *type, t_badge *badge, char **fmt)
 	len = badge->prec > len ? badge->prec : len;
 	len = badge->prec == 0 && type->ull_int == 0 ? 0 : len;
 	if (badge->prec == 0 && type->ull_int == 0)
-	{
-		f_sign_space_u(badge, type, MOD_P);
 		len += badge->sign || badge->space ? 1 : 0;
-	}
 	else if (badge->prec > 0 && type->ull_int == 0)
 	{
-		f_sign_space_u(badge, type, MOD_P);
 		padding_wp(badge, type, '0', MOD_P);
 		len += badge->sign || badge->space ? 1 : 0;
 	}
 	else
 	{
-		len += badge->sign || badge->space ? 1 : 0;
-		f_sign_space_u(badge, type, MOD_P);
 		padding_wp(badge, type, '0', MOD_P);
 		putnbr_ulli(type->ull_int);
 	}
 	(*fmt)++;
 	return (len);
 }
-
-/*
-**Handles if only width field is specified.
-*/
 
 int		cs_lc_u_width(t_type *type, t_badge *badge, char **fmt)
 {
@@ -85,42 +65,29 @@ int		cs_lc_u_width(t_type *type, t_badge *badge, char **fmt)
 	len = badge->min_w;
 	if (badge->jleft)
 	{
-		f_sign_space_u(badge, type, MOD_W);
 		putnbr_ulli(type->ull_int);
 		padding_wp(badge, type, ' ', MOD_W);
 	}
 	else if (badge->zero)
 	{
-		f_sign_space_u(badge, type, MOD_W);
 		padding_wp(badge, type, '0', MOD_W);
 		putnbr_ulli(type->ull_int);
 	}
 	else
 	{
-		f_sign_space_u(badge, type, MOD_ELSE);
 		padding_wp(badge, type, ' ', MOD_W);
-		f_sign_space_u(badge, type, MOD_W);
 		putnbr_ulli(type->ull_int);
 	}
 	(*fmt)++;
 	return (len);
 }
 
-/*
-**Handles if neither width and precision fields are specified.
-*/
-
 int		cs_lc_u_def(t_type *type, t_badge *badge, char **fmt)
 {
 	int len;
 
 	len = 0;
-	if (badge->sign || badge->space)
-	{
-		badge->space ? ft_putchar(' ') : 0;
-		badge->sign ? ft_putchar('+') : 0;
-		badge->sign || badge->space ? len++ : 0;
-	}
+	(void)badge;
 	putnbr_ulli(type->ull_int);
 	len += count_digit_ulli(type);
 	(*fmt)++;

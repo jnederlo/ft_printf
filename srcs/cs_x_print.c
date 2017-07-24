@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/16 11:03:29 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/22 18:00:24 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/23 17:20:35 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,11 +126,11 @@ int		cs_lc_x_def(t_type *type, t_badge *badge, char **fmt)
 
 char	*base_greater_10_x(unsigned long long value, int base)
 {
-	int						i;
-	unsigned long long int	nb;
-	unsigned long long int	nbr;
-	char					*str;
-	char					array[] = "abcdef";
+	int					i;
+	unsigned long long	nb;
+	unsigned long long	nbr;
+	char				*str;
+	char				array[] = "abcdef";
 
 	i = 0;
 	nb = value;

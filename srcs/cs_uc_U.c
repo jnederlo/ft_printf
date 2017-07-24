@@ -1,41 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cs_u_helpers.c                                     :+:      :+:    :+:   */
+/*   cs_uc_U.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/13 19:08:56 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/23 16:50:07 by jnederlo         ###   ########.fr       */
+/*   Created: 2017/07/23 17:13:29 by jnederlo          #+#    #+#             */
+/*   Updated: 2017/07/23 17:14:06 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		count_digit_ulli(t_type *type)
+int		choose_len_uc_u(t_type *type, t_badge *badge, va_list ap)
 {
-	int						i;
-	unsigned long long int	nb;
+	unsigned long long	num;
 
-	nb = type->ull_int;
-	i = 0;
-	if (nb == 0)
-		i = 1;
-	while (nb != 0)
+	if (badge->l || badge->ll || badge->j || badge->z)
 	{
-		nb /= 10;
-		i++;
+		type->ull_int = va_arg(ap, unsigned long long);
+		return (num = count_digit_ulli(type));
 	}
-	return (i);
-}
-
-void	putnbr_ulli(unsigned long long nb)
-{
-	if (nb >= 10)
+	else if (badge->h)
 	{
-		putnbr_ulli(nb / 10);
-		putnbr_ulli(nb % 10);
+		type->ull_int = va_arg(ap, unsigned long);
+		return (num = count_digit_ulli(type));
 	}
 	else
-		ft_putchar(nb + 48);
+		type->ull_int = va_arg(ap, unsigned long);
+	return (num = count_digit_ulli(type));
 }
