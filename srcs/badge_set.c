@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/16 10:53:20 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/20 19:11:01 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/24 15:10:25 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,24 @@
 void	min_width_set(t_badge *badge, char **fmt, va_list ap)
 {
 	flag_set(badge, fmt);
-	if (*(*fmt) == '*')
+	if (*(*fmt) != '.' && *(*fmt + 1) == '*')
+		(*fmt)++;
+	if (*(*fmt) == '*' && !ft_isdigit(*(*fmt + 1)))
+	// if (*(*fmt) == '*')
 	{
 		badge->min_w = va_arg(ap, int);
+		badge->min_w < 0 ? badge->jleft = 1 : 0;
+		badge->min_w = badge->min_w < 0 ? badge->min_w * -1 : badge->min_w;
 		(*fmt)++;
 		precision_set(badge, fmt, ap);
 		return ;
 	}
-	else if (ft_isdigit(*(*fmt)))
+	else if (*(*fmt) == '*' && ft_isdigit(*(*fmt + 1)))
+	{	
+		va_arg(ap, int);
+		(*fmt)++;
+	}
+	if (ft_isdigit(*(*fmt)))
 		badge->min_w = ft_atoi(*fmt);
 	while (ft_isdigit(*(*fmt)))
 		(*fmt)++;
