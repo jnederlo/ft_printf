@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:42:04 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/22 19:00:27 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/24 11:24:43 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ extern t_choose_cs		g_cs_lc_o;
 extern t_choose_cs		g_cs_lc_u;
 extern t_choose_cs		g_cs_lc_x;
 extern t_choose_cs		g_cs_uc_x;
-// extern t_choose_cs		g_cs_uc_d;
+extern t_choose_cs		g_cs_uc_d;
 extern t_choose_cs		g_cs_uc_o;
 extern t_choose_cs		g_cs_uc_u;
 extern t_choose_cs		g_cs_uc_c;
@@ -149,7 +149,7 @@ int						choose_field(int num, t_badge *badge, t_type *d, char **fmt);
 void					arg_type_reset(t_type *type);
 void					flag_rules(t_badge *badge, t_type *d);
 int						choose_len(t_type *type, t_badge *badge, va_list ap);
-void					edge_cases(t_type *type, t_badge *badge);
+void					edge_cases_d(t_type *type, t_badge *badge);
 
 /*
 **Functions in cs_d_print.c
@@ -173,6 +173,11 @@ int						count_digit_lli(t_type *type);
 void					putnbr_lli(long long nb);
 
 /*
+**Funtions in cs__uc_D.c
+*/
+int						choose_len_uc_d(t_type *type, t_badge *badge, va_list ap);
+
+/*
 **Funtions in cs_u_start.c
 */
 int						choose_field_u(int num, t_badge *badge, t_type *d, char **fmt);
@@ -194,6 +199,12 @@ int						cs_lc_u_def(t_type *type, t_badge *badge, char **fmt);
 void					f_sign_space_u(t_badge *badge, t_type *type, int mod);
 int						count_digit_ulli(t_type *type);
 void					putnbr_ulli(unsigned long long nb);
+
+/*
+**Funtions in cs__uc_D.c
+*/
+
+int						choose_len_uc_u(t_type *type, t_badge *badge, va_list ap);
 
 /*
 **Functions in cs_s_print.c

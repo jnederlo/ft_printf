@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/16 13:19:19 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/18 23:01:37 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/24 11:20:57 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,13 +60,13 @@ int		choose_len(t_type *type, t_badge *badge, va_list ap)
 	else if (badge->h)
 	{
 		type->ll_int = va_arg(ap, int);//won't let me specify it as "short"
-		edge_cases(type, badge);
+		edge_cases_d(type, badge);
 		return (num = count_digit_lli(type));
 	}
 	else
 	{
 		type->ll_int = va_arg(ap, int);
-		edge_cases(type, badge);
+		edge_cases_d(type, badge);
 	}
 	return (num = count_digit_lli(type));
 }
@@ -88,18 +88,27 @@ void	arg_type_reset(t_type *type)
 	type->ull_int = 0;
 }
 
-void	edge_cases(t_type *type, t_badge *badge)
+void	edge_cases_d(t_type *type, t_badge *badge)
 {
+	long long	n;
+
+	n = type->ll_int;
 	if (badge->h)
 	{
-		type->ll_int == 32768 ? type->ll_int = MIN_SINT : 0;
-		type->ll_int == -32769 ? type->ll_int = MAX_SINT : 0;
-		return ;
+		if (type->ll_int == 32768)
+			type->ll_int = MIN_SINT;
+		else if (type->ll_int >= 0)
+			type->ll_int = n / 32769 % 2 ? n % 32769 + 32769 : n % 32769;
+		else
+			type->ll_int = n / 32769 % 2 ? n % 32769 - 32769 : n % 32769;
 	}
 	else if (badge->hh)
 	{
-		type->ll_int == 128 ? type->ll_int = MIN_CHAR : 0;
-		type->ll_int == -129 ? type->ll_int = MAX_CHAR : 0;
-		return ;
+		if (type->ll_int == -128)
+			type->ll_int = MIN_CHAR;
+		else if (type->ll_int >= 0)
+			type->ll_int = n / 128 % 2 ? n % 128 - 128 : n % 128;
+		else
+			type->ll_int = n / 128 % 2 ? n % 128 + 128 : n % 128;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/22 16:42:30 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/22 19:08:36 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/24 14:13:25 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void	cs_p_print_w(t_badge *badge, long long addr)
 	if (badge->jleft)
 	{
 		ft_putstr("0x");
+		addr == 0 ? ft_putchar('0') : 0;
 		ft_putstr(base_greater_10_x(addr, 16));
 		while (width > 0)
 		{
@@ -55,6 +56,7 @@ void	cs_p_print_w(t_badge *badge, long long addr)
 			width--;
 		}
 		ft_putstr("0x");
+		addr == 0 ? ft_putchar('0') : 0;
 		ft_putstr(base_greater_10_x(addr, 16));
 	}
 }

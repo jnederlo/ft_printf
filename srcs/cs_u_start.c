@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/16 13:19:19 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/16 15:32:20 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/24 11:14:43 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,16 +49,16 @@ int		choose_len_u(t_type *type, t_badge *badge, va_list ap)
 
 	if (badge->l || badge->ll || badge->j || badge->z)
 	{
-		type->ull_int = va_arg(ap, unsigned long);
+		type->ull_int = va_arg(ap, unsigned long long);
 		return (num = count_digit_ulli(type));
 	}
 	else if (badge->h)
 	{
-		type->ull_int = va_arg(ap, unsigned int);//won't let me specify it as "short"
+		type->ull_int = va_arg(ap, unsigned long);//won't let me specify it as "short"
 		return (num = count_digit_ulli(type));
 	}
 	else
-		type->ull_int = va_arg(ap, unsigned int);
+		type->ull_int = va_arg(ap, unsigned long);
 	return (num = count_digit_ulli(type));
 }
 
