@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:42:04 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/24 14:17:05 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/24 17:52:25 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -173,11 +173,6 @@ int						count_digit_lli(t_type *type);
 void					putnbr_lli(long long nb);
 
 /*
-**Funtions in cs__uc_D.c
-*/
-int						choose_len_uc_d(t_type *type, t_badge *badge, va_list ap);
-
-/*
 **Funtions in cs_u_start.c
 */
 int						choose_field_u(int num, t_badge *badge, t_type *d, char **fmt);
@@ -200,10 +195,10 @@ int						count_digit_ulli(t_type *type);
 void					putnbr_ulli(unsigned long long nb);
 
 /*
-**Funtions in cs__uc_D.c
+**Funtions in cs_uc_DOU.c
 */
-
-int						choose_len_uc_u(t_type *type, t_badge *badge, va_list ap);
+int						choose_len_uc_uo(t_type *type, t_badge *badge, va_list ap);
+int						choose_len_uc_d(t_type *type, t_badge *badge, va_list ap);
 
 /*
 **Functions in cs_s_print.c
