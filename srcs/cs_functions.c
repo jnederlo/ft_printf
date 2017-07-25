@@ -6,11 +6,12 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:41:54 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/24 17:50:02 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/24 22:36:26 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
 int		g_cs_lc_d(char **fmt, t_badge *badge, va_list ap)
 {
@@ -218,7 +219,6 @@ int		g_cs_lc_p(char **fmt, t_badge *badge, va_list ap)
 	return (len);
 }
 
-
 int		g_cs_pc_s(char **fmt, t_badge *badge, va_list ap)
 {
 	int	len;
@@ -228,7 +228,7 @@ int		g_cs_pc_s(char **fmt, t_badge *badge, va_list ap)
 	if (badge->sign || badge->zero || badge->pound)
 	{
 		(*fmt)++;
-		return (-1);
+		return (0);
 	}
 	badge->jleft ? ft_putchar('%') : 0;
 	while (badge->min_w > 1)

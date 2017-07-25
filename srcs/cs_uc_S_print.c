@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/20 20:23:41 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/22 15:48:09 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/24 22:19:03 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int		cs_uc_s_print(char **fmt, t_badge *badge, va_list ap)
 	len = length;
 	if (badge->prec >= 0 && badge->min_w > 0 && badge->prec < len)
 		len = cs_uc_s_wp(str, badge, length);
-	else if (badge->prec >= 0 && badge->prec < length && badge->min_w < 0)
+	else if (badge->prec >= 0 && badge->prec < length && badge->min_w < 0)//////////////////////////maybe equal?????????
 		len = cs_uc_s_p(str, badge, length);
 	else if ((badge->prec < 0 || badge->prec > length) && badge->min_w > length)
 		len = cs_uc_s_width(str, badge, length);

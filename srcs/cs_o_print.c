@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/16 11:03:29 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/24 11:11:38 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/24 21:46:16 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,6 +116,7 @@ int		cs_lc_o_def(t_type *type, t_badge *badge, char **fmt)
 		(*fmt)++;
 		return (len);
 	}
+	// printf("type->ull_int = %llu\n", type->ull_int);////////////////////////////////////////////////
 	str = base_less_10(type->ull_int, 8);
 	ft_putstr(str);
 	len += ft_strlen(str);

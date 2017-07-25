@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:39:51 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/22 19:09:56 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/24 23:17:42 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@ int	main(void)
 	int my_l;
 	int	actual_l;
 	int	i = 1;
-	// len = ft_printf("My Printf:	-->%-10i<--\n", -42);
-	// 	     printf("Acutal Printf:	-->%-10i<--\n", -42);
+
 
 // /******************************************************************
 // |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
@@ -1170,8 +1169,8 @@ int	main(void)
 
 // //	#185
 // 	printf("Test #%d\n", i++);
-// 	actual_l = printf("ACTUAL:						 -->%z0<--\n", MAX_USINT);
-// 	my_l = ft_printf("MINE:						 -->%z0<--\n", MAX_USINT);
+// 	actual_l = printf("ACTUAL:						 -->%zO<--\n", MAX_USINT);
+// 	my_l = ft_printf("MINE:						 -->%zO<--\n", MAX_USINT);
 // 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
 
 // //	#186
@@ -1301,7 +1300,7 @@ int	main(void)
 // *******************************************************************
 // ******************************************************************/
 
-	// printf("||||||||||WIDTH SPECIFERS||||||||||\n\n");
+// 	printf("||||||||||WIDTH SPECIFERS||||||||||\n\n");
 
 // //	#204
 // 	printf("Test #%d\n", i++);
@@ -1503,45 +1502,45 @@ int	main(void)
 
 
 
-	// printf("42FC TEST #127\n");
-	// actual_l = printf("ACTUAL:					 -->%5d<--\n", 42);
-	// my_l = ft_printf("MINE:					 -->%5d<--\n", 42);
-	// printf("(%d, %d)\n\n", actual_l, my_l + 2);
+// 	printf("42FC TEST #127\n");
+// 	actual_l = printf("ACTUAL:					 -->%5d<--\n", 42);
+// 	my_l = ft_printf("MINE:					 -->%5d<--\n", 42);
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
 
-	// printf("42FC TEST #139\n");
-	// actual_l = printf("ACTUAL:					 -->%hd<--\n", 32768);
-	// my_l = ft_printf("MINE:					 -->%hd<--\n", 32768);
-	// printf("(%d, %d)\n\n", actual_l, my_l + 2);
+// 	printf("42FC TEST #139\n");
+// 	actual_l = printf("ACTUAL:					 -->%hd<--\n", 32768);
+// 	my_l = ft_printf("MINE:					 -->%hd<--\n", 32768);
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
 
-	// printf("42FC TEST #142\n");
-	// actual_l = printf("ACTUAL:					 -->%hhd<--\n", 128);
-	// my_l = ft_printf("MINE:					 -->%hhd<--\n", 128);
-	// printf("(%d, %d)\n\n", actual_l, my_l + 2);
+// 	printf("42FC TEST #142\n");
+// 	actual_l = printf("ACTUAL:					 -->%hhd<--\n", 128);
+// 	my_l = ft_printf("MINE:					 -->%hhd<--\n", 128);
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
 
-	// printf("42FC TEST #144\n");
-	// actual_l = printf("ACTUAL:					 -->%hhd<--\n", -129);
-	// my_l = ft_printf("MINE:					 -->%hhd<--\n", -129);
-	// printf("(%d, %d)\n\n", actual_l, my_l + 2);
+// 	printf("42FC TEST #144\n");
+// 	actual_l = printf("ACTUAL:					 -->%hhd<--\n", -129);
+// 	my_l = ft_printf("MINE:					 -->%hhd<--\n", -129);
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
 
-	// printf("42FC TEST #150\n");
-	// actual_l = printf("ACTUAL:					 -->%lld<--\n", -9223372036854775808);
-	// my_l = ft_printf("MINE:					 -->%lld<--\n", -9223372036854775808);
-	// printf("(%d, %d)\n\n", actual_l, my_l + 2);
+// 	printf("42FC TEST #150\n");
+// 	actual_l = printf("ACTUAL:					 -->%lld<--\n", -9223372036854775808);
+// 	my_l = ft_printf("MINE:					 -->%lld<--\n", -9223372036854775808);
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
 
-	// printf("42FC TEST #163\n");
-	// actual_l = printf("ACTUAL:					 -->%.2d<--\n", 4242);
-	// my_l = ft_printf("MINE:					 -->%.2d<--\n", 4242);
-	// printf("(%d, %d)\n\n", actual_l, my_l + 2);
+// 	printf("42FC TEST #163\n");
+// 	actual_l = printf("ACTUAL:					 -->%.2d<--\n", 4242);
+// 	my_l = ft_printf("MINE:					 -->%.2d<--\n", 4242);
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
 
-	// printf("42FC TEST #165\n");
-	// actual_l = printf("ACTUAL:					 -->%10.5d<--\n", 4242);
-	// my_l = ft_printf("MINE:					 -->%10.5d<--\n", 4242);
-	// printf("(%d, %d)\n\n", actual_l, my_l + 2);
+// 	printf("42FC TEST #165\n");
+// 	actual_l = printf("ACTUAL:					 -->%10.5d<--\n", 4242);
+// 	my_l = ft_printf("MINE:					 -->%10.5d<--\n", 4242);
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
 
-	// printf("42FC TEST #176\n");
-	// actual_l = printf("ACTUAL:					 -->@moulitest: %5.d %5.0d<--\n", 0, 0);
-	// my_l = ft_printf("MINE:					 -->@moulitest: %5.d %5.0d<--\n", 0, 0);
-	// printf("(%d, %d)\n\n\n\n", actual_l, my_l + 2);
+// 	printf("42FC TEST #176\n");
+// 	actual_l = printf("ACTUAL:					 -->@moulitest: %5.d %5.0d<--\n", 0, 0);
+// 	my_l = ft_printf("MINE:					 -->@moulitest: %5.d %5.0d<--\n", 0, 0);
+// 	printf("(%d, %d)\n\n\n\n", actual_l, my_l + 2);
 
 
 
@@ -1607,10 +1606,10 @@ int	main(void)
 // 	my_l = ft_printf("MINE:	pound && zero			 -->%###0o<--\n", 0);
 // 	printf("(%d, %d)\n\n\n\n", actual_l, my_l + 2);
 
-/******************************************************************
-***						WIDTH SPECIFIERS						***
-*******************************************************************
-******************************************************************/
+// /******************************************************************
+// ***						WIDTH SPECIFIERS						***
+// *******************************************************************
+// ******************************************************************/
 
 // 	printf("||||||||||WIDTH SPECIFERS||||||||||\n\n");
 
@@ -2066,137 +2065,205 @@ int	main(void)
 // 	printf("(%d, %d)\n\n", actual_l, my_l);
 
 
-// #include <locale.h>
+#include <locale.h>
 
-// setlocale(LC_ALL, "en_US");
+setlocale(LC_ALL, "en_US");
 
-// int not_i = 20;//2097151 is MAX if only printing one char per while loop.
-// int unihex = 0x1F499;//0x21 is the start
-// while (not_i--)
-// {
-// 	ft_printf("%C	", unihex);
-// 	unihex++;
-// 	ft_printf("%C	", unihex);
-// 	unihex++;
-// 	ft_printf("%C	", unihex);
-// 	unihex++;
-// 	ft_printf("%C	", unihex);
-// 	unihex++;
-// 	ft_printf("%C	", unihex);
-// 	unihex++;
-// 	ft_printf("%C	", unihex);
-// 	unihex++;
-// 	ft_printf("%C	", unihex);
-// 	unihex++;
-// 	ft_printf("%C	", unihex);
-// 	unihex++;
-// 	ft_printf("%C	", unihex);
-// 	unihex++;
-// 	ft_printf("%C	", unihex);
-// 	unihex++;
-// 	ft_printf("%C	", unihex);
-// 	unihex++;
-// 	ft_printf("%C	", unihex);
-// 	unihex++;
-// 	ft_printf("%C	", unihex);
-// 	unihex++;
-// 	ft_printf("%C	", unihex);
-// 	unihex++;
-// 	ft_printf("%C	", unihex);
-// 	unihex++;
-// 	ft_printf("%C	", unihex);
-// 	unihex++;
-// 	ft_printf("%C	", unihex);
-// 	unihex++;
-// 	ft_printf("%C	", unihex);
-// 	unihex++;
-// 	ft_printf("%C	", unihex);
-// 	unihex++;
-// 	ft_printf("%C	", unihex);
-// 	unihex++;
-// 	ft_printf("%C	", unihex);
-// 	unihex++;
-// 	ft_printf("%C	", unihex);
-// 	unihex++;
-// 	ft_printf("%C	", unihex);
-// 	unihex++;
-// 	ft_printf("%C	", unihex);
-// 	unihex++;
-// 	ft_printf("%C	", unihex);
-// 	unihex++;
-// 	ft_printf("%C	", unihex);
-// 	unihex++;
-// 	ft_printf("%C	", unihex);
-// 	unihex++;
-// 	ft_printf("%C	", unihex);
-// 	unihex++;
-// 	ft_printf("%C	", unihex);
-// 	unihex++;
-// 	ft_printf("%C	", unihex);
-// 	unihex++;
-// 	ft_printf("%C	", unihex);
-// 	unihex++;
-// 	ft_printf("%C	", unihex);
-// 	unihex++;
-// 	ft_printf("%C	", unihex);
-// 	unihex++;
-// 	ft_printf("%C	", unihex);
-// 	unihex++;
-// 	ft_printf("%C	", unihex);
-// 	unihex++;
-// 	ft_printf("%C	", unihex);
-// 	unihex++;
-// 	ft_printf("%C	", unihex);
-// 	unihex++;
-// 	ft_printf("%C	", unihex);
-// 	unihex++;
-// 	ft_printf("%C	", unihex);
-// 	unihex++;
-// 	ft_printf("%C	", unihex);
-// 	unihex++;
-// 	ft_printf("%C	", unihex);
-// 	unihex++;
-// 	ft_printf("%C	\n", unihex);
-// 	unihex++;
-// }
+// // int not_i = 20;//2097151 is MAX if only printing one char per while loop.
+// // int unihex = 0x1F499;//0x21 is the start
+// // while (not_i--)
+// // {
+// // 	ft_printf("%C	", unihex);
+// // 	unihex++;
+// // 	ft_printf("%C	", unihex);
+// // 	unihex++;
+// // 	ft_printf("%C	", unihex);
+// // 	unihex++;
+// // 	ft_printf("%C	", unihex);
+// // 	unihex++;
+// // 	ft_printf("%C	", unihex);
+// // 	unihex++;
+// // 	ft_printf("%C	", unihex);
+// // 	unihex++;
+// // 	ft_printf("%C	", unihex);
+// // 	unihex++;
+// // 	ft_printf("%C	", unihex);
+// // 	unihex++;
+// // 	ft_printf("%C	", unihex);
+// // 	unihex++;
+// // 	ft_printf("%C	", unihex);
+// // 	unihex++;
+// // 	ft_printf("%C	", unihex);
+// // 	unihex++;
+// // 	ft_printf("%C	", unihex);
+// // 	unihex++;
+// // 	ft_printf("%C	", unihex);
+// // 	unihex++;
+// // 	ft_printf("%C	", unihex);
+// // 	unihex++;
+// // 	ft_printf("%C	", unihex);
+// // 	unihex++;
+// // 	ft_printf("%C	", unihex);
+// // 	unihex++;
+// // 	ft_printf("%C	", unihex);
+// // 	unihex++;
+// // 	ft_printf("%C	", unihex);
+// // 	unihex++;
+// // 	ft_printf("%C	", unihex);
+// // 	unihex++;
+// // 	ft_printf("%C	", unihex);
+// // 	unihex++;
+// // 	ft_printf("%C	", unihex);
+// // 	unihex++;
+// // 	ft_printf("%C	", unihex);
+// // 	unihex++;
+// // 	ft_printf("%C	", unihex);
+// // 	unihex++;
+// // 	ft_printf("%C	", unihex);
+// // 	unihex++;
+// // 	ft_printf("%C	", unihex);
+// // 	unihex++;
+// // 	ft_printf("%C	", unihex);
+// // 	unihex++;
+// // 	ft_printf("%C	", unihex);
+// // 	unihex++;
+// // 	ft_printf("%C	", unihex);
+// // 	unihex++;
+// // 	ft_printf("%C	", unihex);
+// // 	unihex++;
+// // 	ft_printf("%C	", unihex);
+// // 	unihex++;
+// // 	ft_printf("%C	", unihex);
+// // 	unihex++;
+// // 	ft_printf("%C	", unihex);
+// // 	unihex++;
+// // 	ft_printf("%C	", unihex);
+// // 	unihex++;
+// // 	ft_printf("%C	", unihex);
+// // 	unihex++;
+// // 	ft_printf("%C	", unihex);
+// // 	unihex++;
+// // 	ft_printf("%C	", unihex);
+// // 	unihex++;
+// // 	ft_printf("%C	", unihex);
+// // 	unihex++;
+// // 	ft_printf("%C	", unihex);
+// // 	unihex++;
+// // 	ft_printf("%C	", unihex);
+// // 	unihex++;
+// // 	ft_printf("%C	", unihex);
+// // 	unihex++;
+// // 	ft_printf("%C	", unihex);
+// // 	unihex++;
+// // 	ft_printf("%C	\n", unihex);
+// // 	unihex++;
+// // }
 
-//POINTER TESTS
+// //POINTER TESTS
 
 char *str;
 
 str = malloc(sizeof(char) * 10);
-str = "Jarvis";
 
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:				 -->%p<--\n", NULL);
-	my_l = ft_printf("MINE:				 -->%p<--\n", NULL);
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:				 -->%p<--\n", NULL);
+// 	my_l = ft_printf("MINE:				 -->%p<--\n", NULL);
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
 
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:				 -->%-p<--\n", str);
-	my_l = ft_printf("MINE:				 -->%-p<--\n", str);
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:				 -->%-p<--\n", str);
+// 	my_l = ft_printf("MINE:				 -->%-p<--\n", str);
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
 
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:				 -->%5p<--\n", str);
-	my_l = ft_printf("MINE:				 -->%5p<--\n", str);
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:				 -->%5p<--\n", str);
+// 	my_l = ft_printf("MINE:				 -->%5p<--\n", str);
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
 
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:				 -->%-5p<--\n", str);
-	my_l = ft_printf("MINE:				 -->%-5p<--\n", str);
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:				 -->%-5p<--\n", str);
+// 	my_l = ft_printf("MINE:				 -->%-5p<--\n", str);
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
 
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:				 -->%15p<--\n", str);
-	my_l = ft_printf("MINE:				 -->%15p<--\n", str);
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:				 -->%15p<--\n", str);
+// 	my_l = ft_printf("MINE:				 -->%15p<--\n", str);
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
 
-	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:				 -->%-15p<--\n", str);
-	my_l = ft_printf("MINE:				 -->%-15p<--\n", str);
-	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:				 -->%-15p<--\n", str);
+// 	my_l = ft_printf("MINE:				 -->%-15p<--\n", str);
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
 
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:				 -->%lX<--\n", 4294967296);
+// 	my_l = ft_printf("MINE:				 -->%llX<--\n", 4294967296);
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:				 -->%5lu<--\n", 4294967295);
+// 	my_l = ft_printf("MINE:				 -->%5lu<--\n", 4294967295);
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:				 -->%lu<--\n", 4294967295);
+// 	my_l = ft_printf("MINE:				 -->%U<--\n", 4294967295);
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:				 -->%u<--\n", -1);
+// 	my_l = ft_printf("MINE:				 -->%u<--\n", -1);
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:				 -->%u<--\n", 4294967296);
+// 	my_l = ft_printf("MINE:				 -->%u<--\n", 4294967296);
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+	
+// 	printf("Test #%d\n", i++);
+// 	actual_l = printf("ACTUAL:				 -->%hhD %hhD<--\n", 0, MAX_USINT);
+// 	my_l = ft_printf("MINE:				 -->%hhD %hhD<--\n", 0, MAX_USINT);
+// 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
+	
+
+	// printf("Test #%d\n", i++);
+	// actual_l = printf("ACTUAL:				 -->%hhu, %hhu<--\n", 0, MAX_UCHAR + 2);
+	// my_l = ft_printf("MINE:				 -->%hhu, %hhu<--\n", 0, MAX_UCHAR + 2);
+	// printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+	// printf("Test #%d\n", i++);
+	// actual_l = printf("ACTUAL:				 -->%s%d%p%%%S%lD%i%o%O%u%llU%x%X%c%C<--\n", "bonjour", 42, &str, L"暖炉", 9223372036854775807, 42, 42, 42, 100000, 7777777, 42, 42, 'c', L'플');
+	// my_l = ft_printf("MINE:				 -->%s%d%p%%%S%D%i%o%O%u%U%x%X%c%C<--\n", "bonjour", 42, &str, L"暖炉", 9223372036854775807, 42, 42, 42, 100000, 7777777, 42, 42, 'c', L'플');
+	// printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+	// printf("Test #%d\n", i++);
+	// actual_l = printf("ACTUAL:				 -->%s%d%p%%%S%D%i%o<--\n", "bonjour", 42, &str, L"暖炉", 9223372036854775807, 42, 42);
+	// my_l = ft_printf("MINE:				 -->%s%d%p%%%S%D%i%o<--\n", "bonjour", 42, &str, L"暖炉", 9223372036854775807, 42, 42);
+	// printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+	// printf("Test #%d\n", i++);
+	// actual_l = printf("ACTUAL:				 -->%d%p%%%S%D%i%o<--\n", 42, &str, L"暖炉", 9223372036854775807, 42, 42);
+	my_l = ft_printf("MINE:				 -->%d%p%S%D%i%o<--\n", 42, &str, L"€€", 9223372036854775807, 42, 42);
+
+	// my_l = ft_printf("MINE:				 -->%d%p%%%S%D%i%o<--\n", 42, &str, L"€€", 9223372036854775807, 42, 42);
+	// printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+	// my_l = ft_printf("MINE:				 -->%d%p%%%D%i%o<--\n", 42, &str, 9223372036854775807, 42, 42);
+	// printf("Test #%d\n", i++);
+	// actual_l = printf("ACTUAL:				 -->%o%O%u%U%x%X<--\n", 42, 42, 100000, 7777777, 42, 42);
+	// my_l = ft_printf("MINE:				 -->%o%O%u%U%x%X<--\n", 42, 42, 100000, 7777777, 42, 42);
+	// printf("(%d, %d)\n\n", actual_l, my_l + 2);
+	// my_l = ft_printf("MINE:				 -->%p%%%S%D%i%o<--\n", &str, L"€€", 9223372036854775807, 42, 42);
+	// printf("Test #%d\n", i++);
+	// actual_l = ft_printf("ACTUAL:				 -->%s	%d	%p	%%	%S	%D	%i	%o	%O	%u	%U	%x	%X	%c	%C<--\n", "bonjour", 42, &str, L"暖炉", 9223372036854775807, 42, 42, 42, 100000, 18446744073709551615, 42, 42, 'c', L'플');
+	// my_l = printf("MINE:				 -->%s	%d	%p	%%	%S	%D	%i	%o	%O	%u	%U	%x	%X	%c	%C<--\n", "bonjour", 42, &str, L"暖炉", 9223372036854775807, 42, 42, 42, 100000, 18446744073709551615, 42, 42, 'c', L'플');
+	// printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+
+	// printf("Test #%d\n", i++);
+	// actual_l = printf("ACTUAL:				 -->%o<--\n", 42);
+	// my_l = ft_printf("MINE:				 -->%o<--\n", 42);
+	// printf("(%d, %d)\n\n", actual_l, my_l + 2);
 
 	return (0);
 }
