@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:42:04 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/25 11:51:32 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/25 12:05:47 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -250,7 +250,7 @@ int						choose_len_o(t_type *type, t_badge *badge, va_list ap);
 **Functions in cs_o_print.c
 */
 int						cs_lc_o_wp(t_type *type, t_badge *badge, char **fmt, int num);
-int						cs_lc_o_prec(t_type *type, t_badge *badge, char **fmt);
+int						cs_lc_o_prec(t_type *type, t_badge *badge, char **fmt, int num);
 int						cs_lc_o_width(t_type *type, t_badge *badge, char **fmt);
 int						cs_lc_o_def(t_type *type, t_badge *badge, char **fmt);
 char					*base_less_10(unsigned long long value, int base);

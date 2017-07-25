@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/16 11:03:29 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/25 11:51:15 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/25 12:07:02 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,14 @@ int		cs_lc_o_wp(t_type *type, t_badge *badge, char **fmt, int num)
 	if (badge->jleft)
 	{
 		badge->jleft && badge->pound ? badge->min_w-- : 0;
-		cs_lc_o_prec(type, badge, fmt);
+		cs_lc_o_prec(type, badge, fmt, num);
 		padding_wp(badge, type, ' ', MOD_WP);
 	}
 	else
 	{
 		badge->pound && badge->prec == 0 ? badge->min_w-- : 0;
 		padding_wp(badge, type, ' ', MOD_WP);
-		cs_lc_o_prec(type, badge, fmt);
+		cs_lc_o_prec(type, badge, fmt, num);
 	}
 	return (len);
 }
@@ -43,7 +43,7 @@ int		cs_lc_o_wp(t_type *type, t_badge *badge, char **fmt, int num)
 **Handles if the precision field is specified.
 */
 
-int		cs_lc_o_prec(t_type *type, t_badge *badge, char **fmt)
+int		cs_lc_o_prec(t_type *type, t_badge *badge, char **fmt, int num)
 {
 	int		len;
 	char	*str;
@@ -51,6 +51,8 @@ int		cs_lc_o_prec(t_type *type, t_badge *badge, char **fmt)
 	len = count_digit_ulli(type);
 	len = badge->prec > len ? badge->prec : len;
 	len = badge->prec == 0 && type->ull_int == 0 ? 0 : len;
+	str = base_less_10(type->ull_int, 8);
+	badge->prec -= (int)ft_strlen(str) > num ? (int)ft_strlen(str) - num : 0;
 	if (badge->pound)
 	{
 		ft_putchar('0');

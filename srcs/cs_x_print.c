@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/16 11:03:29 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/25 11:08:34 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/25 12:15:45 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int		cs_lc_x_wp(t_type *type, t_badge *badge, char **fmt)
 {
 	int			len;
 
-	len = badge->min_w;
+	len = badge->min_w > badge->prec ? badge->min_w : badge->prec;
 	if (badge->jleft)
 	{
 		badge->jleft && badge->pound ? badge->min_w-- : 0;

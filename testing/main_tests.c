@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:39:51 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/25 11:38:16 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/25 12:11:13 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -2290,8 +2290,8 @@ str = malloc(sizeof(char) * 10);
 	// printf("(%d, %d)\n\n", actual_l, my_l + 2);
 
 	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:				 -->%15.4o<--\n", 424242);
-	my_l = ft_printf("MINE:				 -->%15.4o<--\n", 424242);
+	actual_l = printf("ACTUAL:				 -->%4.15x<--\n", 42);
+	my_l = ft_printf("MINE:				 -->%4.15x<--\n", 42);
 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
 
 
