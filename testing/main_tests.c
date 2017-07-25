@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:39:51 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/24 23:17:42 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/25 11:38:16 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -2243,7 +2243,7 @@ str = malloc(sizeof(char) * 10);
 
 	// printf("Test #%d\n", i++);
 	// actual_l = printf("ACTUAL:				 -->%d%p%%%S%D%i%o<--\n", 42, &str, L"暖炉", 9223372036854775807, 42, 42);
-	my_l = ft_printf("MINE:				 -->%d%p%S%D%i%o<--\n", 42, &str, L"€€", 9223372036854775807, 42, 42);
+	// my_l = ft_printf("MINE:				 -->%d%p%S%D%i%o<--\n", 42, &str, L"€€", 9223372036854775807, 42, 42);
 
 	// my_l = ft_printf("MINE:				 -->%d%p%%%S%D%i%o<--\n", 42, &str, L"€€", 9223372036854775807, 42, 42);
 	// printf("(%d, %d)\n\n", actual_l, my_l + 2);
@@ -2258,6 +2258,41 @@ str = malloc(sizeof(char) * 10);
 	// actual_l = ft_printf("ACTUAL:				 -->%s	%d	%p	%%	%S	%D	%i	%o	%O	%u	%U	%x	%X	%c	%C<--\n", "bonjour", 42, &str, L"暖炉", 9223372036854775807, 42, 42, 42, 100000, 18446744073709551615, 42, 42, 'c', L'플');
 	// my_l = printf("MINE:				 -->%s	%d	%p	%%	%S	%D	%i	%o	%O	%u	%U	%x	%X	%c	%C<--\n", "bonjour", 42, &str, L"暖炉", 9223372036854775807, 42, 42, 42, 100000, 18446744073709551615, 42, 42, 'c', L'플');
 	// printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+	// printf("Test #%d\n", i++);
+	// actual_l = printf("ACTUAL:				 -->%.p, %.0p<--\n", 0, 0);
+	// my_l = ft_printf("MINE:				 -->%.p, %.0p<--\n", 0, 0);
+	// printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+	// printf("Test #%d\n", i++);
+	// actual_l = printf("ACTUAL:				 -->{%05.c}<--\n", 0);
+	// my_l = ft_printf("MINE:				 -->{%05.c}<--\n", 0);
+	// printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+	// printf("Test #%d\n", i++);
+	// actual_l = printf("ACTUAL:				 -->{%05.s}<--\n", 0);
+	// my_l = ft_printf("MINE:				 -->{%05.s}<--\n", 0);
+	// printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+	// printf("Test #%d\n", i++);
+	// actual_l = printf("ACTUAL:				 -->{%05p}<--\n", 0);
+	// my_l = ft_printf("MINE:				 -->{%05p}<--\n", 0);
+	// printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+	// printf("Test #%d\n", i++);
+	// actual_l = printf("ACTUAL:				 -->{%05.Z}<--\n", 0);
+	// my_l = ft_printf("MINE:				 -->{%05.Z}<--\n", 0);
+	// printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+	// printf("Test #%d\n", i++);
+	// actual_l = printf("ACTUAL:				 -->{%#.5x}<--\n", 1);
+	// my_l = ft_printf("MINE:				 -->{%#.5x}<--\n", 1);
+	// printf("(%d, %d)\n\n", actual_l, my_l + 2);
+
+	printf("Test #%d\n", i++);
+	actual_l = printf("ACTUAL:				 -->%15.4o<--\n", 424242);
+	my_l = ft_printf("MINE:				 -->%15.4o<--\n", 424242);
+	printf("(%d, %d)\n\n", actual_l, my_l + 2);
 
 
 	// printf("Test #%d\n", i++);

@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/16 13:19:19 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/24 23:46:07 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/25 11:51:13 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int		choose_field_o(int num, t_badge *badge, t_type *type, char **fmt)
 	badge->min_w < 0 ? badge->jleft = 1 : 0;
 	badge->min_w = badge->min_w < 0 ? badge->min_w * -1 : badge->min_w;
 	if (badge->min_w > badge->prec && badge->min_w > num && badge->prec >= 0)
-		len += cs_lc_o_wp(type, badge, fmt);
+		len += cs_lc_o_wp(type, badge, fmt, num);
 	else if (badge->prec >= 0)
 	{
 //		len += badge->prec == 0 && type->ull_int < 0 ? -1 : 0;

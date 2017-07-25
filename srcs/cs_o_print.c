@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/16 11:03:29 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/24 21:46:16 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/25 11:51:15 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,14 @@
 **Handles if both width and precision fields are specified.
 */
 
-int		cs_lc_o_wp(t_type *type, t_badge *badge, char **fmt)
+int		cs_lc_o_wp(t_type *type, t_badge *badge, char **fmt, int num)
 {
-	int			len;
+	int		len;
+	char	*str;
 
 	len = badge->min_w;
+	str = base_less_10(type->ull_int, 8);
+	badge->min_w -= (int)ft_strlen(str) > num ? (int)ft_strlen(str) - num : 0;
 	if (badge->jleft)
 	{
 		badge->jleft && badge->pound ? badge->min_w-- : 0;
@@ -57,6 +60,7 @@ int		cs_lc_o_prec(t_type *type, t_badge *badge, char **fmt)
 	padding_wp(badge, type, '0', MOD_P);
 	str = base_less_10(type->ull_int, 8);
 	ft_putstr(str);
+	(int)ft_strlen(str) > len ? len = ft_strlen(str) : 0;
 	(*fmt)++;
 	return (len);
 }
@@ -116,7 +120,6 @@ int		cs_lc_o_def(t_type *type, t_badge *badge, char **fmt)
 		(*fmt)++;
 		return (len);
 	}
-	// printf("type->ull_int = %llu\n", type->ull_int);////////////////////////////////////////////////
 	str = base_less_10(type->ull_int, 8);
 	ft_putstr(str);
 	len += ft_strlen(str);

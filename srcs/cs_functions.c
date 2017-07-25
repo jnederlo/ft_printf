@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:41:54 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/24 22:36:26 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/25 10:53:12 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -172,8 +172,10 @@ int		g_cs_uc_c(char **fmt, t_badge *badge, va_list ap)
 int		g_cs_lc_c(char **fmt, t_badge *badge, va_list ap)
 {
 	int	len;
-
-	len = cs_c_print(fmt, badge, ap);
+	if (badge->l)
+		len = cs_uc_c_print(fmt, badge, ap);
+	else
+		len = cs_c_print(fmt, badge, ap);
 	return (len);
 }
 
@@ -200,6 +202,8 @@ int		g_cs_lc_s(char **fmt, t_badge *badge, va_list ap)
 		(*fmt)++;
 		return (0);//changed
 	}
+	else if (badge->l)
+		len = cs_uc_s_print(fmt, badge, ap);
 	else
 		len = cs_lc_s_print(fmt, badge, ap);
 	return (len);
@@ -225,7 +229,7 @@ int		g_cs_pc_s(char **fmt, t_badge *badge, va_list ap)
 
 	(void)ap;
 	len = badge->min_w > 0 ? badge->min_w : 1;
-	if (badge->sign || badge->zero || badge->pound)
+	if (badge->sign || badge->pound)
 	{
 		(*fmt)++;
 		return (0);
@@ -233,7 +237,7 @@ int		g_cs_pc_s(char **fmt, t_badge *badge, va_list ap)
 	badge->jleft ? ft_putchar('%') : 0;
 	while (badge->min_w > 1)
 	{
-		ft_putchar(' ');
+		badge->zero ? ft_putchar('0') : ft_putchar(' ');
 		badge->min_w--;
 	}
 	!badge->jleft ? ft_putchar('%') : 0;

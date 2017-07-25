@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/16 11:03:29 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/22 18:00:24 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/25 11:08:34 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ int		cs_lc_x_prec(t_type *type, t_badge *badge, char **fmt)
 	badge->prec = badge->prec - ft_strlen(str);
 	if (badge->pound)
 	{
+		len += 2;
 		ft_putstr("0x");
 		badge->prec == 0 ? len++ : 0;
 	}
