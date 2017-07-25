@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cs_uc_D.c                                          :+:      :+:    :+:   */
+/*   cs_uc_DUO.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/24 10:51:14 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/24 11:21:18 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/24 17:50:28 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,23 @@ int		choose_len_uc_d(t_type *type, t_badge *badge, va_list ap)
 		// edge_cases(type, badge);
 	}
 	return (num = count_digit_lli(type));
+}
+
+int		choose_len_uc_uo(t_type *type, t_badge *badge, va_list ap)
+{
+	unsigned long long	num;
+
+	if (badge->l || badge->ll || badge->j || badge->z)
+	{
+		type->ull_int = va_arg(ap, unsigned long long);
+		return (num = count_digit_ulli(type));
+	}
+	else if (badge->h)
+	{
+		type->ull_int = va_arg(ap, unsigned long);//won't let me specify it as "short"
+		return (num = count_digit_ulli(type));
+	}
+	else
+		type->ull_int = va_arg(ap, unsigned long);
+	return (num = count_digit_ulli(type));
 }

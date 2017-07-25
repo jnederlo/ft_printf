@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/16 13:19:19 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/24 15:31:38 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/24 17:38:43 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ int		choose_field_u(int num, t_badge *badge, t_type *type, char **fmt)
 		len += cs_lc_u_wp(type, badge, fmt);
 	else if (badge->prec >= 0)
 	{
-//		len += badge->prec == 0 && type->ull_int < 0 ? -1 : 0;
 		len += cs_lc_u_prec(type, badge, fmt);
 		num += badge->prec;
 	}
@@ -60,7 +59,10 @@ int		choose_len_u(t_type *type, t_badge *badge, va_list ap)
 		return (num = count_digit_ulli(type));
 	}
 	else
+	{
 		type->ull_int = va_arg(ap, unsigned);
+		badge->hh ? type->ull_int = type->ull_int % 256 : 0;
+	}
 	return (num = count_digit_ulli(type));
 }
 
