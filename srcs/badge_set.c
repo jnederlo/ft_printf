@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/16 10:53:20 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/24 16:59:00 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/24 17:10:08 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ void	min_width_set(t_badge *badge, char **fmt, va_list ap)
 	if (*(*fmt) == '*')
 	{
 		badge->min_w = va_arg(ap, int);
+		badge->min_w < 0 ? badge->jleft = 1 : 0;
+		badge->min_w < 0 ? badge->min_w = badge->min_w * -1 : 0;
 		(*fmt)++;
 		precision_set(badge, fmt, ap);
 		return ;
