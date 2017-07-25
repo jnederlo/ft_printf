@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:41:54 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/25 10:53:12 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/25 13:34:07 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -172,7 +172,7 @@ int		g_cs_uc_c(char **fmt, t_badge *badge, va_list ap)
 int		g_cs_lc_c(char **fmt, t_badge *badge, va_list ap)
 {
 	int	len;
-	if (badge->l)
+	if (badge->l || badge->ll)//only l?
 		len = cs_uc_c_print(fmt, badge, ap);
 	else
 		len = cs_c_print(fmt, badge, ap);
