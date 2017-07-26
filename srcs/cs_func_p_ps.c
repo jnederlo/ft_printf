@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/25 13:44:47 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/25 18:36:16 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/26 11:48:59 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int		g_cs_lc_p(char **fmt, t_badge *badge, va_list ap)
 		return (0);
 	}
 	len = cs_p_print(fmt, badge, ap, d);
+	free(d);
 	return (len);
 }
 

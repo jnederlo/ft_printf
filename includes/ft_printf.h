@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:42:04 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/25 19:03:48 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/26 12:03:49 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 # include <stdarg.h>
 # include <unistd.h>
-# include "../libft/includes/libft.h"
+# include <wchar.h>
+# include <stdlib.h>
 # define CS_LC_D	0
 # define CS_LC_I	1
 # define CS_LC_O	2
@@ -187,6 +188,7 @@ int						cs_p_print(char **fmt, t_badge *badge,
 void					cs_p_print_w(t_badge *badge, t_type *type);
 int						count_digit_ulli_base(t_type *type, int base);
 void					arg_type_reset_p(t_type *type);
+void					cs_p_print_spaces(int width);
 
 /*
 **Functions in cs_s_print.c
@@ -313,5 +315,15 @@ int						w_strlen(wchar_t *w_str);
 int						w_charlen(wchar_t wc);
 int						w_putstr(wchar_t *ws);
 int						w_putchar(wchar_t wc);
+
+/*
+**Functions in library_funcs.c
+*/
+
+int						ft_atoi(const char *str);
+int						ft_isdigit(int c);
+void					ft_putchar(char c);
+size_t					ft_strlen(const char *s);
+void					ft_putstr(char const *s);
 
 #endif

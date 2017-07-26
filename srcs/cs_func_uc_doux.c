@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:41:54 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/25 14:34:17 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/26 11:48:56 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int		g_cs_uc_d(char **fmt, t_badge *badge, va_list ap)
 	num = choose_len_uc_d(d, badge, ap);
 	flag_rules(badge, d);
 	len = choose_field(num, badge, d, fmt);
+	free(d);
 	return (len);
 }
 
@@ -44,6 +45,7 @@ int		g_cs_uc_o(char **fmt, t_badge *badge, va_list ap)
 	}
 	flag_rules_o(badge, d);
 	len = choose_field_o(num, badge, d, fmt);
+	free(d);
 	return (len);
 }
 
@@ -59,6 +61,7 @@ int		g_cs_uc_u(char **fmt, t_badge *badge, va_list ap)
 	num = choose_len_uc_uo(d, badge, ap);
 	flag_rules_u(badge, d);
 	len = choose_field_u(num, badge, d, fmt);
+	free(d);
 	return (len);
 }
 
@@ -79,5 +82,6 @@ int		g_cs_uc_x(char **fmt, t_badge *badge, va_list ap)
 	}
 	flag_rules_x(badge, d);
 	len = choose_field_uc_x(num, badge, d, fmt);
+	free(d);
 	return (len);
 }

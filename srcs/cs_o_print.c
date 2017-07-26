@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/16 11:03:29 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/25 18:04:37 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/26 11:51:49 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,7 @@ int		cs_lc_o_def(t_type *type, t_badge *badge, char **fmt)
 	ft_putstr(str);
 	len += ft_strlen(str);
 	(*fmt)++;
+	free(str);
 	return (len);
 }
 

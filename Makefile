@@ -6,15 +6,13 @@
 #    By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/07/08 14:42:13 by jnederlo          #+#    #+#              #
-#    Updated: 2017/07/25 14:22:59 by jnederlo         ###   ########.fr        #
+#    Updated: 2017/07/26 11:30:47 by jnederlo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME				=	libftprintf.a
 CC					=	gcc -Wall -Werror -Wextra
 FLAGS				=	-I includes
-LIBRARY				=	libft
-LIBS				=	libft/libft.a
 FILES				=	ft_printf.c \
 						badge_set.c \
 						dispatcher.c \
@@ -42,12 +40,13 @@ FILES				=	ft_printf.c \
 						cs_uc_x_print.c \
 						cs_uc_duo.c \
 						cs_p_print.c \
+						library_funcs.c \
 
 #custom messages to display compilation process.
 MESS_BLANK			=	@echo ""
-MESS_COMPILE		=	@echo "\033[34m\033[1m**Compiling Local Library**\033[0m"
-MESS_ARCHIVE		=	@echo "\033[35m\033[1m**Archiving Library**\033[0m"
-MESS_SUCCESS		=	@echo "\033[92m\033[1m******SUCCESSFULLY COMPILED******\033[0m"
+MESS_ARCHIVE		=	@echo "\033[35m\033[1m**Archiving libftprintf.a**\033[0m"
+MESS_SUCCESS		=	@echo "\033[92m\033[1m******IT'S PICKLE RICK!!******\033[0m"
+MESS_FINISH			=	@echo "\033[92m\033[1m******WUBBA LUBBA DUB DUB******\033[0m"
 MESS_BUILD			=	@echo "\033[33m\033[1m**Building Object Files**\033[0m"
 MESS_CUSTOM			=	@echo "\033[97m\033[1m**Compiling Custom Main: 'test'**\033[0m"
 MESS_START			=	@echo "\033[1m\033[100m\033[97m******Starting Compilation******\033[0m"
@@ -71,22 +70,13 @@ clean:
 
 fclean: clean
 	@rm -f $(NAME)
-	@rm -f $(LIBS)
 	@rm -f $(EXEC)
 
 re: fclean all
 
 $(NAME): $(OBJECTS)
-	$(MESS_BLANK)
-	$(MESS_COMPILE)
-	make -C $(LIBRARY)
-	$(MESS_BLANK)
 	$(MESS_ARCHIVE)
-	ar rcs temp.a $(OBJECTS)
-	ar -x temp.a
-	ar -x libft/libft.a
-	ar rcs $(NAME) *.o
-	rm temp.a *.o
+	ar rcs $@ $(OBJECTS)
 	$(MESS_BLANK)
 	$(MESS_SUCCESS)
 
@@ -106,4 +96,4 @@ $(EXEC): testing/main_tests.c $(NAME)
 	$(MESS_CUSTOM)
 	gcc -o $(EXEC) $(TESTING) $(NAME) $(LIBS) -fsanitize=address
 	$(MESS_BLANK)
-	$(MESS_SUCCESS)
+	$(MESS_FINISH)
