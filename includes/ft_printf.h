@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:42:04 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/26 13:19:12 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/26 13:25:30 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,11 +65,11 @@ typedef struct			s_type
 
 typedef struct			s_badge
 {
-	int		pound;
-	int		jleft;
-	int		zero;
-	int		space;
-	int		sign;
+	int		pound:1;
+	int		jleft:1;
+	int		zero:1;
+	int		space:1;
+	int		sign:1;
 	int		min_w;
 	int		prec;
 	char	l;
