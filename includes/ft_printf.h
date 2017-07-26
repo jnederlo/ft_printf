@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:42:04 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/26 12:03:49 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/26 12:54:35 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@
 # define CS_LC_S	12
 # define CS_LC_P	13
 # define CS_PC_S	14
+# define CS_LC_N	15
 # define MOD_W		1
 # define MOD_P		2
 # define MOD_WP		3
@@ -78,6 +79,7 @@ typedef struct			s_badge
 	char	hh;
 	char	j;
 	char	z;
+	int		len;
 }						t_badge;
 
 /*
@@ -120,6 +122,7 @@ extern t_choose_cs		g_cs_uc_s;
 extern t_choose_cs		g_cs_lc_s;
 extern t_choose_cs		g_cs_lc_p;
 extern t_choose_cs		g_cs_pc_s;
+extern t_choose_cs		g_cs_lc_n;
 
 /*
 **Funtions in badge_set.c
