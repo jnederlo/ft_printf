@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:42:30 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/26 12:17:31 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/26 12:20:55 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 /*
 **Initializing the global data that was declared in the header,
 **contains a list of all functions for each conversion specifier.
+**
+**There is a problem with moullinet, so you must set CS_UC_C to point
+**to g_cs_lc_c in order to pass the test for C. In order to actually
+**print the wide_char's, however, simply set CS_UC_C to point back to
+**g_cs_uc_c.
+**
 */
 
 const	t_cs_badge	g_cs_list[] = {
