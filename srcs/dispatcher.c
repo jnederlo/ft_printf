@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:42:30 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/24 22:00:54 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/25 19:00:07 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 **Initializing the global data that was declared in the header,
 **contains a list of all functions for each conversion specifier.
 */
+
 const	t_cs_badge	g_cs_list[] = {
 	{'d', CS_LC_D, g_cs_lc_d},
 	{'i', CS_LC_I, g_cs_lc_d},
@@ -35,14 +36,16 @@ const	t_cs_badge	g_cs_list[] = {
 };
 
 /*
-**global variable to determine which function pointer to call:
+**global variable to determine which function pointer to call.
 */
+
 int		g_cs_type;
 
 /*
 **determines the number of initializers coded,
 **making it easy to add functionality later.
 */
+
 const	int		g_nbr_cs_badge = sizeof(g_cs_list) / sizeof(t_cs_badge);
 
 /*
@@ -58,16 +61,11 @@ int		sub_fmt(char **fmt, t_badge *badge, va_list ap)
 	min_width_set(badge, fmt, ap);
 	if (conv_spec(fmt))
 		len = g_cs_list[g_cs_type].choose_cs(fmt, badge, ap);
-	// else if (*(*fmt) == '%')
-	// {
-	// 	(*fmt)++;
-	// 	len += write(1, "%", 1);
-	// }
 	return (len);
 }
 
 /*
-**determines which cs_badge to use by setting g_cs_type to apropriate type.
+**determines which cs_badge to use by setting g_cs_type.
 */
 
 int		conv_spec(char **fmt)
@@ -88,6 +86,6 @@ int		conv_spec(char **fmt)
 		i++;
 	}
 	if (cs_true == 0)
-		return (0);//indicating some error, or that we aren't on the CS element yet.
+		return (0);
 	return (1);
 }

@@ -6,12 +6,11 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/16 10:53:20 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/25 11:04:22 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/25 14:37:34 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 /*
 **Sets the width to a value in t_badge struct.
@@ -104,17 +103,16 @@ void	len_mod_set(t_badge *badge, char **fmt)
 	{
 		*(*fmt) == 'j' ? badge->j = 'j' : 0;
 		*(*fmt) == 'z' ? badge->z = 'z' : 0;
-		//print_badge(badge);//WILL NEED TO REMOVE THIS!!!!!!!!!!!!!!!!
 		(*fmt)++;
 		return ;
 	}
 	else if (*(*fmt) == 'l' || *(*fmt) == 'h')
 	{
-		if ((*(*fmt) == 'l' && *(*fmt + 1) != 'l') || (*(*fmt) == 'h' && *(*fmt + 1) != 'h'))
+		if ((*(*fmt) == 'l' && *(*fmt + 1) != 'l') ||
+			(*(*fmt) == 'h' && *(*fmt + 1) != 'h'))
 		{
 			*(*fmt) == 'l' ? badge->l = 'l' : 0;
 			*(*fmt) == 'h' ? badge->h = 'h' : 0;
-			//print_badge(badge);//WILL NEED TO REMOVE THIS!!!!!!!!!!!!!!!!
 			(*fmt)++;
 			return ;
 		}
@@ -124,5 +122,4 @@ void	len_mod_set(t_badge *badge, char **fmt)
 			badge->hh = 'H';
 		(*fmt) += 2;
 	}
-	//print_badge(badge);//WILL NEED TO REMOVE THIS!!!!!!!!!!!!!!!
 }

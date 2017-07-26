@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/16 11:03:29 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/24 22:54:25 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/25 14:49:42 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ int		cs_lc_d_wp(t_type *type, t_badge *badge, char **fmt)
 	}
 	else
 	{
-		badge->prec > count_digit_lli(type) && type->ll_int < 0 ? badge->min_w-- : 0;
+		badge->prec > count_digit_lli(type) && type->ll_int < 0 ?
+			badge->min_w-- : 0;
 		badge->sign || badge->space ? badge->min_w-- : 0;
-		//badge->sign || badge->space || type->ll_int < 0 ? badge->min_w-- : 0;
 		padding_wp(badge, type, ' ', MOD_WP);
 		cs_lc_d_prec(type, badge, fmt);
 	}
@@ -55,20 +55,16 @@ int		cs_lc_d_prec(t_type *type, t_badge *badge, char **fmt)
 	len = badge->prec > len ? badge->prec : len;
 	len = badge->prec == 0 && type->ll_int == 0 ? 0 : len;
 	badge->prec > 0 && badge->prec < len && type->ll_int < 0 ? len-- : 0;
+	len += badge->sign || badge->space || type->ll_int < 0 ? 1 : 0;
 	if (badge->prec == 0 && type->ll_int == 0)
-	{
 		f_sign_space(badge, type, MOD_P);
-		len += badge->sign || badge->space ? 1 : 0;
-	}
 	else if (badge->prec > 0 && type->ll_int == 0)
 	{
 		f_sign_space(badge, type, MOD_P);
 		padding_wp(badge, type, '0', MOD_P);
-		len += badge->sign || badge->space ? 1 : 0;
 	}
 	else
 	{
-		len += badge->sign || badge->space || type->ll_int < 0 ? 1 : 0;
 		f_sign_space(badge, type, MOD_P);
 		padding_wp(badge, type, '0', MOD_P);
 		putnbr_lli(type->ll_int);

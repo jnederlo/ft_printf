@@ -1,86 +1,79 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cs_o_print.c                                       :+:      :+:    :+:   */
+/*   cs_uc_x_print.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/16 11:03:29 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/25 18:04:37 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/25 18:03:36 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		cs_lc_o_wp(t_type *type, t_badge *badge, char **fmt, int num)
+int		cs_uc_x_wp(t_type *type, t_badge *badge, char **fmt, char *str)
 {
-	int		len;
-	char	*str;
+	int	len;
 
-	len = badge->min_w;
-	str = base_less_10(type, 8);
-	badge->min_w -= (int)ft_strlen(str) > num ? (int)ft_strlen(str) - num : 0;
+	len = badge->min_w > badge->prec ? badge->min_w : badge->prec;
 	if (badge->jleft)
 	{
 		badge->jleft && badge->pound ? badge->min_w-- : 0;
-		cs_lc_o_prec(type, badge, fmt, num);
+		cs_uc_x_prec(type, badge, fmt, str);
 		padding_wp(badge, type, ' ', MOD_WP);
 	}
 	else
 	{
 		badge->pound && badge->prec == 0 ? badge->min_w-- : 0;
 		padding_wp(badge, type, ' ', MOD_WP);
-		cs_lc_o_prec(type, badge, fmt, num);
+		cs_uc_x_prec(type, badge, fmt, str);
 	}
 	return (len);
 }
 
-int		cs_lc_o_prec(t_type *type, t_badge *badge, char **fmt, int num)
+int		cs_uc_x_prec(t_type *type, t_badge *badge, char **fmt, char *str)
 {
-	int		len;
-	char	*str;
+	int	len;
 
 	len = count_digit_ulli(type);
 	len = badge->prec > len ? badge->prec : len;
 	len = badge->prec == 0 && type->ull_int == 0 ? 0 : len;
-	str = base_less_10(type, 8);
-	badge->prec -= (int)ft_strlen(str) > num ? (int)ft_strlen(str) - num : 0;
+	str = base_greater_10_uc_x(type, 16);
+	badge->prec = badge->prec - ft_strlen(str);
 	if (badge->pound)
 	{
-		ft_putchar('0');
+		ft_putstr("0X");
 		badge->prec == 0 ? len++ : 0;
-		badge->prec > 0 ? badge->prec-- : 0;
 	}
-	padding_wp(badge, type, '0', MOD_P);
-	str = base_less_10(type, 8);
+	padding_wp(badge, type, '0', MOD_P_X);
 	ft_putstr(str);
-	(int)ft_strlen(str) > len ? len = ft_strlen(str) : 0;
 	(*fmt)++;
 	return (len);
 }
 
-int		cs_lc_o_width(t_type *type, t_badge *badge, char **fmt)
+int		cs_uc_x_width(t_type *type, t_badge *badge, char **fmt, char *str)
 {
-	int			len;
-	char		*str;
+	int	len;
 
 	len = badge->min_w;
+	str = base_greater_10_uc_x(type, 16);
+	badge->min_w = badge->min_w - ft_strlen(str);
 	if (badge->jleft)
 	{
-		badge->pound ? ft_putchar('0') : 0;
-		badge->pound ? badge->min_w-- : 0;
-		str = base_less_10(type, 8);
+		badge->pound ? ft_putstr("0X") : 0;
+		badge->pound ? badge->min_w -= 2 : 0;
 		*str == 0 ? ft_putchar('0') : 0;
 		ft_putstr(str);
-		padding_wp(badge, type, ' ', MOD_W);
+		padding_wp(badge, type, ' ', MOD_W_X);
 	}
 	else
 	{
-		badge->pound ? badge->min_w-- : 0;
-		badge->zero ? padding_wp(badge, type, '0', MOD_W) :
-			padding_wp(badge, type, ' ', MOD_W);
-		badge->pound ? ft_putchar('0') : 0;
-		str = base_less_10(type, 8);
+		badge->pound ? badge->min_w -= 2 : 0;
+		badge->zero && badge->pound ? ft_putstr("0X") : 0;
+		badge->zero ? padding_wp(badge, type, '0', MOD_W_X) :
+			padding_wp(badge, type, ' ', MOD_W_X);
+		!badge->zero && badge->pound ? ft_putstr("0X") : 0;
 		*str == 0 ? ft_putchar('0') : 0;
 		ft_putstr(str);
 	}
@@ -88,16 +81,15 @@ int		cs_lc_o_width(t_type *type, t_badge *badge, char **fmt)
 	return (len);
 }
 
-int		cs_lc_o_def(t_type *type, t_badge *badge, char **fmt)
+int		cs_uc_x_def(t_type *type, t_badge *badge, char **fmt, char *str)
 {
-	int		len;
-	char	*str;
+	int	len;
 
 	len = 0;
 	if (badge->pound && type->ull_int > 0)
 	{
-		ft_putchar('0');
-		len++;
+		ft_putstr("0X");
+		len += 2;
 	}
 	if (type->ull_int == 0)
 	{
@@ -106,14 +98,14 @@ int		cs_lc_o_def(t_type *type, t_badge *badge, char **fmt)
 		(*fmt)++;
 		return (len);
 	}
-	str = base_less_10(type, 8);
+	str = base_greater_10_uc_x(type, 16);
 	ft_putstr(str);
 	len += ft_strlen(str);
 	(*fmt)++;
 	return (len);
 }
 
-char	*base_less_10(t_type *type, int base)
+char	*base_greater_10_uc_x(t_type *type, int base)
 {
 	int					i;
 	unsigned long long	nb;
@@ -132,7 +124,7 @@ char	*base_less_10(t_type *type, int base)
 	nb = type->ull_int;
 	while (nb > 0)
 	{
-		str[i] = nb % base + 48;
+		str[i] = nb % base > 9 ? nb % base + 55 : nb % base + 48;
 		nb /= base;
 		i--;
 	}

@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:42:04 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/25 12:05:47 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/25 19:03:48 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,8 @@
 
 typedef struct			s_type
 {
-	long long int			ll_int;
-	unsigned long long int	ull_int;
+	long long			ll_int;
+	unsigned long long	ull_int;
 }						t_type;
 
 typedef struct			s_badge
@@ -106,7 +106,6 @@ extern int				g_cs_type;
 **for some functions of type t_choose_cs:
 */
 extern t_choose_cs		g_cs_lc_d;
-// extern t_choose_cs		g_cs_lc_i;
 extern t_choose_cs		g_cs_lc_o;
 extern t_choose_cs		g_cs_lc_u;
 extern t_choose_cs		g_cs_lc_x;
@@ -122,19 +121,6 @@ extern t_choose_cs		g_cs_lc_p;
 extern t_choose_cs		g_cs_pc_s;
 
 /*
-**Funtions in ft_printf.c
-*/
-int						ft_printf(char *fmt, ...);
-void					badge_reset(t_badge *badge);
-void					print_badge(t_badge *badge);//REMOVE THIS!!!!!!!!!!
-
-/*
-**Functions in dispatcher.c
-*/
-int						sub_fmt(char **fmt, t_badge *badge, va_list ap);
-int						conv_spec(char **fmt);
-
-/*
 **Funtions in badge_set.c
 */
 void					min_width_set(t_badge *badge, char **fmt, va_list ap);
@@ -143,13 +129,17 @@ void					precision_set(t_badge *badge, char **fmt, va_list ap);
 void					len_mod_set(t_badge *badge, char **fmt);
 
 /*
-**Funtions in cs_d_start.c
+**Functions in cs_c_print.c
 */
-int						choose_field(int num, t_badge *badge, t_type *d, char **fmt);
-void					arg_type_reset(t_type *type);
-void					flag_rules(t_badge *badge, t_type *d);
-int						choose_len(t_type *type, t_badge *badge, va_list ap);
-void					edge_cases_d(t_type *type, t_badge *badge);
+int						cs_c_print(char **fmt, t_badge *badge, va_list ap);
+void					cs_c_print_w(t_badge *badge);
+
+/*
+**Funtions in cs_d_helpers.c
+*/
+void					f_sign_space(t_badge *badge, t_type *type, int mod);
+int						count_digit_lli(t_type *type);
+void					putnbr_lli(long long nb);
 
 /*
 **Functions in cs_d_print.c
@@ -160,45 +150,43 @@ int						cs_lc_d_width(t_type *type, t_badge *badge, char **fmt);
 int						cs_lc_d_def(t_type *type, t_badge *badge, char **fmt);
 
 /*
-**Funtions in padding.c
+**Funtions in cs_d_start.c
 */
-void					padding_wp(t_badge *badge, t_type *type, char c, int mod);
-int						set_digit(t_badge *badge, t_type *type, int mod);
+int						choose_field(int num, t_badge *badge,
+											t_type *d, char **fmt);
+int						choose_len(t_type *type, t_badge *badge, va_list ap);
+void					flag_rules(t_badge *badge, t_type *d);
+void					arg_type_reset(t_type *type);
+void					edge_cases_d(t_type *type, t_badge *badge);
 
 /*
-**Funtions in cs_d_helpers.c
+**Functions in cs_o_print.c
 */
-void					f_sign_space(t_badge *badge, t_type *type, int mod);
-int						count_digit_lli(t_type *type);
-void					putnbr_lli(long long nb);
+int						cs_lc_o_wp(t_type *type, t_badge *badge,
+											char **fmt, int num);
+int						cs_lc_o_prec(t_type *type, t_badge *badge,
+											char **fmt, int num);
+int						cs_lc_o_width(t_type *type, t_badge *badge, char **fmt);
+int						cs_lc_o_def(t_type *type, t_badge *badge, char **fmt);
+char					*base_less_10(t_type *type, int base);
 
 /*
-**Funtions in cs_u_start.c
+**Funtions in cs_o_start.c
 */
-int						choose_field_u(int num, t_badge *badge, t_type *d, char **fmt);
-void					arg_type_reset_u(t_type *type);
-void					flag_rules_u(t_badge *badge, t_type *d);
-int						choose_len_u(t_type *type, t_badge *badge, va_list ap);
+int						choose_field_o(int num, t_badge *badge,
+											t_type *d, char **fmt);
+int						choose_len_o(t_type *type, t_badge *badge, va_list ap);
+void					flag_rules_o(t_badge *badge, t_type *d);
+void					arg_type_reset_o(t_type *type);
 
 /*
-**Functions in cs_u_print.c
+**Functions in cs_p_print.c
 */
-int						cs_lc_u_wp(t_type *type, t_badge *badge, char **fmt);
-int						cs_lc_u_prec(t_type *type, t_badge *badge, char **fmt);
-int						cs_lc_u_width(t_type *type, t_badge *badge, char **fmt);
-int						cs_lc_u_def(t_type *type, t_badge *badge, char **fmt);
-
-/*
-**Funtions in cs_u_helpers.c
-*/
-int						count_digit_ulli(t_type *type);
-void					putnbr_ulli(unsigned long long nb);
-
-/*
-**Funtions in cs_uc_DOU.c
-*/
-int						choose_len_uc_uo(t_type *type, t_badge *badge, va_list ap);
-int						choose_len_uc_d(t_type *type, t_badge *badge, va_list ap);
+int						cs_p_print(char **fmt, t_badge *badge,
+											va_list ap, t_type *type);
+void					cs_p_print_w(t_badge *badge, t_type *type);
+int						count_digit_ulli_base(t_type *type, int base);
+void					arg_type_reset_p(t_type *type);
 
 /*
 **Functions in cs_s_print.c
@@ -210,7 +198,44 @@ int						cs_lc_s_width(char *str, t_badge *badge, int len);
 void					cs_lc_s_print_w(int	width);
 
 /*
-**Functions in cs_uc_S_print.c
+**Funtions in cs_u_helpers.c
+*/
+int						count_digit_ulli(t_type *type);
+void					putnbr_ulli(unsigned long long nb);
+
+/*
+**Functions in cs_u_print.c
+*/
+int						cs_lc_u_wp(t_type *type, t_badge *badge, char **fmt);
+int						cs_lc_u_prec(t_type *type, t_badge *badge, char **fmt);
+int						cs_lc_u_width(t_type *type, t_badge *badge, char **fmt);
+int						cs_lc_u_def(t_type *type, t_badge *badge, char **fmt);
+
+/*
+**Funtions in cs_u_start.c
+*/
+int						choose_field_u(int num, t_badge *badge,
+											t_type *d, char **fmt);
+int						choose_len_u(t_type *type, t_badge *badge, va_list ap);
+void					flag_rules_u(t_badge *badge, t_type *d);
+void					arg_type_reset_u(t_type *type);
+
+/*
+**Functions in cs_uc_c_print.c
+*/
+int						cs_uc_c_print(char **fmt, t_badge *badge, va_list ap);
+void					cs_uc_c_print_w(t_badge *badge);
+
+/*
+**Funtions in cs_uc_duo.c
+*/
+int						choose_len_uc_uo(t_type *type, t_badge *badge,
+											va_list ap);
+int						choose_len_uc_d(t_type *type, t_badge *badge,
+											va_list ap);
+
+/*
+**Functions in cs_uc_s_print.c
 */
 int						cs_uc_s_print(char **fmt, t_badge *badge, va_list ap);
 int						cs_uc_s_wp(wchar_t *str, t_badge *badge, int len);
@@ -219,16 +244,67 @@ int						cs_uc_s_width(wchar_t *str, t_badge *badge, int len);
 void					cs_uc_s_print_w(int	width);
 
 /*
-**Functions in cs_c_print.c
+**Functions in cs_uc_x_print.c
 */
-int						cs_c_print(char **fmt, t_badge *badge, va_list ap);
-void					cs_c_print_w(t_badge *badge);
+int						cs_uc_x_wp(t_type *type, t_badge *badge,
+												char **fmt, char *str);
+int						cs_uc_x_prec(t_type *type, t_badge *badge,
+												char **fmt, char *str);
+int						cs_uc_x_width(t_type *type, t_badge *badge,
+												char **fmt, char *str);
+int						cs_uc_x_def(t_type *type, t_badge *badge,
+												char **fmt, char *str);
+char					*base_greater_10_uc_x(t_type *type, int base);
 
 /*
-**Functions in cs_uc_C_print.c
+**Funtions in cs_uc_x_start.c
 */
-int						cs_uc_c_print(char **fmt, t_badge *badge, va_list ap);
-void					cs_uc_c_print_w(t_badge *badge);
+int						choose_field_uc_x(int num, t_badge *badge,
+												t_type *d, char **fmt);
+int						choose_len_uc_x(t_type *type, t_badge *badge,
+												va_list ap);
+
+/*
+**Functions in cs_x_print.c
+*/
+int						cs_lc_x_wp(t_type *type, t_badge *badge,
+												char **fmt, char *str);
+int						cs_lc_x_prec(t_type *type, t_badge *badge,
+												char **fmt, char *str);
+int						cs_lc_x_width(t_type *type, t_badge *badge,
+												char **fmt, char *str);
+int						cs_lc_x_def(t_type *type, t_badge *badge,
+												char **fmt, char *str);
+char					*base_greater_10_x(t_type *type, int base);
+
+/*
+**Funtions in cs_x_start.c
+*/
+int						choose_field_x(int num, t_badge *badge,
+												t_type *d, char **fmt);
+int						choose_len_x(t_type *type, t_badge *badge, va_list ap);
+void					flag_rules_x(t_badge *badge, t_type *type);
+void					arg_type_reset_x(t_type *type);
+int						nullinator(t_badge *badge, char **fmt, t_type *type);
+
+/*
+**Functions in dispatcher.c
+*/
+int						sub_fmt(char **fmt, t_badge *badge, va_list ap);
+int						conv_spec(char **fmt);
+
+/*
+**Funtions in ft_printf.c
+*/
+int						ft_printf(char *fmt, ...);
+void					badge_reset(t_badge *badge);
+
+/*
+**Funtions in padding.c
+*/
+void					padding_wp(t_badge *badge, t_type *type,
+												char c, int mod);
+int						set_digit(t_badge *badge, t_type *type, int mod);
 
 /*
 **Functions in wide_char.c
@@ -237,65 +313,5 @@ int						w_strlen(wchar_t *w_str);
 int						w_charlen(wchar_t wc);
 int						w_putstr(wchar_t *ws);
 int						w_putchar(wchar_t wc);
-
-/*
-**Funtions in cs_o_start.c
-*/
-int						choose_field_o(int num, t_badge *badge, t_type *d, char **fmt);
-void					arg_type_reset_o(t_type *type);
-void					flag_rules_o(t_badge *badge, t_type *d);
-int						choose_len_o(t_type *type, t_badge *badge, va_list ap);
-
-/*
-**Functions in cs_o_print.c
-*/
-int						cs_lc_o_wp(t_type *type, t_badge *badge, char **fmt, int num);
-int						cs_lc_o_prec(t_type *type, t_badge *badge, char **fmt, int num);
-int						cs_lc_o_width(t_type *type, t_badge *badge, char **fmt);
-int						cs_lc_o_def(t_type *type, t_badge *badge, char **fmt);
-char					*base_less_10(unsigned long long value, int base);
-
-/*
-**Funtions in cs_x_start.c
-*/
-int						choose_field_x(int num, t_badge *badge, t_type *d, char **fmt);
-void					arg_type_reset_x(t_type *type);
-void					flag_rules_x(t_badge *badge, t_type *d);
-int						choose_len_x(t_type *type, t_badge *badge, va_list ap);
-int						nullinator(t_badge *badge, char **fmt, t_type *type);
-
-/*
-**Functions in cs_x_print.c
-*/
-int						cs_lc_x_wp(t_type *type, t_badge *badge, char **fmt);
-int						cs_lc_x_prec(t_type *type, t_badge *badge, char **fmt);
-int						cs_lc_x_width(t_type *type, t_badge *badge, char **fmt);
-int						cs_lc_x_def(t_type *type, t_badge *badge, char **fmt);
-char					*base_greater_10_x(unsigned long long value, int base);
-
-/*
-**Funtions in cs_uc_X_start.c
-*/
-int						choose_field_X(int num, t_badge *badge, t_type *d, char **fmt);
-void					arg_type_reset_X(t_type *type);
-void					flag_rules_X(t_badge *badge, t_type *d);
-int						choose_len_X(t_type *type, t_badge *badge, va_list ap);
-int						nullinator_X(t_badge *badge, char **fmt, t_type *type);
-
-/*
-**Functions in cs_uc_X_print.c
-*/
-int						cs_uc_X_wp(t_type *type, t_badge *badge, char **fmt);
-int						cs_uc_X_prec(t_type *type, t_badge *badge, char **fmt);
-int						cs_uc_X_width(t_type *type, t_badge *badge, char **fmt);
-int						cs_uc_X_def(t_type *type, t_badge *badge, char **fmt);
-char					*base_greater_10_X(unsigned long long value, int base);
-
-/*
-**Functions in cs_p_print.c
-*/
-int						cs_p_print(char **fmt, t_badge *badge, va_list ap);
-int						count_digit_li_base(long long addr, int base);
-void					cs_p_print_w(t_badge *badge, long long addr);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/22 15:37:56 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/22 15:56:48 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/25 14:24:35 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ int		w_charlen(wchar_t wc)
 {
 	if ((unsigned int)wc < ONE_BYTE)
 		return (1);
-	else if((unsigned int)wc < TWO_BYTE)
+	else if ((unsigned int)wc < TWO_BYTE)
 		return (2);
-	else if((unsigned int)wc < THREE_BYTE)
+	else if ((unsigned int)wc < THREE_BYTE)
 		return (3);
 	else
 		return (4);
@@ -64,7 +64,7 @@ int		w_putchar(wchar_t wc)
 		ft_putchar(((unsigned int)wc & 63) | 128);
 		return (2);
 	}
-	else if((unsigned int)wc < THREE_BYTE)
+	else if ((unsigned int)wc < THREE_BYTE)
 	{
 		ft_putchar(((unsigned int)wc >> 12) | 224);
 		ft_putchar((((unsigned int)wc >> 6) & 63) | 128);

@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/16 13:19:19 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/24 15:16:41 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/25 14:42:13 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int		choose_field(int num, t_badge *badge, t_type *type, char **fmt)
 
 	len = 0;
 	if (badge->pound)
-		return (-1);
+		return (0);
 	badge->min_w < 0 ? badge->jleft = 1 : 0;
 	badge->min_w = badge->min_w < 0 ? badge->min_w * -1 : badge->min_w;
 	if (badge->min_w > badge->prec && badge->min_w > num && badge->prec >= 0)
@@ -95,9 +95,11 @@ void	edge_cases_d(t_type *type, t_badge *badge)
 		if (type->ll_int == 32768)
 			type->ll_int = MIN_SINT;
 		else if (type->ll_int >= 0)
-			type->ll_int = n / 32769 % 2 ? n % 32769 + 32769 : n % 32769;
+			type->ll_int = n / 32769 % 2 ?
+				n % 32769 + 32769 : n % 32769;
 		else
-			type->ll_int = n / 32769 % 2 ? n % 32769 - 32769 : n % 32769;
+			type->ll_int = n / 32769 % 2 ?
+				n % 32769 - 32769 : n % 32769;
 	}
 	else if (badge->hh)
 	{

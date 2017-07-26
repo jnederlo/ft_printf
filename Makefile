@@ -6,7 +6,7 @@
 #    By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/07/08 14:42:13 by jnederlo          #+#    #+#              #
-#    Updated: 2017/07/24 21:56:23 by jnederlo         ###   ########.fr        #
+#    Updated: 2017/07/25 14:22:59 by jnederlo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,26 +19,29 @@ FILES				=	ft_printf.c \
 						badge_set.c \
 						dispatcher.c \
 						padding.c \
-						cs_functions.c \
+						cs_func_lc_cs_uc_cs.c \
+						cs_func_doux.c \
+						cs_func_p_ps.c \
+						cs_func_uc_doux.c \
 						cs_d_start.c \
 						cs_d_print.c \
 						cs_d_helpers.c \
 						cs_u_start.c \
 						cs_u_print.c \
 						cs_u_helpers.c \
-						cs_s_print.c \
-						cs_c_print.c \
-						cs_uc_C_print.c \
 						cs_o_start.c \
 						cs_o_print.c \
 						cs_x_start.c \
 						cs_x_print.c \
-						cs_uc_X_start.c \
-						cs_uc_X_print.c \
-						cs_uc_S_print.c \
+						cs_c_print.c \
+						cs_uc_c_print.c \
+						cs_s_print.c \
+						cs_uc_s_print.c \
 						wide_char.c \
+						cs_uc_x_start.c \
+						cs_uc_x_print.c \
+						cs_uc_duo.c \
 						cs_p_print.c \
-						cs_uc_DUO.c \
 
 #custom messages to display compilation process.
 MESS_BLANK			=	@echo ""

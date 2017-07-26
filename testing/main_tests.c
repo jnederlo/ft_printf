@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:39:51 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/25 13:19:01 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/25 18:07:21 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -1121,8 +1121,8 @@ int	main(void)
 
 // //	#177
 // 	printf("Test #%d\n", i++);
-// 	actual_l = printf("ACTUAL:						 -->%zd%zd<--\n", 0, 42);
-// 	my_l = ft_printf("MINE:						 -->%zd%zd<--\n", 0, 42);
+// 	actual_l = printf("ACTUAL:						 -->%zx%zx<--\n", 0, MAX_ULLINT);
+// 	my_l = ft_printf("MINE:						 -->%zx%zx<--\n", 0, MAX_ULLINT);
 // 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
 
 // //	#178
@@ -2290,8 +2290,8 @@ str = malloc(sizeof(char) * 10);
 	// printf("(%d, %d)\n\n", actual_l, my_l + 2);
 
 	printf("Test #%d\n", i++);
-	actual_l = printf("ACTUAL:				 -->% p|%+p<--\n", 42, 42);
-	my_l = ft_printf("MINE:				 -->% p|%+p<--\n", 42, 42);
+	actual_l = printf("ACTUAL:				 -->{%-13p}<--\n", &str);
+	my_l = ft_printf("MINE:				 -->{%-13p}<--\n", &str);
 	printf("(%d, %d)\n\n", actual_l, my_l + 2);
 
 

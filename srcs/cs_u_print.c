@@ -6,15 +6,11 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/16 11:03:29 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/24 14:19:26 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/25 14:05:13 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-/*
-**Handles if both width and precision fields are specified.
-*/
 
 int		cs_lc_u_wp(t_type *type, t_badge *badge, char **fmt)
 {
@@ -39,10 +35,6 @@ int		cs_lc_u_wp(t_type *type, t_badge *badge, char **fmt)
 	return (len);
 }
 
-/*
-**Handles if the precision field is specified.
-*/
-
 int		cs_lc_u_prec(t_type *type, t_badge *badge, char **fmt)
 {
 	int			len;
@@ -65,10 +57,6 @@ int		cs_lc_u_prec(t_type *type, t_badge *badge, char **fmt)
 	(*fmt)++;
 	return (len);
 }
-
-/*
-**Handles if only width field is specified.
-*/
 
 int		cs_lc_u_width(t_type *type, t_badge *badge, char **fmt)
 {
@@ -93,10 +81,6 @@ int		cs_lc_u_width(t_type *type, t_badge *badge, char **fmt)
 	(*fmt)++;
 	return (len);
 }
-
-/*
-**Handles if neither width and precision fields are specified.
-*/
 
 int		cs_lc_u_def(t_type *type, t_badge *badge, char **fmt)
 {
