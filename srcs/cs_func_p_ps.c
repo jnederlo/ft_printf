@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/25 13:44:47 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/26 11:48:59 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/26 12:55:20 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,15 @@ int		g_cs_pc_s(char **fmt, t_badge *badge, va_list ap)
 	!badge->jleft ? ft_putchar('%') : 0;
 	(*fmt)++;
 	return (len);
+}
+
+int		g_cs_lc_n(char **fmt, t_badge *badge, va_list ap)
+{
+	int	*n;
+
+	n = malloc(sizeof(int *));
+	va_arg(ap, int *);
+	n = &badge->len;
+	(*fmt)++;
+	return (*n);
 }

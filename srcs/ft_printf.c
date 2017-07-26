@@ -6,7 +6,7 @@
 /*   By: jnederlo <jnederlo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:41:42 by jnederlo          #+#    #+#             */
-/*   Updated: 2017/07/25 14:17:25 by jnederlo         ###   ########.fr       */
+/*   Updated: 2017/07/26 12:53:25 by jnederlo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int		ft_printf(char *fmt, ...)
 			badge_reset(&badge);
 			len += sub_fmt(&fmt, &badge, ap);
 		}
-		else
+		else if (*fmt != '%')
 		{
 			len += write(1, fmt, 1);
 			fmt++;
@@ -57,4 +57,5 @@ void	badge_reset(t_badge *badge)
 	badge->hh = '\0';
 	badge->j = '\0';
 	badge->z = '\0';
+	badge->len = 0;
 }
